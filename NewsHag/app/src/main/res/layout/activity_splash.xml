@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashScreen"
+    android:background="#eb5c5b">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/splash"
+        android:background="@drawable/newsssyyy"
+        android:alpha="12"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageButton
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/iconforanim"
+        android:shadowColor="#eb5c5b"
+        android:layout_marginTop="10dp"
+        android:shadowDx="4"
+        android:shadowDy="4"
+        android:shadowRadius="4.5"
+        android:background="@drawable/newhag"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome"
+        android:textColor="#F0FFFF"
+        android:shadowColor="#eb5c5b"
+        android:shadowDx="4"
+        android:shadowDy="4"
+        android:shadowRadius="4.5"
+        android:textSize="70sp"
+        android:id="@+id/Welcome"
+        android:fontFamily="cursive"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/iconforanim"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="To"
+        android:shadowColor="#eb5c5b"
+        android:shadowDx="4"
+        android:shadowDy="4"
+        android:shadowRadius="4.5"
+        android:textColor="#F0FFFF"
+        android:textSize="50sp"
+        android:fontFamily="cursive"
+        android:id="@+id/to"
+        android:layout_below="@+id/Welcome"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="News Hag"
+        android:fontFamily="cursive"
+        android:shadowColor="#eb5c5b"
+        android:shadowDx="4"
+        android:shadowDy="4"
+        android:shadowRadius="4.5"
+        android:textSize="70sp"
+        android:textColor="#F0FFFF"
+        android:id="@+id/newhag"
+        android:layout_below="@+id/to"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#F0FFFF"
+        android:fontFamily="cursive"
+        android:textSize="25sp"
+        android:shadowColor="#eb5c5b"
+        android:shadowDx="4"
+        android:shadowDy="4"
+        android:shadowRadius="4.5"
+        android:layout_marginRight="10dp"
+        android:text="..your daily source of news"
+        android:id="@+id/your"
+        android:layout_below="@+id/newhag"
+        android:layout_alignParentEnd="true" />
+</RelativeLayout>
