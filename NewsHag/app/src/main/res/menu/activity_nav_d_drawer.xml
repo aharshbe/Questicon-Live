@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_top10"
+            android:icon="@drawable/new2"
+            android:title="Daily Top News"
+            android:onClick="clickingTopTen"/>
+        <item
+            android:id="@+id/nav_tech"
+            android:icon="@drawable/tech2"
+            android:title="Technology"
+            android:onClick="clickingTech"/>
+        <item
+            android:id="@+id/nav_biz"
+            android:icon="@drawable/biz2"
+            android:title="Business"
+            android:onClick="clickingBiz"/>
+        <item
+            android:id="@+id/nav_favorites"
+            android:icon="@drawable/f1"
+            android:title="Favorites"
+            android:onClick="clickingFavoritesNav"/>
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/settings"
+            android:title="Settings"
+            android:onClick="clickingSettings"/>
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/s6"
+                android:title="Share GitHub Repo"
+                android:onClick="clickingShareNav"/>
+        </menu>
+    </item>
+
+</menu>
