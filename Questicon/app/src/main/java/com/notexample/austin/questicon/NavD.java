@@ -100,4 +100,19 @@ public class NavD extends AppCompatActivity
         Intent intent = new Intent(NavD.this, Bosses.class);
         startActivity(intent);
     }
+
+    public void clickingDungeons(MenuItem item) {
+        Intent intent = new Intent(NavD.this, Dungeon.class);
+        startActivity(intent);
+    }
+
+    public void clickingMounts(MenuItem item) {
+        Intent intent = new Intent(NavD.this, Mounts.class);
+        startActivity(intent);
+    }
+
+    public void clickingPets(MenuItem item) {
+        Intent intent = new Intent(NavD.this, Pets.class);
+        startActivity(intent);
+    }
 }

@@ -1,12 +1,8 @@
 package com.notexample.austin.questicon;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -21,27 +17,25 @@ import java.util.LinkedList;
 
 import cz.msebera.android.httpclient.Header;
 
-public class Bosses extends AppCompatActivity {
+public class Mounts extends AppCompatActivity {
     LinkedList<String> items;
     ArrayAdapter<String> mAdapter;
     ListView listView;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bosses);
+        setContentView(R.layout.activity_mounts);
 
-        bosses();
+        mounts();
     }
 
-    public void bosses() {
+    public void mounts() {
 
 
         items = new LinkedList<>();
         mAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, items);
-        listView = (ListView) findViewById(R.id.listViewBosses);
+        listView = (ListView) findViewById(R.id.listViewMounts);
         listView.setAdapter(mAdapter);
 
 
@@ -53,7 +47,7 @@ public class Bosses extends AppCompatActivity {
         // Not sure why this boolean isn't working but the objective was to make it so that if a user enter's nothing, the search doesn't happen
 
 
-        client.get("https://us.api.battle.net/wow/boss/?locale=en_US&apikey=wheces9zargz65mhza5jfv9nentuy2gg", new JsonHttpResponseHandler() {
+        client.get("https://us.api.battle.net/wow/mount/?locale=en_US&apikey=wheces9zargz65mhza5jfv9nentuy2gg", new JsonHttpResponseHandler() {
 
 
             @Override
@@ -61,13 +55,13 @@ public class Bosses extends AppCompatActivity {
 
 
                 try {
-                    JSONArray jsonArray = responseBody.getJSONArray("bosses");
+                    JSONArray jsonArray = responseBody.getJSONArray("mounts");
 
 
                     for (int i = 0; i < jsonArray.length(); i++) {
-                        JSONObject bosses = jsonArray.getJSONObject(i);
-                        if (!bosses.has("name")) continue;
-                        items.add(bosses.getString("name"));
+                        JSONObject mounts = jsonArray.getJSONObject(i);
+                        if (!mounts.has("name")) continue;
+                        items.add(mounts.getString("name"));
                     }
                     mAdapter.notifyDataSetChanged();
 
@@ -102,8 +96,4 @@ public class Bosses extends AppCompatActivity {
 
 
     }
-
 }
-
-
-

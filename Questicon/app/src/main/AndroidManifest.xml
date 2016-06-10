@@ -11,23 +11,22 @@
         android:label="Questicon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CharacterActivity">
-        </activity>
+        <activity android:name=".CharacterActivity" />
         <activity android:name=".Bosses" />
         <activity android:name=".Main2Activity" />
         <activity
-
             android:name=".NavD"
-            android:label="@string/title_activity_nav_d"
-            android:theme="@style/AppTheme.NoActionBar"
-            >
+            android:label="Questicon"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
+        <activity android:name=".Dungeon" />
+        <activity android:name=".Mounts" />
+        <activity android:name=".Pets"></activity>
     </application>
 
 </manifest>
