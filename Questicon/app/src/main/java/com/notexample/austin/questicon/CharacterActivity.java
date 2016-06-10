@@ -34,7 +34,7 @@ public class CharacterActivity extends AppCompatActivity {
     LinkedList<String> items;
     ArrayAdapter<String> mAdapter;
     ListView listView;
-    EditText editText;
+    EditText realm, charactername;
 
 
 
@@ -48,10 +48,12 @@ public class CharacterActivity extends AppCompatActivity {
         mAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, items);
         listView = (ListView) findViewById(R.id.listView);
         listView.setAdapter(mAdapter);
-        editText = (EditText) findViewById(R.id.editText);
+        realm = (EditText) findViewById(R.id.realm);
+        charactername = (EditText) findViewById(R.id.charactername);
+
 
         CheckingInternetConnection();
-        APICALL();
+
     }
 
 
@@ -118,14 +120,16 @@ public class CharacterActivity extends AppCompatActivity {
 
         final AsyncHttpClient client = new AsyncHttpClient();
 
-        final String searchVariable = editText.getText().toString();
+        final String searchVariableName = charactername.getText().toString();
+        final String searchVariableRealm = realm.getText().toString();
+
 
         // Not sure why this boolean isn't working but the objective was to make it so that if a user enter's nothing, the search doesn't happen
 
 
 
 
-            client.get("https://us.api.battle.net/wow/character/sargeras/blimpie?fields=appearance&locale=en_US&apikey=wheces9zargz65mhza5jfv9nentuy2gg\n", new JsonHttpResponseHandler() {
+            client.get("https://us.api.battle.net/wow/character/"+searchVariableRealm+"/"+searchVariableName+"?fields=appearance&locale=en_US&apikey=wheces9zargz65mhza5jfv9nentuy2gg\n", new JsonHttpResponseHandler() {
 
 
                 @Override
@@ -173,7 +177,10 @@ public class CharacterActivity extends AppCompatActivity {
 
         }
 
+    public void clickingSearch(View view) {
+        APICALL();
     }
+}
 
 
 
