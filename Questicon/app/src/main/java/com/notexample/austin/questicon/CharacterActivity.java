@@ -55,11 +55,16 @@ public class CharacterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_character);
 
         items = new ArrayList<>();
-        mAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, items);
+//        mAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, items);
         listView = (ListView) findViewById(R.id.listView);
-        listView.setAdapter(mAdapter);
+//        listView.setAdapter(mAdapter);
         realm = (EditText) findViewById(R.id.realm);
         charactername = (EditText) findViewById(R.id.charactername);
+
+
+        ArrayList<CharacterModel> characterModels = new ArrayList<CharacterModel>();
+        CustomAdapter adapter = new CustomAdapter(this, characterModels);
+        listView.setAdapter(adapter);
 
 
 
@@ -153,21 +158,29 @@ public class CharacterActivity extends AppCompatActivity {
                 public void onSuccess(int statusCode, Header[] headers, JSONObject responseBody) {
 
 
+//                        JSONArray jsonArray = responseBody.getJSONArray("bosses")
                     try {
-
-//                        JSONArray jsonArray = responseBody.getJSONArray("bosses");
-
-
-                            items.add(responseBody.getString("thumbnail"));
-
-                        mAdapter.notifyDataSetChanged();
+                        JSONObject jsonObjectName = responseBody.getJSONObject("name");
+                        JSONObject jsonObjectBattleGroup = responseBody.getJSONObject("battlegroup");
+                        JSONObject jsonObjectImage = responseBody.getJSONObject("thumbnail");
+                        JSONObject jsonObjectClass = responseBody.getJSONObject("class");
+                        JSONObject jsonObjectRace = responseBody.getJSONObject("race");
+                        JSONObject jsonObjectGender = responseBody.getJSONObject("gender");
+                        JSONObject jsonObjectAP = responseBody.getJSONObject("achievementPoints");
+                        JSONObject jsonObjectFaction = responseBody.getJSONObject("faction");
+                        JSONObject jsonObjectLevel = responseBody.getJSONObject("level");
 
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
 
 
+                    adapter.();
+
+                    adapter.notifyDataSetChanged();
+
                 }
+
 
 
                 @Override
@@ -195,7 +208,10 @@ public class CharacterActivity extends AppCompatActivity {
         }
 
     public void clickingSearch(View view) {
+
+
         APICALL();
+
     }
 }
 
