@@ -47,12 +47,6 @@ public class CharacterActivity extends AppCompatActivity {
     EditText realm, charactername;
 
 
-
-
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,19 +62,10 @@ public class CharacterActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
 
 
-
         CheckingInternetConnection();
 
 
-
     }
-
-
-
-
-
-
-
 
 
     public void CheckingInternetConnection() {
@@ -88,7 +73,6 @@ public class CharacterActivity extends AppCompatActivity {
         ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
-
 
 
             Intent intent1 = new Intent(this, CharacterActivity.class);
@@ -116,7 +100,6 @@ public class CharacterActivity extends AppCompatActivity {
 
 
             PendingIntent pendingIntent = PendingIntent.getActivity(this, (int) System.currentTimeMillis(), intent1, 0);
-
 
 
             NotificationCompat.BigTextStyle bigTextStyle = new NotificationCompat.BigTextStyle();
@@ -150,92 +133,79 @@ public class CharacterActivity extends AppCompatActivity {
         // Not sure why this boolean isn't working but the objective was to make it so that if a user enter's nothing, the search doesn't happen
 
 
+        client.get("https://us.api.battle.net/wow/character/" + searchVariableRealm + "/" + searchVariableName + "?fields=appearance&locale=en_US&apikey=wheces9zargz65mhza5jfv9nentuy2gg\n", new JsonHttpResponseHandler() {
 
 
-            client.get("https://us.api.battle.net/wow/character/"+searchVariableRealm+"/"+searchVariableName+"?fields=appearance&locale=en_US&apikey=wheces9zargz65mhza5jfv9nentuy2gg\n", new JsonHttpResponseHandler() {
-
-
-                @Override
-                public void onSuccess(int statusCode, Header[] headers, final JSONObject responseBody) {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, final JSONObject responseBody) {
 
 
 //                        JSONArray jsonArray = responseBody.getJSONArray("bosses")
-                    try {
-                        String name = responseBody.getString("name");
-                        String battlegroup = responseBody.getString("battlegroup");
-                        final String image = responseBody.getString("thumbnail");
-                        int classWow = responseBody.getInt("class");
-                        int race = responseBody.getInt("race");
-                        int gender = responseBody.getInt("gender");
-                        int ap = responseBody.getInt("achievementPoints");
-                        int faction = responseBody.getInt("faction");
-                        int level = responseBody.getInt("level");
-                        int kills = responseBody.getInt("totalHonorableKills");
+                try {
+                    String name = responseBody.getString("name");
+                    String battlegroup = responseBody.getString("battlegroup");
+                    final String image = responseBody.getString("thumbnail");
+                    int classWow = responseBody.getInt("class");
+                    int race = responseBody.getInt("race");
+                    int gender = responseBody.getInt("gender");
+                    int ap = responseBody.getInt("achievementPoints");
+                    int faction = responseBody.getInt("faction");
+                    int level = responseBody.getInt("level");
+                    int kills = responseBody.getInt("totalHonorableKills");
 
 
+                    CharacterModel character = new CharacterModel(name, battlegroup, image, classWow, race, gender, ap, faction, level, kills);
+
+                    ArrayList<CharacterModel> characterModels = new ArrayList<>();
+                    CustomAdapter adapter = new CustomAdapter(CharacterActivity.this, characterModels);
+
+                    listView.setAdapter(adapter);
 
 
-                        CharacterModel character = new CharacterModel(name, battlegroup, image, classWow, race, gender, ap, faction, level, kills);
+                    adapter.add(character);
 
-                        ArrayList<CharacterModel> characterModels = new ArrayList<>();
-                        CustomAdapter adapter = new CustomAdapter(CharacterActivity.this, characterModels);
+                    adapter.notifyDataSetChanged();
 
-                        listView.setAdapter(adapter);
-
-
-                        adapter.add(character);
-
-                        adapter.notifyDataSetChanged();
-
-                        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                            @Override
-                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                                Intent myIntent = new Intent(CharacterActivity.this, Main2Activity.class);
-                                myIntent.putExtra("position", position);
+                    listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            Intent myIntent = new Intent(CharacterActivity.this, Main2Activity.class);
+                            myIntent.putExtra("position", position);
 
 
-                                try {
+                            try {
 
-                                    String image = responseBody.getString("thumbnail");
-                                    myIntent.putExtra("url2", image);
-                                    startActivity(myIntent);
+                                String image = responseBody.getString("thumbnail");
+                                myIntent.putExtra("url2", image);
+                                startActivity(myIntent);
 
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
-                                }
-
-
-
+                            } catch (JSONException e) {
+                                e.printStackTrace();
                             }
-                        });
 
 
+                        }
+                    });
 
 
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-
-
-
-
-
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
 
 
-
-                @Override
-                public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
-                    super.onFailure(statusCode, headers, throwable, errorResponse);
-                    Toast.makeText(getApplicationContext(), "Process Not Successful",
-                            Toast.LENGTH_SHORT).show();
-                }
-            });
+            }
 
 
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+                Toast.makeText(getApplicationContext(), "Process Not Successful",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
-        }
+    }
 
     public void clickingSearch(View view) {
 

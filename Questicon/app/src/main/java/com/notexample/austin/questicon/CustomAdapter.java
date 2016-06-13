@@ -32,7 +32,7 @@ public class CustomAdapter extends ArrayAdapter<CharacterModel> {
         }
 
         TextView name = (TextView) convertView.findViewById(R.id.name);
-        TextView battlegroup = (TextView) convertView.findViewById(R.id.levelly);
+        TextView battlegroup = (TextView) convertView.findViewById(R.id.battlegroup);
         ImageView imageChar  = (ImageView) convertView.findViewById(R.id.image);
 
 
