@@ -5,38 +5,42 @@ import android.database.Cursor;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.CursorAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-public class CustomAdapter extends BaseAdapter {
+import com.squareup.picasso.Picasso;
 
-    private LayoutInflater layoutInflater;
+import java.util.ArrayList;
+import java.util.List;
 
-    public CustomAdapter(Context context, Cursor cursor, int flags) {
-        layoutInflater = (LayoutInflater) context.getSystemService(
-                Context.LAYOUT_INFLATER_SERVICE);
+public class CustomAdapter extends ArrayAdapter<CharacterModel> {
 
-
-    }
-
-
-    @Override
-    public int getCount() {
-        return 0;
+    public CustomAdapter(Context context, ArrayList<CharacterModel> users) {
+        super(context, 0, users);
     }
 
     @Override
-    public Object getItem(int i) {
-        return null;
-    }
+    public View getView(int position, View convertView, ViewGroup parent) {
 
-    @Override
-    public long getItemId(int i) {
-        return 0;
-    }
+        CharacterModel character = getItem(position);
 
-    @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
-        return null;
+        if (convertView == null) {
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.customlayout, parent, false);
+        }
+
+        TextView name = (TextView) convertView.findViewById(R.id.name);
+        TextView level = (TextView) convertView.findViewById(R.id.level);
+        ImageView image  = (ImageView) convertView.findViewById(R.id.image);
+
+
+
+        name.setText(character.name);
+        level.setText(character.level);
+//        image.setImageResource(character.image);
+
+        return convertView;
     }
 }
