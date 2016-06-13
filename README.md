@@ -27,6 +27,8 @@
 * **Lastly, Hamlick and his friends really enjoy challending themselves to see who has the most mounts, so a way to see all the in-game mounts would also be valuable.**
 
 ##App Development Plan:
+* **Create Questicon README**
+* **Create User persona**
 * **Build out prototype.**
 * **Verify Blizzard API will work for what Questicon will do**
 * **Register for an API Key and make test API calls**
