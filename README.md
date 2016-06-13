@@ -26,5 +26,38 @@
 * **As an added bonus, Hamlick sometimes likes to show his friends what his characters currently look like, he needs a way to show or share out his character's level as well.**
 * **Lastly, Hamlick and his friends really enjoy challending themselves to see who has the most mounts, so a way to see all the in-game mounts would also be valuable.**
 
+##App Development Plan:
+* **Build out prototype.**
+* **Verify Blizzard API will work for what Questicon will do**
+* **Register for an API Key and make test API calls**
+* **Use postman to build out the correct API calls**
+* **Create basic UX and XML layouts**
+* **Integrate API calls into the XML and layouts to provide a proof of concept**
+* **Create intents and proper app user flow; app starts being realized**
+* **Integrate logic for API calls and test out the API calls are calling the correct data from Blizzard's servers ~~Is data populating?**
+* **Create custom array adapter to increase readability of the app and bolster UX/UI**
+* **Utilize API call to populate more data into the Bosses, Pets, Mounts and Dungeons activities**
+* **Create v2 prototype**
+* **Utilize jUnit and Expresso for app testing**
+* **Fix bugs found by various testing techniques**
+* **User test out conepts**
+* **Interview users for UX concepts to build on** 
+* **Submite project 4**
+* **Utilize feedback from Graeme and Blaise to build out app further and iron down bugs**
+* **Fix bugs**
+* **Verify it's out with Blizzard to submit app the Play Store**
+* **Submit to Google Play store**
+
+
+##User Story:
+###> ...To be added
+##User Flow Diagram:
+###> ...To be added
+##Paper Prototype:
+###> ...To be added
+##Paper Prototype v2:
+###>...To be added
+
+
 
 
