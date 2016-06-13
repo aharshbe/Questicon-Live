@@ -1,9 +1,11 @@
 package com.notexample.austin.questicon;
 
+import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -13,8 +15,10 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.provider.Settings;
 import android.support.v7.app.NotificationCompat;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CursorAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -25,16 +29,22 @@ import com.loopj.android.http.JsonHttpResponseHandler;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 import cz.msebera.android.httpclient.Header;
 
 
 public class CharacterActivity extends AppCompatActivity {
-    LinkedList<String> items;
+    ArrayList<String> items;
     ArrayAdapter<String> mAdapter;
+    CustomAdapter adapter;
     ListView listView;
     EditText realm, charactername;
+
+
+
+
 
 
 
@@ -44,7 +54,7 @@ public class CharacterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_character);
 
-        items = new LinkedList<>();
+        items = new ArrayList<>();
         mAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, items);
         listView = (ListView) findViewById(R.id.listView);
         listView.setAdapter(mAdapter);
@@ -52,9 +62,16 @@ public class CharacterActivity extends AppCompatActivity {
         charactername = (EditText) findViewById(R.id.charactername);
 
 
+
         CheckingInternetConnection();
 
+
+
     }
+
+
+
+
 
 
 
@@ -181,6 +198,7 @@ public class CharacterActivity extends AppCompatActivity {
         APICALL();
     }
 }
+
 
 
 
