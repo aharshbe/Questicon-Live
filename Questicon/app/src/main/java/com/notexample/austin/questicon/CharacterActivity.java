@@ -1,6 +1,7 @@
 package com.notexample.austin.questicon;
 
 import android.database.Cursor;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -20,11 +21,14 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CursorAdapter;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -36,8 +40,8 @@ import cz.msebera.android.httpclient.Header;
 
 
 public class CharacterActivity extends AppCompatActivity {
-    ArrayList<String> items;
-    ArrayAdapter<String> mAdapter;
+
+    ArrayList<CharacterModel> characterModels;
     CustomAdapter adapter;
     ListView listView;
     EditText realm, charactername;
@@ -54,16 +58,13 @@ public class CharacterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_character);
 
-        items = new ArrayList<>();
-//        mAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, items);
         listView = (ListView) findViewById(R.id.listView);
-//        listView.setAdapter(mAdapter);
         realm = (EditText) findViewById(R.id.realm);
         charactername = (EditText) findViewById(R.id.charactername);
 
 
-        ArrayList<CharacterModel> characterModels = new ArrayList<CharacterModel>();
-        CustomAdapter adapter = new CustomAdapter(this, characterModels);
+        characterModels = new ArrayList<>();
+        adapter = new CustomAdapter(this, characterModels);
         listView.setAdapter(adapter);
 
 
@@ -155,29 +156,69 @@ public class CharacterActivity extends AppCompatActivity {
 
 
                 @Override
-                public void onSuccess(int statusCode, Header[] headers, JSONObject responseBody) {
+                public void onSuccess(int statusCode, Header[] headers, final JSONObject responseBody) {
 
 
 //                        JSONArray jsonArray = responseBody.getJSONArray("bosses")
                     try {
-                        JSONObject jsonObjectName = responseBody.getJSONObject("name");
-                        JSONObject jsonObjectBattleGroup = responseBody.getJSONObject("battlegroup");
-                        JSONObject jsonObjectImage = responseBody.getJSONObject("thumbnail");
-                        JSONObject jsonObjectClass = responseBody.getJSONObject("class");
-                        JSONObject jsonObjectRace = responseBody.getJSONObject("race");
-                        JSONObject jsonObjectGender = responseBody.getJSONObject("gender");
-                        JSONObject jsonObjectAP = responseBody.getJSONObject("achievementPoints");
-                        JSONObject jsonObjectFaction = responseBody.getJSONObject("faction");
-                        JSONObject jsonObjectLevel = responseBody.getJSONObject("level");
+                        String name = responseBody.getString("name");
+                        String battlegroup = responseBody.getString("battlegroup");
+                        final String image = responseBody.getString("thumbnail");
+                        int classWow = responseBody.getInt("class");
+                        int race = responseBody.getInt("race");
+                        int gender = responseBody.getInt("gender");
+                        int ap = responseBody.getInt("achievementPoints");
+                        int faction = responseBody.getInt("faction");
+                        int level = responseBody.getInt("level");
+                        int kills = responseBody.getInt("totalHonorableKills");
+
+
+
+
+                        CharacterModel character = new CharacterModel(name, battlegroup, image, classWow, race, gender, ap, faction, level, kills);
+
+                        ArrayList<CharacterModel> characterModels = new ArrayList<>();
+                        CustomAdapter adapter = new CustomAdapter(CharacterActivity.this, characterModels);
+
+                        listView.setAdapter(adapter);
+
+
+                        adapter.add(character);
+
+                        adapter.notifyDataSetChanged();
+
+                        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                Intent myIntent = new Intent(CharacterActivity.this, Main2Activity.class);
+                                myIntent.putExtra("position", position);
+
+
+                                try {
+
+                                    String image = responseBody.getString("thumbnail");
+                                    myIntent.putExtra("url2", image);
+                                    startActivity(myIntent);
+
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+
+
+
+                            }
+                        });
+
+
+
 
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
 
 
-                    adapter.();
 
-                    adapter.notifyDataSetChanged();
+
 
                 }
 
@@ -191,18 +232,7 @@ public class CharacterActivity extends AppCompatActivity {
                 }
             });
 
-            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Intent myIntent = new Intent(CharacterActivity.this, Main2Activity.class);
-                    myIntent.putExtra("position", position);
-//                    String imageid = items.get(position);
-                    String picasso = items.get(position);
-//                    myIntent.putExtra("url", imageid);
-                    myIntent.putExtra("url2", picasso);
-                    startActivity(myIntent);
-                }
-            });
+
 
 
         }

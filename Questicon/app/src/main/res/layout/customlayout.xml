@@ -32,7 +32,7 @@
 
 
             <TextView
-                android:id="@+id/level"
+                android:id="@+id/levelly"
                 android:layout_width="254dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
