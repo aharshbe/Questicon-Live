@@ -17,13 +17,14 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 import cz.msebera.android.httpclient.Header;
 
 public class Bosses extends AppCompatActivity {
-    LinkedList<String> items;
-    ArrayAdapter<String> mAdapter;
+    ArrayList<BossesModel> bossesModels;
+    CustomAdapterBosses adapterBosses;
     ListView listView;
 
 
@@ -38,11 +39,11 @@ public class Bosses extends AppCompatActivity {
 
     public void bosses() {
 
+        ListView listViewBosses = (ListView) findViewById(R.id.listViewBosses);
+        bossesModels = new ArrayList<>();
+        adapterBosses = new CustomAdapterBosses(this, bossesModels);
+        listViewBosses.setAdapter(adapterBosses);
 
-        items = new LinkedList<>();
-        mAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, items);
-        listView = (ListView) findViewById(R.id.listViewBosses);
-        listView.setAdapter(mAdapter);
 
 
 
@@ -66,10 +67,12 @@ public class Bosses extends AppCompatActivity {
 
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject bosses = jsonArray.getJSONObject(i);
-                        if (!bosses.has("name")) continue;
-                        items.add(bosses.getString("name"));
+                        if (!bosses.has("description") || !bosses.has(("name"))) continue;
+                        BossesModel bossesModel = new BossesModel(bosses.get("name").toString(), bosses.get("description").toString());
+                        bossesModels.add(bossesModel);
+                        adapterBosses.notifyDataSetChanged();
                     }
-                    mAdapter.notifyDataSetChanged();
+
 
                 } catch (JSONException e) {
                     e.printStackTrace();
