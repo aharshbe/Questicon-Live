@@ -19,7 +19,7 @@
         <activity android:name=".Main2Activity" />
         <activity
             android:name=".NavD"
-            android:label="WoW Lexicon"
+            android:label="Questicon"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
