@@ -11,8 +11,9 @@
         android:label="Questicon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CharacterActivity"
-            android:label="Character Search"/>
+        <activity
+            android:name=".CharacterActivity"
+            android:label="Character Search" />
         <activity
             android:name=".Bosses"
             android:label="Bosses" />
@@ -27,14 +28,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Dungeon"
-            android:label="Dungeons"/>
-        <activity android:name=".Mounts"
-            android:label="Mounts"/>
-        <activity android:name=".Pets"
-            android:label="Pets"/>
+        <activity
+            android:name=".Dungeon"
+            android:label="Dungeons" />
+        <activity
+            android:name=".Mounts"
+            android:label="Mounts" />
+        <activity
+            android:name=".Pets"
+            android:label="Pets" />
         <activity android:name=".BossesDetailView" />
-        <activity android:name=".DunegonDetailView"></activity>
+        <activity android:name=".DunegonDetailView" />
+        <activity android:name=".MountDetailView"></activity>
     </application>
 
 </manifest>

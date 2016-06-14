@@ -54,10 +54,10 @@ public class Mounts extends AppCompatActivity {
 
                             MountModel mount = mountModels.get(position);
 
-                            Intent myIntent = new Intent(Mounts.this, DunegonDetailView.class);
+                            Intent myIntent = new Intent(Mounts.this, MountDetailView.class);
                             myIntent.putExtra("position", position);
-                            myIntent.putExtra("des", mount.getName());
-                            myIntent.putExtra("name", mount.getImageurl());
+                            myIntent.putExtra("name", mount.getName());
+                            myIntent.putExtra("imageurl", mount.getImageurl());
                             startActivity(myIntent);
                         }
                     });
