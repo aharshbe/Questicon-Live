@@ -5,9 +5,9 @@ package com.notexample.austin.questicon;
  */
 public class DungeonModel {
     String nameD, descriptionD, location, bossesName, bossesDes;
-    int numPlayers, maxLvl, minLvl, floors;
+    String numPlayers, maxLvl, minLvl, floors;
 
-    public DungeonModel(String nameD, String descriptionD, String location, String bossesName, String bossesDes, int numPlayers, int maxLvl, int minLvl, int floors) {
+    public DungeonModel(String nameD, String descriptionD, String location, String bossesName, String bossesDes, String numPlayers, String maxLvl, String minLvl, String floors) {
         this.nameD = nameD;
         this.descriptionD = descriptionD;
         this.location = location;
@@ -59,35 +59,35 @@ public class DungeonModel {
         this.bossesDes = bossesDes;
     }
 
-    public int getNumPlayers() {
+    public String getNumPlayers() {
         return numPlayers;
     }
 
-    public void setNumPlayers(int numPlayers) {
+    public void setNumPlayers(String numPlayers) {
         this.numPlayers = numPlayers;
     }
 
-    public int getMaxLvl() {
+    public String getMaxLvl() {
         return maxLvl;
     }
 
-    public void setMaxLvl(int maxLvl) {
+    public void setMaxLvl(String maxLvl) {
         this.maxLvl = maxLvl;
     }
 
-    public int getMinLvl() {
+    public String getMinLvl() {
         return minLvl;
     }
 
-    public void setMinLvl(int minLvl) {
+    public void setMinLvl(String minLvl) {
         this.minLvl = minLvl;
     }
 
-    public int getFloors() {
+    public String getFloors() {
         return floors;
     }
 
-    public void setFloors(int floors) {
+    public void setFloors(String floors) {
         this.floors = floors;
     }
 }

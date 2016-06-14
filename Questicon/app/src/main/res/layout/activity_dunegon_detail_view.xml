@@ -3,12 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.notexample.austin.questicon.BossesDetailView">
-
+    tools:context="com.notexample.austin.questicon.DunegonDetailView">
 
     <WebView
-        android:id="@+id/webViewBossesDetail"
+        android:id="@+id/webViewDungeonDetail"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerHorizontal="true" />
+
 </RelativeLayout>

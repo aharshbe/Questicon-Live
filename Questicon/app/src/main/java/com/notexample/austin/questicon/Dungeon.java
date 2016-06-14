@@ -38,20 +38,18 @@ public class Dungeon extends AppCompatActivity {
 
                 for (int i = 0; i < jsonArray.length(); i++) {
                     final JSONObject dungeon = jsonArray.getJSONObject(i);
+                    final JSONObject bosses = jsonArray.getJSONObject(1);
 
                     if (!dungeon.has("name") || !dungeon.has(("description")) || !dungeon.has(("numPlayers")) ||
                             !dungeon.has(("advisedMinLevel")) || !dungeon.has(("advisedMaxLevel")) ||
                             !dungeon.has(("floors")) || !dungeon.has(("bosses")) || !dungeon.has("location"))
                         continue;
-                    final DungeonModel dungeonModel = new DungeonModel(dungeon.get("name").toString(), dungeon.get("description").toString(),
-                            dungeon.get("numPlayers").toString(),
-
-                            dungeon.get("bosses").toString(), dungeon.get("location"), dungeon.getInt("advisedMaxLevel"),
-                            dungeon.getInt("advisedMinLevel"),
-                            dungeon.get("floors").toString());
+                    final DungeonModel dungeonModel = new DungeonModel(dungeon.getString("name"), dungeon.getString("description"), dungeon.getString("location"),
+                            bosses.getString("name"), bosses.getString("description"), dungeon.getString("numPlayers"), dungeon.getString("advisedMaxLevel"),
+                            dungeon.getString("advisedMinLevel"), dungeon.getString("floors"));
                     dungeonModels.add(dungeonModel);
                     adapterDungeon.notifyDataSetChanged();
-//                    bossesDesciption = bosses.get("description").toString();
+//
 
                     ListView listViewDungeon = (ListView) findViewById(R.id.listViewDungeon);
 
@@ -62,7 +60,7 @@ public class Dungeon extends AppCompatActivity {
 
                             DungeonModel dungeon = dungeonModels.get(position);
 
-                            Intent myIntent = new Intent(Dungeon.this, BossesDetailView.class);
+                            Intent myIntent = new Intent(Dungeon.this, DunegonDetailView.class);
                             myIntent.putExtra("position", position);
                             myIntent.putExtra("des", dungeon.getDescriptionD());
                             myIntent.putExtra("name", dungeon.getNameD());

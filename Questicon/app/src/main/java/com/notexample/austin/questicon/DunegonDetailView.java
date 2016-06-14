@@ -7,19 +7,18 @@ import android.os.Bundle;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.TextView;
 
-public class BossesDetailView extends AppCompatActivity {
+public class DunegonDetailView extends AppCompatActivity {
 
     WebView bossesName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bosses_detail_view);
+        setContentView(R.layout.activity_dunegon_detail_view);
 
 
-        bossesName = (WebView) findViewById(R.id.webViewBossesDetail);
+        bossesName = (WebView) findViewById(R.id.webViewDungeonDetail);
 
 
         final String name = getIntent().getStringExtra("name");
@@ -36,7 +35,7 @@ public class BossesDetailView extends AppCompatActivity {
             @Override
             public void onPageStarted(WebView view, String url, Bitmap favicon) {
                 super.onPageStarted(view, url, favicon);
-                pd.setMessage("Loading boss info, just one second more...");
+                pd.setMessage("Loading dungeon info, just one second more...");
             }
 
 
