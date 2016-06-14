@@ -6,7 +6,7 @@ package com.notexample.austin.questicon;
 public class BossesModel {
     String name, description, level, health, journalid;
 
-    public BossesModel(String name, String description, String level, String health,  String journalid) {
+    public BossesModel(String name, String description, String level, String health, String journalid) {
         this.name = name;
         this.description = description;
         this.health = health;

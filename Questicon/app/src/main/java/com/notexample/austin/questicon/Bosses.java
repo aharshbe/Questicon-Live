@@ -63,6 +63,7 @@ public class Bosses extends AppCompatActivity {
                             Intent myIntent = new Intent(Bosses.this, BossesDetailView.class);
                             myIntent.putExtra("position", position);
                             myIntent.putExtra("des", boss.getDescription());
+                            myIntent.putExtra("name", boss.getName());
                             startActivity(myIntent);
                         }
                     });
