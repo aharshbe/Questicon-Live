@@ -1,5 +1,5 @@
 #<<<<<<<<<<<<<<<![](readmedata/questicon.png)>>>>>>>>>>>>>
-#WoW Lexicon: Your World of Warcraft companion
+#Questicon: Your World of Warcraft companion
 ##>Project 4, a World of Warcraft App
 ####Your source for World of Warcraft bosses, pets and more...
 ##The purpose of this app:
