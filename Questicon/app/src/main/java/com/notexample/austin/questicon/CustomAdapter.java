@@ -50,7 +50,7 @@ public class CustomAdapter extends ArrayAdapter<CharacterModel> {
         level.setText("Character Level:"+ " "+character.faction);
         battlegroup.setText("Character Battlegroup:"+ " " +character.battlegroup);
         wowclass.setText("Character Class:"+ " " +character.classwow);
-        race.setText("Character Race:"+ " " +character.race);
+        race.setText("Character Race:"+ " " +character.newRaceName);
         gender.setText("Character Gender:"+ " " +character.gender);
         ap.setText("Character Achievement Points:"+ " " +character.level);
         faction.setText("Character Faction:"+ " " +character.achievmentpoints);

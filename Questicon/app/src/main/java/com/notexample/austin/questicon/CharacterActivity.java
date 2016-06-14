@@ -140,10 +140,10 @@ public class CharacterActivity extends AppCompatActivity {
             public void onSuccess(int statusCode, Header[] headers, final JSONObject responseBody) {
 
 
-//                        JSONArray jsonArray = responseBody.getJSONArray("bosses")
                 try {
                     String name = responseBody.getString("name");
                     String battlegroup = responseBody.getString("battlegroup");
+                    String newRaceName = "";
                     final String image = responseBody.getString("thumbnail");
                     int classWow = responseBody.getInt("class");
                     int race = responseBody.getInt("race");
@@ -154,7 +154,21 @@ public class CharacterActivity extends AppCompatActivity {
                     int kills = responseBody.getInt("totalHonorableKills");
 
 
-                    CharacterModel character = new CharacterModel(name, battlegroup, image, classWow, race, gender, ap, faction, level, kills);
+                    CharacterModel character = new CharacterModel(name, battlegroup, image, classWow, race, gender, ap, faction, level, kills, newRaceName);
+
+
+                        switch (classWow) {
+                            case 3:
+                                character.setNewRaceName("Dwarf");
+                        }
+
+
+
+
+
+
+
+
 
                     ArrayList<CharacterModel> characterModels = new ArrayList<>();
                     CustomAdapter adapter = new CustomAdapter(CharacterActivity.this, characterModels);
@@ -199,7 +213,7 @@ public class CharacterActivity extends AppCompatActivity {
             @Override
             public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
                 super.onFailure(statusCode, headers, throwable, errorResponse);
-                Toast.makeText(getApplicationContext(), "Process Not Successful",
+                Toast.makeText(getApplicationContext(), "No character under the name: " + searchVariableName + " found.",
                         Toast.LENGTH_SHORT).show();
             }
         });
