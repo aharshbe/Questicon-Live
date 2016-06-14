@@ -8,17 +8,18 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_questicon"
-        android:label="Questicon"
+        android:label="WoW Lexicon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CharacterActivity" />
+        <activity android:name=".CharacterActivity"
+            android:label="Character Search"/>
         <activity
             android:name=".Bosses"
-            android:label="List of all World of Warcraft Bosses" />
+            android:label="Bosses" />
         <activity android:name=".Main2Activity" />
         <activity
             android:name=".NavD"
-            android:label="Questicon"
+            android:label="WoW Lexicon"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,9 +27,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Dungeon" />
-        <activity android:name=".Mounts" />
-        <activity android:name=".Pets" />
+        <activity android:name=".Dungeon"
+            android:label="Dungeons"/>
+        <activity android:name=".Mounts"
+            android:label="Mounts"/>
+        <activity android:name=".Pets"
+            android:label="Pets"/>
         <activity android:name=".BossesDetailView" />
         <activity android:name=".DunegonDetailView"></activity>
     </application>
