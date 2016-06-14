@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.loopj.android.http.AsyncHttpClient;
@@ -66,13 +67,31 @@ public class Bosses extends AppCompatActivity {
 
 
                     for (int i = 0; i < jsonArray.length(); i++) {
-                        JSONObject bosses = jsonArray.getJSONObject(i);
+                        final JSONObject bosses = jsonArray.getJSONObject(i);
+
                         if (!bosses.has("description") || !bosses.has(("name")) ||!bosses.has(("level")) || !bosses.has(("heroicHealth")) || !bosses.has(("journalId"))) continue;
                         BossesModel bossesModel = new BossesModel(bosses.get("name").toString(), bosses.get("description").toString(),
                                 bosses.get("level").toString(), bosses.get("heroicHealth").toString(),
                                 bosses.get("journalId").toString());
                         bossesModels.add(bossesModel);
                         adapterBosses.notifyDataSetChanged();
+                        final String bossesDesciption = bosses.get("description").toString();
+
+                        ListView listViewBosses = (ListView) findViewById(R.id.listViewBosses);
+
+
+                        listViewBosses.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+
+
+                                Intent myIntent = new Intent(Bosses.this, BossesDetailView.class);
+                                myIntent.putExtra("position", position);
+                                myIntent.putExtra("des", bossesDesciption);
+                                startActivity(myIntent);
+                            }
+                        });
                     }
 
 
@@ -92,18 +111,7 @@ public class Bosses extends AppCompatActivity {
             }
         });
 
-//            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//                @Override
-//                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                    Intent myIntent = new Intent(Bosses.this, Main2Activity.class);
-//                    myIntent.putExtra("position", position);
-//                    String imageid = items.get(position);
-//                    String picasso = items.get(position+1);
-//                    myIntent.putExtra("url", imageid);
-//                    myIntent.putExtra("url2", picasso);
-//                    startActivity(myIntent);
-//                }
-//            });
+
 
 
     }

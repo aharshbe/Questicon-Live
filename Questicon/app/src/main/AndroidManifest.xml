@@ -26,7 +26,8 @@
         </activity>
         <activity android:name=".Dungeon" />
         <activity android:name=".Mounts" />
-        <activity android:name=".Pets"></activity>
+        <activity android:name=".Pets" />
+        <activity android:name=".BossesDetailView"></activity>
     </application>
 
 </manifest>
