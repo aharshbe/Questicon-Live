@@ -160,7 +160,77 @@ public class CharacterActivity extends AppCompatActivity {
                     CharacterModel character = new CharacterModel(name, battlegroup, image, classWow, race, gender, ap, faction, level, kills, newRaceName, newClassName, newFaction, newGender);
 
 
-                        switch (classWow) {
+                    switch (gender){
+                        case 0:
+                            character.setNewGender("Male");
+                            break;
+                        case 1:
+                            character.setNewGender("Female");
+                            break;
+                        case 2:
+                            character.setNewGender("Unisex");
+                            break;
+                        default:
+                            character.setNewGender("No gender found");
+                            break;
+                    }
+
+
+
+                    switch (race)  {
+                        case 1:
+                            character.setNewClassName("Warrior");
+                            break;
+                        case 2:
+                            character.setNewClassName("Paladin");
+                            break;
+                        case 3:
+                            character.setNewClassName("Hunter");
+                            break;
+                        case 4:
+                            character.setNewClassName("Rogue");
+                            break;
+                        case 5:
+                            character.setNewClassName("Priest");
+                            break;
+                        case 6:
+                            character.setNewClassName("Death Knight");
+                            break;
+                        case 7:
+                            character.setNewClassName("Shaman");
+                            break;
+                        case 8:
+                            character.setNewClassName("Mage");
+                            break;
+                        case 9:
+                            character.setNewClassName("Warlock");
+                            break;
+                        case 10:
+                            character.setNewClassName("Monk");
+                            break;
+                        case 11:
+                            character.setNewClassName("Druid");
+                            break;
+                        default:
+                            character.setNewClassName("No class found");
+                            break;
+                    }
+
+                    switch (faction){
+                        case 0:
+                            character.setNewFaction("Alliance");
+                            break;
+                        case 1:
+                            character.setNewFaction("Horde");
+                            break;
+                        default:
+                            character.setNewFaction("No faction found");
+                            break;
+                    }
+
+
+
+                    switch (classWow) {
                             case 1:
                                 character.setNewRaceName("Human");
                                 break;
@@ -208,6 +278,7 @@ public class CharacterActivity extends AppCompatActivity {
                                 break;
                             default:
                                 character.setNewRaceName("No race found");
+                                break;
                         }
 
 
