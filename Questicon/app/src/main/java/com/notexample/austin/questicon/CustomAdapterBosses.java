@@ -38,8 +38,8 @@ public class CustomAdapterBosses extends ArrayAdapter<BossesModel> {
 
 
 
-        name.setText("Boss Name:"+ " " +bossesModel.name);
-        description.setText("Boss description:"+ " "+bossesModel.description);
+        name.setText(bossesModel.name);
+        description.setText(bossesModel.description);
         Bosshealth.setText("Boss health:"+ " " +bossesModel.health);
         Bosslevel.setText("Boss level:"+ " "+bossesModel.level);
 

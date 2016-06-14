@@ -27,7 +27,7 @@ public class Bosses extends AppCompatActivity {
     ArrayList<BossesModel> bossesModels;
     CustomAdapterBosses adapterBosses;
     ListView listView;
-//    String bossesDesciption;
+    //    String bossesDesciption;
     JsonHttpResponseHandler jsonHttpResponseHandler = new JsonHttpResponseHandler() {
 
 
@@ -42,7 +42,8 @@ public class Bosses extends AppCompatActivity {
                 for (int i = 0; i < jsonArray.length(); i++) {
                     final JSONObject bosses = jsonArray.getJSONObject(i);
 
-                    if (!bosses.has("description") || !bosses.has(("name")) ||!bosses.has(("level")) || !bosses.has(("heroicHealth")) || !bosses.has(("journalId"))) continue;
+                    if (!bosses.has("description") || !bosses.has(("name")) || !bosses.has(("level")) || !bosses.has(("heroicHealth")) || !bosses.has(("journalId")))
+                        continue;
                     final BossesModel bossesModel = new BossesModel(bosses.get("name").toString(), bosses.get("description").toString(),
                             bosses.get("level").toString(), bosses.get("heroicHealth").toString(),
                             bosses.get("journalId").toString());
@@ -85,7 +86,6 @@ public class Bosses extends AppCompatActivity {
     };
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -102,18 +102,13 @@ public class Bosses extends AppCompatActivity {
         listViewBosses.setAdapter(adapterBosses);
 
 
-
-
         final AsyncHttpClient client = new AsyncHttpClient();
-
 
 
         // Not sure why this boolean isn't working but the objective was to make it so that if a user enter's nothing, the search doesn't happen
 
 
         client.get("https://us.api.battle.net/wow/boss/?locale=en_US&apikey=wheces9zargz65mhza5jfv9nentuy2gg", jsonHttpResponseHandler);
-
-
 
 
     }

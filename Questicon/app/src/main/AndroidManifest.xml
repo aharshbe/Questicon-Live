@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".CharacterActivity" />
-        <activity android:name=".Bosses" />
+        <activity android:name=".Bosses"
+            android:label="List of all World of Warcraft Bosses"/>
         <activity android:name=".Main2Activity" />
         <activity
             android:name=".NavD"
