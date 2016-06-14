@@ -67,8 +67,10 @@ public class Bosses extends AppCompatActivity {
 
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject bosses = jsonArray.getJSONObject(i);
-                        if (!bosses.has("description") || !bosses.has(("name"))) continue;
-                        BossesModel bossesModel = new BossesModel(bosses.get("name").toString(), bosses.get("description").toString());
+                        if (!bosses.has("description") || !bosses.has(("name")) ||!bosses.has(("level")) || !bosses.has(("heroicHealth")) || !bosses.has(("journalId"))) continue;
+                        BossesModel bossesModel = new BossesModel(bosses.get("name").toString(), bosses.get("description").toString(),
+                                bosses.get("level").toString(), bosses.get("heroicHealth").toString(),
+                                bosses.get("journalId").toString());
                         bossesModels.add(bossesModel);
                         adapterBosses.notifyDataSetChanged();
                     }

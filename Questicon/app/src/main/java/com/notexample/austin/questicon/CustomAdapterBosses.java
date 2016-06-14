@@ -30,6 +30,8 @@ public class CustomAdapterBosses extends ArrayAdapter<BossesModel> {
 
         TextView name = (TextView) convertView.findViewById(R.id.nameBosses);
         TextView description = (TextView) convertView.findViewById(R.id.descriptionBosses);
+        TextView Bosshealth = (TextView) convertView.findViewById(R.id.BossHealth);
+        TextView Bosslevel = (TextView) convertView.findViewById(R.id.LevelBoss);
 
 
 
@@ -38,6 +40,8 @@ public class CustomAdapterBosses extends ArrayAdapter<BossesModel> {
 
         name.setText("Boss Name:"+ " " +bossesModel.name);
         description.setText("Boss description:"+ " "+bossesModel.description);
+        Bosshealth.setText("Boss health:"+ " " +bossesModel.health);
+        Bosslevel.setText("Boss level:"+ " "+bossesModel.level);
 
 
 
