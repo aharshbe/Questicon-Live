@@ -4,21 +4,17 @@ package com.notexample.austin.questicon;
  * Created by austin on 6/13/16.
  */
 public class CharacterModel {
-    String name, battlegroup, image, newRaceName;
+    String name, battlegroup, image, newRaceName, newClassName, newFaction, newGender;
     int race, classwow, gender, level, achievmentpoints, faction, honorkills;
 
-    public String getNewRaceName() {
-        return newRaceName;
-    }
 
-    public void setNewRaceName(String newRaceName) {
-        this.newRaceName = newRaceName;
-    }
 
-    public CharacterModel(String name, String battlegroup, String image, int race, int classwow, int gender, int level, int achievmentpoints, int faction, int honorkills, String newRaceName) {
+    public CharacterModel(String name, String battlegroup, String image, int race, int classwow, int gender, int level, int achievmentpoints, int faction, int honorkills, String newRaceName, String newClassName, String newFaction, String newGender) {
         this.name = name;
         this.newRaceName = newRaceName;
-
+        this.newClassName = newClassName;
+        this.newFaction = newFaction;
+        this.newGender = newGender;
         this.battlegroup = battlegroup;
         this.image = image;
         this.race = race;
@@ -28,6 +24,38 @@ public class CharacterModel {
         this.achievmentpoints = achievmentpoints;
         this.faction = faction;
         this.honorkills = honorkills;
+    }
+
+    public String getNewGender() {
+        return newGender;
+    }
+
+    public void setNewGender(String newGender) {
+        this.newGender = newGender;
+    }
+
+    public String getNewFaction() {
+        return newFaction;
+    }
+
+    public void setNewFaction(String newFaction) {
+        this.newFaction = newFaction;
+    }
+
+    public String getNewClassName() {
+        return newClassName;
+    }
+
+    public void setNewClassName(String newClassName) {
+        this.newClassName = newClassName;
+    }
+
+    public String getNewRaceName() {
+        return newRaceName;
+    }
+
+    public void setNewRaceName(String newRaceName) {
+        this.newRaceName = newRaceName;
     }
 
     public String getName() {

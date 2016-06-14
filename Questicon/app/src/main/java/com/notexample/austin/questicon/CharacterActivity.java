@@ -144,6 +144,9 @@ public class CharacterActivity extends AppCompatActivity {
                     String name = responseBody.getString("name");
                     String battlegroup = responseBody.getString("battlegroup");
                     String newRaceName = "";
+                    String newClassName = "";
+                    String newFaction = "";
+                    String newGender = "";
                     final String image = responseBody.getString("thumbnail");
                     int classWow = responseBody.getInt("class");
                     int race = responseBody.getInt("race");
@@ -154,12 +157,57 @@ public class CharacterActivity extends AppCompatActivity {
                     int kills = responseBody.getInt("totalHonorableKills");
 
 
-                    CharacterModel character = new CharacterModel(name, battlegroup, image, classWow, race, gender, ap, faction, level, kills, newRaceName);
+                    CharacterModel character = new CharacterModel(name, battlegroup, image, classWow, race, gender, ap, faction, level, kills, newRaceName, newClassName, newFaction, newGender);
 
 
                         switch (classWow) {
+                            case 1:
+                                character.setNewRaceName("Human");
+                                break;
+                            case 2:
+                                character.setNewRaceName("Orc");
+                                break;
                             case 3:
                                 character.setNewRaceName("Dwarf");
+                                break;
+                            case 4:
+                                character.setNewRaceName("Night Elf");
+                                break;
+                            case 5:
+                                character.setNewRaceName("Undead");
+                                break;
+                            case 6:
+                                character.setNewRaceName("Tauren");
+                                break;
+                            case 7:
+                                character.setNewRaceName("Gnome");
+                                break;
+                            case 8:
+                                character.setNewRaceName("Troll");
+                                break;
+                            case 9:
+                                character.setNewRaceName("Goblin");
+                                break;
+                            case 10:
+                                character.setNewRaceName("Blood Elf");
+                                break;
+                            case 11:
+                                character.setNewRaceName("Draenei");
+                                break;
+                            case 22:
+                                character.setNewRaceName("Worgen");
+                                break;
+                            case 24:
+                                character.setNewRaceName("Pandaren");
+                                break;
+                            case 25:
+                                character.setNewRaceName("Pandaren");
+                                break;
+                            case 26:
+                                character.setNewRaceName("Pandaren");
+                                break;
+                            default:
+                                character.setNewRaceName("No race found");
                         }
 
 
@@ -214,7 +262,7 @@ public class CharacterActivity extends AppCompatActivity {
             public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
                 super.onFailure(statusCode, headers, throwable, errorResponse);
                 Toast.makeText(getApplicationContext(), "No character under the name: " + searchVariableName + " found.",
-                        Toast.LENGTH_SHORT).show();
+                        Toast.LENGTH_LONG).show();
             }
         });
 
