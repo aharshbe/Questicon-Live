@@ -26,8 +26,6 @@ import cz.msebera.android.httpclient.Header;
 public class Bosses extends AppCompatActivity {
     ArrayList<BossesModel> bossesModels;
     CustomAdapterBosses adapterBosses;
-    ListView listView;
-    //    String bossesDesciption;
     JsonHttpResponseHandler jsonHttpResponseHandler = new JsonHttpResponseHandler() {
 
 
@@ -49,7 +47,7 @@ public class Bosses extends AppCompatActivity {
                             bosses.get("journalId").toString());
                     bossesModels.add(bossesModel);
                     adapterBosses.notifyDataSetChanged();
-//                    bossesDesciption = bosses.get("description").toString();
+
 
                     ListView listViewBosses = (ListView) findViewById(R.id.listViewBosses);
 

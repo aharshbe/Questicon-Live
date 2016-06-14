@@ -1,7 +1,10 @@
 package com.notexample.austin.questicon;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -13,86 +16,94 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 import cz.msebera.android.httpclient.Header;
 
 public class Mounts extends AppCompatActivity {
-    LinkedList<String> items;
-    ArrayAdapter<String> mAdapter;
-    ListView listView;
+    ArrayList<MountModel> mountModels;
+    CustomAdapterMount adapterMount;
+    JsonHttpResponseHandler jsonHttpResponseHandler = new JsonHttpResponseHandler() {
+
+
+        @Override
+        public void onSuccess(int statusCode, Header[] headers, JSONObject responseBody) {
+
+
+            try {
+                JSONArray jsonArray = responseBody.getJSONArray("mounts");
+
+
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    final JSONObject mount = jsonArray.getJSONObject(i);
+
+                    if (!mount.has("name") || !mount.has(("icon")))
+                        continue;
+                    final MountModel mountModel = new MountModel(mount.getString("name"), mount.getString("icon"));
+                    mountModels.add(mountModel);
+                    adapterMount.notifyDataSetChanged();
+
+
+                    ListView listViewMount = (ListView) findViewById(R.id.listViewMounts);
+
+
+                    listViewMount.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                            MountModel mount = mountModels.get(position);
+
+                            Intent myIntent = new Intent(Mounts.this, DunegonDetailView.class);
+                            myIntent.putExtra("position", position);
+                            myIntent.putExtra("des", mount.getName());
+                            myIntent.putExtra("name", mount.getImageurl());
+                            startActivity(myIntent);
+                        }
+                    });
+                }
+
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+
+        }
+
+
+        @Override
+        public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+            super.onFailure(statusCode, headers, throwable, errorResponse);
+            Toast.makeText(getApplicationContext(), "Process Not Successful",
+                    Toast.LENGTH_SHORT).show();
+        }
+    };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mounts);
 
-        mounts();
+        mount();
     }
 
-    public void mounts() {
+    public void mount() {
 
-
-        items = new LinkedList<>();
-        mAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, items);
-        listView = (ListView) findViewById(R.id.listViewMounts);
-        listView.setAdapter(mAdapter);
-
+        ListView listViewMount = (ListView) findViewById(R.id.listViewMounts);
+        mountModels = new ArrayList<>();
+        adapterMount = new CustomAdapterMount(this, mountModels);
+        listViewMount.setAdapter(adapterMount);
 
 
         final AsyncHttpClient client = new AsyncHttpClient();
 
 
-
         // Not sure why this boolean isn't working but the objective was to make it so that if a user enter's nothing, the search doesn't happen
 
 
-        client.get("https://us.api.battle.net/wow/mount/?locale=en_US&apikey=wheces9zargz65mhza5jfv9nentuy2gg", new JsonHttpResponseHandler() {
-
-
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, JSONObject responseBody) {
-
-
-                try {
-                    JSONArray jsonArray = responseBody.getJSONArray("mounts");
-
-
-                    for (int i = 0; i < jsonArray.length(); i++) {
-                        JSONObject mounts = jsonArray.getJSONObject(i);
-                        if (!mounts.has("name")) continue;
-                        items.add(mounts.getString("name"));
-                    }
-                    mAdapter.notifyDataSetChanged();
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
-
-            }
-
-
-            @Override
-            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
-                super.onFailure(statusCode, headers, throwable, errorResponse);
-                Toast.makeText(getApplicationContext(), "Process Not Successful",
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
-
-//            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//                @Override
-//                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                    Intent myIntent = new Intent(Bosses.this, Main2Activity.class);
-//                    myIntent.putExtra("position", position);
-//                    String imageid = items.get(position);
-//                    String picasso = items.get(position+1);
-//                    myIntent.putExtra("url", imageid);
-//                    myIntent.putExtra("url2", picasso);
-//                    startActivity(myIntent);
-//                }
-//            });
+        client.get("https://us.api.battle.net/wow/mount/?locale=en_US&apikey=wheces9zargz65mhza5jfv9nentuy2gg", jsonHttpResponseHandler);
 
 
     }
