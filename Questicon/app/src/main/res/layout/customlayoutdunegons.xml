@@ -22,37 +22,37 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/LevelBoss"
+                    android:id="@+id/minLevel"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="3dp"
-                    android:text="Boss Level" />
+                    android:text="minLevel" />
                 <TextView
-                    android:id="@+id/BossHealth"
+                    android:id="@+id/maxLevel"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="3dp"
-                    android:text="Boss Health"
+                    android:text="maxLevel"
                     android:layout_alignParentTop="true"
                     android:layout_marginStart="115dp" />
 
                 <TextView
-                    android:id="@+id/nameBosses"
+                    android:id="@+id/nameDungeon"
                     android:layout_width="255dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="3dp"
-                    android:text="Boss Name"
+                    android:text="Dungeon Name"
                     android:textColor="#000000"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    android:layout_below="@+id/LevelBoss"
+                    android:layout_below="@+id/minLevel"
                     android:layout_alignStart="@+id/LevelBoss" />
 
                 <TextView
-                    android:id="@+id/descriptionBosses"
+                    android:id="@+id/descriptionDungeon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/nameBosses"
+                    android:layout_below="@id/nameDungeon"
                     android:layout_marginLeft="3dp"
                     android:layout_marginTop="5dp"
                     android:text="Description" />
