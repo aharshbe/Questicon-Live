@@ -1,11 +1,13 @@
 package com.notexample.austin.questicon;
 
 import android.database.Cursor;
+import android.media.Image;
 import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.app.Notification;
@@ -160,7 +162,7 @@ public class CharacterActivity extends AppCompatActivity {
                     CharacterModel character = new CharacterModel(name, battlegroup, image, classWow, race, gender, ap, faction, level, kills, newRaceName, newClassName, newFaction, newGender);
 
 
-                    switch (gender){
+                    switch (gender) {
                         case 0:
                             character.setNewGender("Male");
                             break;
@@ -176,8 +178,7 @@ public class CharacterActivity extends AppCompatActivity {
                     }
 
 
-
-                    switch (race)  {
+                    switch (race) {
                         case 1:
                             character.setNewClassName("Warrior");
                             break;
@@ -216,7 +217,7 @@ public class CharacterActivity extends AppCompatActivity {
                             break;
                     }
 
-                    switch (faction){
+                    switch (faction) {
                         case 0:
                             character.setNewFaction("Alliance");
                             break;
@@ -229,64 +230,62 @@ public class CharacterActivity extends AppCompatActivity {
                     }
 
 
-
                     switch (classWow) {
-                            case 1:
-                                character.setNewRaceName("Human");
-                                break;
-                            case 2:
-                                character.setNewRaceName("Orc");
-                                break;
-                            case 3:
-                                character.setNewRaceName("Dwarf");
-                                break;
-                            case 4:
-                                character.setNewRaceName("Night Elf");
-                                break;
-                            case 5:
-                                character.setNewRaceName("Undead");
-                                break;
-                            case 6:
-                                character.setNewRaceName("Tauren");
-                                break;
-                            case 7:
-                                character.setNewRaceName("Gnome");
-                                break;
-                            case 8:
-                                character.setNewRaceName("Troll");
-                                break;
-                            case 9:
-                                character.setNewRaceName("Goblin");
-                                break;
-                            case 10:
-                                character.setNewRaceName("Blood Elf");
-                                break;
-                            case 11:
-                                character.setNewRaceName("Draenei");
-                                break;
-                            case 22:
-                                character.setNewRaceName("Worgen");
-                                break;
-                            case 24:
-                                character.setNewRaceName("Pandaren");
-                                break;
-                            case 25:
-                                character.setNewRaceName("Pandaren");
-                                break;
-                            case 26:
-                                character.setNewRaceName("Pandaren");
-                                break;
-                            default:
-                                character.setNewRaceName("No race found");
-                                break;
-                        }
+                        case 1:
+                            character.setNewRaceName("Human");
+                            break;
+                        case 2:
+                            character.setNewRaceName("Orc");
+                            break;
+                        case 3:
+                            character.setNewRaceName("Dwarf");
+                            break;
+                        case 4:
+                            character.setNewRaceName("Night Elf");
+                            break;
+                        case 5:
+                            character.setNewRaceName("Undead");
+                            break;
+                        case 6:
+                            character.setNewRaceName("Tauren");
+                            break;
+                        case 7:
+                            character.setNewRaceName("Gnome");
+                            break;
+                        case 8:
+                            character.setNewRaceName("Troll");
+                            break;
+                        case 9:
+                            character.setNewRaceName("Goblin");
+                            break;
+                        case 10:
+                            character.setNewRaceName("Blood Elf");
+                            break;
+                        case 11:
+                            character.setNewRaceName("Draenei");
+                            break;
+                        case 22:
+                            character.setNewRaceName("Worgen");
+                            break;
+                        case 24:
+                            character.setNewRaceName("Pandaren");
+                            break;
+                        case 25:
+                            character.setNewRaceName("Pandaren");
+                            break;
+                        case 26:
+                            character.setNewRaceName("Pandaren");
+                            break;
+                        default:
+                            character.setNewRaceName("No race found");
+                            break;
+                    }
 
+                    String imageThumb = responseBody.getString("thumbnail");
 
+                    ImageView imageViewcharacter  = (ImageView) findViewById(R.id.imagecharacter);
 
-
-
-
-
+                    Picasso.with(CharacterActivity.this).load("https://us.battle.net/static-render/us/"+ imageThumb).into(imageViewcharacter);
 
 
                     ArrayList<CharacterModel> characterModels = new ArrayList<>();

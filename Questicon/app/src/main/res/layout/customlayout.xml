@@ -114,8 +114,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginLeft="3dp"
-                    android:layout_marginStart="260dp"
-                    android:background="@drawable/loading" />
+                    android:layout_marginStart="260dp"/>
 
             </RelativeLayout>
 
