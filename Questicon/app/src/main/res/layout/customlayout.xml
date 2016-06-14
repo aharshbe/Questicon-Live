@@ -34,10 +34,22 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/battlegroup"
+                    android:id="@+id/level"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/name"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="3dp"
+                    android:text="Level" />
+
+
+
+
+                <TextView
+                    android:id="@+id/battlegroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/level"
                     android:layout_marginTop="5dp"
                     android:layout_marginLeft="3dp"
                     android:text="Battlegroup" />
