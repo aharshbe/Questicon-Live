@@ -114,18 +114,18 @@ public class DungeonActivity extends AppCompatActivity {
     }
 
     public void clickingSearchDungeon(View view) {
-        EditText search = (EditText) findViewById(R.id.SearchDungeon);
+        EditText searchDungeonEdit = (EditText) findViewById(R.id.SearchDungeon);
          dungeonModels1 = new ArrayList<>();
 
         for (int i = 0; i < dungeonModels.size() ; i++) {
 
-            if (dungeonModels.get(i).getNameD().toLowerCase().contains(search.getText().toString().toLowerCase())){
+            if (dungeonModels.get(i).getNameD().toLowerCase().contains(searchDungeonEdit.getText().toString().toLowerCase())){
                 dungeonModels1.add(dungeonModels.get(i));
             }
 
         }
         ListView listViewDungeon = (ListView) findViewById(R.id.listViewDungeon);
-        dungeonModels.contains(search);
+        dungeonModels.contains(searchDungeonEdit);
         adapterDungeon = new CustomAdapterDungeon(this, dungeonModels1);
         listViewDungeon.setAdapter(adapterDungeon);
 

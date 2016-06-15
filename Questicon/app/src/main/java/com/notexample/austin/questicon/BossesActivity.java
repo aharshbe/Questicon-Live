@@ -28,7 +28,7 @@ import cz.msebera.android.httpclient.Header;
 
 public class BossesActivity extends AppCompatActivity {
     ArrayList<BossesModel> bossesModels;
-    EditText search;
+    EditText searchEditText;
     CustomAdapterBosses adapterBosses;
     JsonHttpResponseHandler jsonHttpResponseHandler = new JsonHttpResponseHandler() {
 
@@ -99,7 +99,23 @@ public class BossesActivity extends AppCompatActivity {
 
         bosses();
 
+        handleIntent(getIntent());
 
+
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+
+        handleIntent(intent);
+    }
+
+    private void handleIntent(Intent intent) {
+
+        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+            String query = intent.getStringExtra(SearchManager.QUERY);
+            //use the query to search your data somehow
+        }
     }
 
 
@@ -123,18 +139,18 @@ public class BossesActivity extends AppCompatActivity {
     }
 
     public void clickingSearch(View view) {
-        search = (EditText) findViewById(R.id.SearchBosses);
+        searchEditText = (EditText) findViewById(R.id.SearchBosses);
         ArrayList<BossesModel> bossesModels3 = new ArrayList<>();
 
         for (int i = 0; i < bossesModels.size(); i++) {
 
-            if (bossesModels.get(i).getName().toLowerCase().contains(search.getText().toString().toLowerCase())) {
+            if (bossesModels.get(i).getName().toLowerCase().contains(searchEditText.getText().toString().toLowerCase())) {
                 bossesModels3.add(bossesModels.get(i));
             }
 
         }
         ListView listViewBosses = (ListView) findViewById(R.id.listViewBosses);
-        bossesModels.contains(search);
+        bossesModels.contains(searchEditText);
         adapterBosses = new CustomAdapterBosses(this, bossesModels3);
         listViewBosses.setAdapter(adapterBosses);
 
@@ -146,12 +162,11 @@ public class BossesActivity extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.options_menu, menu);
 
-        SearchManager searchManager =
-                (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-        SearchView searchView =
-                (SearchView) menu.findItem(R.id.search).getActionView();
-        searchView.setSearchableInfo(
-                searchManager.getSearchableInfo(getComponentName()));
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+
+        SearchView searchView = (SearchView) menu.findItem(R.id.search).getActionView();
+
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
 
 
         return true;
