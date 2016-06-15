@@ -30,6 +30,8 @@ public class BossesActivity extends AppCompatActivity {
     ArrayList<BossesModel> bossesModels;
     EditText searchEditText;
     CustomAdapterBosses adapterBosses;
+    String theySearched = "";
+    ArrayList<BossesModel> bossesModels3;
     JsonHttpResponseHandler jsonHttpResponseHandler = new JsonHttpResponseHandler() {
 
 
@@ -56,17 +58,36 @@ public class BossesActivity extends AppCompatActivity {
                     ListView listViewBosses = (ListView) findViewById(R.id.listViewBosses);
 
 
+                    assert listViewBosses != null;
                     listViewBosses.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                            BossesModel boss = bossesModels.get(position);
+                            if (theySearched.equalsIgnoreCase("")) {
 
-                            Intent myIntent = new Intent(BossesActivity.this, BossesDetailView.class);
-                            myIntent.putExtra("position", position);
-                            myIntent.putExtra("des", boss.getDescription());
-                            myIntent.putExtra("name", boss.getName());
-                            startActivity(myIntent);
+                                BossesModel boss = bossesModels.get(position);
+
+                                Intent myIntent = new Intent(BossesActivity.this, BossesDetailView.class);
+                                myIntent.putExtra("position", position);
+                                myIntent.putExtra("des", boss.getDescription());
+                                myIntent.putExtra("name", boss.getName());
+
+                                startActivity(myIntent);
+
+
+                            } else {
+                                BossesModel boss = bossesModels3.get(position);
+
+                                Intent myIntent = new Intent(BossesActivity.this, BossesDetailView.class);
+                                myIntent.putExtra("position", position);
+                                myIntent.putExtra("des", boss.getDescription());
+                                myIntent.putExtra("name", boss.getName());
+
+                                startActivity(myIntent);
+
+                            }
+
+
                         }
                     });
                 }
@@ -113,8 +134,11 @@ public class BossesActivity extends AppCompatActivity {
     private void handleIntent(Intent intent) {
 
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+
             String query = intent.getStringExtra(SearchManager.QUERY);
             //use the query to search your data somehow
+
+
         }
     }
 
@@ -162,11 +186,45 @@ public class BossesActivity extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.options_menu, menu);
 
-        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+//        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
 
         SearchView searchView = (SearchView) menu.findItem(R.id.search).getActionView();
 
-        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+//        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+
+
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+
+                theySearched = newText;
+
+                bossesModels3 = new ArrayList<>();
+
+                for (int i = 0; i < bossesModels.size(); i++) {
+
+                    if (bossesModels.get(i).getName().toLowerCase().contains(newText.toLowerCase())) {
+                        bossesModels3.add(bossesModels.get(i));
+                    }
+
+                }
+                ListView listViewBosses = (ListView) findViewById(R.id.listViewBosses);
+                bossesModels.contains(newText);
+                adapterBosses = new CustomAdapterBosses(BossesActivity.this, bossesModels3);
+                listViewBosses.setAdapter(adapterBosses);
+
+                adapterBosses.notifyDataSetChanged();
+
+
+                return false;
+            }
+        });
 
 
         return true;
