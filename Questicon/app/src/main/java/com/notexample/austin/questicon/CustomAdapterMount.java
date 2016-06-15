@@ -5,7 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -14,8 +17,11 @@ import java.util.ArrayList;
  */
 public class CustomAdapterMount extends ArrayAdapter<MountModel> {
 
+    private Context context;
+
     public CustomAdapterMount(Context context, ArrayList<MountModel> users) {
         super(context, 0, users);
+        this.context = context;
     }
 
     @Override
@@ -28,11 +34,13 @@ public class CustomAdapterMount extends ArrayAdapter<MountModel> {
         }
 
         TextView mountName = (TextView) convertView.findViewById(R.id.nameMount);
+        ImageView mountImage = (ImageView) convertView.findViewById(R.id.imageMount);
 
 
 
 
         mountName.setText(mountModel.nameMount);
+        Picasso.with(context).load("http://wow.zamimg.com/images/wow/icons/large/" + mountModel.getImageurl() + ".jpg").into(mountImage);
 
 
 

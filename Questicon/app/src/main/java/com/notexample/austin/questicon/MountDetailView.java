@@ -30,8 +30,7 @@ public class MountDetailView extends AppCompatActivity {
         final String name = getIntent().getStringExtra("name");
         final String url = getIntent().getStringExtra("imageurl");
 
-        Picasso.with(this).load("http://wow.zamimg.com/images/wow/icons/large/"+url+".jpg").into(imageViewMount);
-
+        Picasso.with(this).load("http://wow.zamimg.com/images/wow/icons/large/" + url + ".jpg").into(imageViewMount);
 
 
         final ProgressDialog pd = ProgressDialog.show(this, "", "Loading...", true);
@@ -57,7 +56,7 @@ public class MountDetailView extends AppCompatActivity {
             }
         });
 
-        mountWebView.loadUrl("http://wow.gamepedia.com/Reins_of_the_" +name);
+        mountWebView.loadUrl("http://wow.gamepedia.com/Reins_of_the_" + name);
 
 
     }

@@ -2,9 +2,6 @@ package com.notexample.austin.questicon;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -97,17 +94,17 @@ public class NavD extends AppCompatActivity
     }
 
     public void clickingBosses(MenuItem item) {
-        Intent intent = new Intent(NavD.this, Bosses.class);
+        Intent intent = new Intent(NavD.this, BossesActivity.class);
         startActivity(intent);
     }
 
     public void clickingDungeons(MenuItem item) {
-        Intent intent = new Intent(NavD.this, Dungeon.class);
+        Intent intent = new Intent(NavD.this, DungeonActivity.class);
         startActivity(intent);
     }
 
     public void clickingMounts(MenuItem item) {
-        Intent intent = new Intent(NavD.this, Mounts.class);
+        Intent intent = new Intent(NavD.this, MountsActivity.class);
         startActivity(intent);
     }
 

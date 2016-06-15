@@ -3,10 +3,8 @@ package com.notexample.austin.questicon;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -18,11 +16,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 
 import cz.msebera.android.httpclient.Header;
 
-public class Dungeon extends AppCompatActivity {
+public class DungeonActivity extends AppCompatActivity {
     ArrayList<DungeonModel> dungeonModels;
     CustomAdapterDungeon adapterDungeon;
     JsonHttpResponseHandler jsonHttpResponseHandler = new JsonHttpResponseHandler() {
@@ -60,7 +57,7 @@ public class Dungeon extends AppCompatActivity {
 
                             DungeonModel dungeon = dungeonModels.get(position);
 
-                            Intent myIntent = new Intent(Dungeon.this, DunegonDetailView.class);
+                            Intent myIntent = new Intent(DungeonActivity.this, DunegonDetailView.class);
                             myIntent.putExtra("position", position);
                             myIntent.putExtra("des", dungeon.getDescriptionD());
                             myIntent.putExtra("name", dungeon.getNameD());

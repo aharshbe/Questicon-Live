@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -17,13 +16,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 
 import cz.msebera.android.httpclient.Header;
 
-public class Mounts extends AppCompatActivity {
-    ArrayList<MountModel> mountModels;
-    CustomAdapterMount adapterMount;
+public class BossesActivity extends AppCompatActivity {
+    ArrayList<BossesModel> bossesModels;
+    CustomAdapterBosses adapterBosses;
     JsonHttpResponseHandler jsonHttpResponseHandler = new JsonHttpResponseHandler() {
 
 
@@ -32,32 +30,34 @@ public class Mounts extends AppCompatActivity {
 
 
             try {
-                JSONArray jsonArray = responseBody.getJSONArray("mounts");
+                JSONArray jsonArray = responseBody.getJSONArray("bosses");
 
 
                 for (int i = 0; i < jsonArray.length(); i++) {
-                    final JSONObject mount = jsonArray.getJSONObject(i);
+                    final JSONObject bosses = jsonArray.getJSONObject(i);
 
-                    if (!mount.has("name") || !mount.has(("icon")))
+                    if (!bosses.has("description") || !bosses.has(("name")) || !bosses.has(("level")) || !bosses.has(("heroicHealth")) || !bosses.has(("journalId")))
                         continue;
-                    final MountModel mountModel = new MountModel(mount.getString("name"), mount.getString("icon"));
-                    mountModels.add(mountModel);
-                    adapterMount.notifyDataSetChanged();
+                    final BossesModel bossesModel = new BossesModel(bosses.get("name").toString(), bosses.get("description").toString(),
+                            bosses.get("level").toString(), bosses.get("heroicHealth").toString(),
+                            bosses.get("journalId").toString());
+                    bossesModels.add(bossesModel);
+                    adapterBosses.notifyDataSetChanged();
 
 
-                    ListView listViewMount = (ListView) findViewById(R.id.listViewMounts);
+                    ListView listViewBosses = (ListView) findViewById(R.id.listViewBosses);
 
 
-                    listViewMount.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    listViewBosses.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                            MountModel mount = mountModels.get(position);
+                            BossesModel boss = bossesModels.get(position);
 
-                            Intent myIntent = new Intent(Mounts.this, MountDetailView.class);
+                            Intent myIntent = new Intent(BossesActivity.this, BossesDetailView.class);
                             myIntent.putExtra("position", position);
-                            myIntent.putExtra("name", mount.getName());
-                            myIntent.putExtra("imageurl", mount.getImageurl());
+                            myIntent.putExtra("des", boss.getDescription());
+                            myIntent.putExtra("name", boss.getName());
                             startActivity(myIntent);
                         }
                     });
@@ -84,17 +84,17 @@ public class Mounts extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mounts);
+        setContentView(R.layout.activity_bosses);
 
-        mount();
+        bosses();
     }
 
-    public void mount() {
+    public void bosses() {
 
-        ListView listViewMount = (ListView) findViewById(R.id.listViewMounts);
-        mountModels = new ArrayList<>();
-        adapterMount = new CustomAdapterMount(this, mountModels);
-        listViewMount.setAdapter(adapterMount);
+        ListView listViewBosses = (ListView) findViewById(R.id.listViewBosses);
+        bossesModels = new ArrayList<>();
+        adapterBosses = new CustomAdapterBosses(this, bossesModels);
+        listViewBosses.setAdapter(adapterBosses);
 
 
         final AsyncHttpClient client = new AsyncHttpClient();
@@ -103,8 +103,12 @@ public class Mounts extends AppCompatActivity {
         // Not sure why this boolean isn't working but the objective was to make it so that if a user enter's nothing, the search doesn't happen
 
 
-        client.get("https://us.api.battle.net/wow/mount/?locale=en_US&apikey=wheces9zargz65mhza5jfv9nentuy2gg", jsonHttpResponseHandler);
+        client.get("https://us.api.battle.net/wow/boss/?locale=en_US&apikey=wheces9zargz65mhza5jfv9nentuy2gg", jsonHttpResponseHandler);
 
 
     }
+
 }
+
+
+

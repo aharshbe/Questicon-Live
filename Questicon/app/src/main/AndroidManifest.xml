@@ -15,7 +15,7 @@
             android:name=".CharacterActivity"
             android:label="Character Search" />
         <activity
-            android:name=".Bosses"
+            android:name=".BossesActivity"
             android:label="Bosses" />
         <activity android:name=".Main2Activity" />
         <activity
@@ -29,10 +29,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Dungeon"
+            android:name=".DungeonActivity"
             android:label="Dungeons" />
         <activity
-            android:name=".Mounts"
+            android:name=".MountsActivity"
             android:label="Mounts" />
         <activity
             android:name=".Pets"

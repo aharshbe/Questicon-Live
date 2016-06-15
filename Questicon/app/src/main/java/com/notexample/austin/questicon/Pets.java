@@ -81,18 +81,6 @@ public class Pets extends AppCompatActivity {
             }
         });
 
-//            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//                @Override
-//                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                    Intent myIntent = new Intent(Bosses.this, Main2Activity.class);
-//                    myIntent.putExtra("position", position);
-//                    String imageid = items.get(position);
-//                    String picasso = items.get(position+1);
-//                    myIntent.putExtra("url", imageid);
-//                    myIntent.putExtra("url2", picasso);
-//                    startActivity(myIntent);
-//                }
-//            });
 
 
     }
