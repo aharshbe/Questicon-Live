@@ -292,7 +292,11 @@ public class CharacterActivity extends AppCompatActivity {
                             try {
 
                                 String image = responseBody.getString("thumbnail");
+                                String nameChar = searchVariableName;
+                                String nameRealm = searchVariableName;
                                 myIntent.putExtra("url2", image);
+                                myIntent.putExtra("nameChar", nameChar);
+                                myIntent.putExtra("nameRealm", nameRealm);
                                 startActivity(myIntent);
 
                             } catch (JSONException e) {
