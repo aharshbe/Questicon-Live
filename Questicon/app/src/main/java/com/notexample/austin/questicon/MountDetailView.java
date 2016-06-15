@@ -56,7 +56,7 @@ public class MountDetailView extends AppCompatActivity {
             }
         });
 
-        mountWebView.loadUrl("http://wow.gamepedia.com/Reins_of_the_" + name);
+        mountWebView.loadUrl("http://wow.gamepedia.com/" + name);
 
 
     }
