@@ -112,7 +112,6 @@ public class BossesActivity extends AppCompatActivity {
     }
 
     public void clickingSearch(View view) {
-        Log.d("Checking searchrking", "It s or isn't");
         search = (EditText) findViewById(R.id.SearchBosses);
         ArrayList<BossesModel> bossesModels3 = new ArrayList<>();
 

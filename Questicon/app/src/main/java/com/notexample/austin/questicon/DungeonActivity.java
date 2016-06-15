@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -22,6 +23,7 @@ import cz.msebera.android.httpclient.Header;
 public class DungeonActivity extends AppCompatActivity {
     ArrayList<DungeonModel> dungeonModels;
     CustomAdapterDungeon adapterDungeon;
+    ArrayList<DungeonModel> dungeonModels1;
     JsonHttpResponseHandler jsonHttpResponseHandler = new JsonHttpResponseHandler() {
 
 
@@ -107,6 +109,28 @@ public class DungeonActivity extends AppCompatActivity {
 
 
         client.get("https://us.api.battle.net/wow/zone/?locale=en_US&apikey=wheces9zargz65mhza5jfv9nentuy2gg", jsonHttpResponseHandler);
+
+
+    }
+
+    public void clickingSearchDungeon(View view) {
+        EditText search = (EditText) findViewById(R.id.SearchDungeon);
+         dungeonModels1 = new ArrayList<>();
+
+        for (int i = 0; i < dungeonModels.size() ; i++) {
+
+            if (dungeonModels.get(i).getNameD().equalsIgnoreCase(search.getText().toString())){
+                dungeonModels1.add(dungeonModels.get(i));
+            }
+
+        }
+        ListView listViewDungeon = (ListView) findViewById(R.id.listViewDungeon);
+        dungeonModels.contains(search);
+        adapterDungeon = new CustomAdapterDungeon(this, dungeonModels1);
+        listViewDungeon.setAdapter(adapterDungeon);
+
+        adapterDungeon.notifyDataSetChanged();
+
 
 
     }
