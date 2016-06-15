@@ -40,8 +40,8 @@ public class CharacterDetailView extends AppCompatActivity {
 
 
         final ProgressDialog pd = ProgressDialog.show(this, "", "Loading...", true);
-//        webViewCharacter.getSettings().setBuiltInZoomControls(true);
-//        webViewCharacter.getSettings().setSupportZoom(true);
+        webViewCharacter.getSettings().setBuiltInZoomControls(true);
+        webViewCharacter.getSettings().setSupportZoom(true);
         webViewCharacter.setInitialScale(100);
         webViewCharacter.getSettings().getLoadsImagesAutomatically();
         webViewCharacter.getSettings().setDefaultZoom(WebSettings.ZoomDensity.FAR);
