@@ -80,17 +80,15 @@ public class BossesActivity extends AppCompatActivity {
                                     .setActionTextColor(Color.RED)
                                     .show();
 
-                            textToSpeech=new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+                            textToSpeech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
                                 @Override
                                 public void onInit(int status) {
 
-                                    if(status != TextToSpeech.ERROR) {
+                                    if (status != TextToSpeech.ERROR) {
                                         textToSpeech.setLanguage(Locale.UK);
 
                                         textToSpeech.speak(boss.getDescription().toString(),
                                                 TextToSpeech.QUEUE_FLUSH, null);
-
-
 
 
                                     }
@@ -135,6 +133,7 @@ public class BossesActivity extends AppCompatActivity {
                                 startActivity(myIntent);
 
                             }
+
 
                             return false;
                         }
@@ -256,7 +255,6 @@ public class BossesActivity extends AppCompatActivity {
 
         return true;
     }
-
 
 
 }

@@ -1,6 +1,9 @@
 package com.notexample.austin.questicon;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.speech.tts.TextToSpeech;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.SearchView;
@@ -20,6 +23,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 import cz.msebera.android.httpclient.Header;
 
@@ -28,6 +32,9 @@ public class DungeonActivity extends AppCompatActivity {
     CustomAdapterDungeon adapterDungeon;
     ArrayList<DungeonModel> dungeonModels1;
     String theySearched = "";
+    int postitionTHis;
+    TextToSpeech textToSpeech;
+    View.OnClickListener mOnClickListener;
     JsonHttpResponseHandler jsonHttpResponseHandler = new JsonHttpResponseHandler() {
 
 
@@ -63,20 +70,58 @@ public class DungeonActivity extends AppCompatActivity {
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
 
+                            postitionTHis = position;
+                            final DungeonModel dungeon2 = dungeonModels.get(position);
+
+
+                            Snackbar.make(findViewById(android.R.id.content), "Speaking text from: " + dungeon2.getNameD(), Snackbar.LENGTH_INDEFINITE)
+                                    .setAction("Stop speaking", mOnClickListener)
+                                    .setActionTextColor(Color.RED)
+                                    .show();
+
+                            textToSpeech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+                                @Override
+                                public void onInit(int status) {
+
+                                    if (status != TextToSpeech.ERROR) {
+                                        textToSpeech.setLanguage(Locale.UK);
+
+                                        textToSpeech.speak(dungeon2.descriptionD.toString(),
+                                                TextToSpeech.QUEUE_FLUSH, null);
+
+
+                                    }
+                                }
+                            });
+
+
+                        }
+                    });
+                    mOnClickListener = new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            textToSpeech.stop();
+                        }
+                    };
+
+                    listViewDungeon.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+                        @Override
+                        public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
+                                                       int pos, long arg3) {
                             if (theySearched.equalsIgnoreCase("")) {
 
-                                DungeonModel dungeon = dungeonModels.get(position);
+                                DungeonModel dungeon = dungeonModels.get(pos);
                                 Intent myIntent = new Intent(DungeonActivity.this, DunegonDetailView.class);
-                                myIntent.putExtra("position", position);
+                                myIntent.putExtra("position", pos);
                                 myIntent.putExtra("des", dungeon.getDescriptionD());
                                 myIntent.putExtra("name", dungeon.getNameD());
                                 startActivity(myIntent);
 
                             } else {
 
-                                DungeonModel dungeon = dungeonModels1.get(position);
+                                DungeonModel dungeon = dungeonModels1.get(pos);
                                 Intent myIntent = new Intent(DungeonActivity.this, DunegonDetailView.class);
-                                myIntent.putExtra("position", position);
+                                myIntent.putExtra("position", pos);
                                 myIntent.putExtra("des", dungeon.getDescriptionD());
                                 myIntent.putExtra("name", dungeon.getNameD());
                                 startActivity(myIntent);
@@ -84,6 +129,7 @@ public class DungeonActivity extends AppCompatActivity {
                             }
 
 
+                            return false;
                         }
                     });
                 }
@@ -117,6 +163,7 @@ public class DungeonActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.info, menu);
         inflater.inflate(R.menu.options_menu, menu);
 
 
