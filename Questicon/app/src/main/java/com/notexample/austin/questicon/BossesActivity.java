@@ -3,8 +3,10 @@ package com.notexample.austin.questicon;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -21,6 +23,7 @@ import cz.msebera.android.httpclient.Header;
 
 public class BossesActivity extends AppCompatActivity {
     ArrayList<BossesModel> bossesModels;
+    EditText search;
     CustomAdapterBosses adapterBosses;
     JsonHttpResponseHandler jsonHttpResponseHandler = new JsonHttpResponseHandler() {
 
@@ -108,6 +111,25 @@ public class BossesActivity extends AppCompatActivity {
 
     }
 
+    public void clickingSearch(View view) {
+        Log.d("Checking searchrking", "It s or isn't");
+        search = (EditText) findViewById(R.id.SearchBosses);
+        ArrayList<BossesModel> bossesModels3 = new ArrayList<>();
+
+        for (int i = 0; i < bossesModels.size() ; i++) {
+
+            if (bossesModels.get(i).getName().equalsIgnoreCase(search.getText().toString())){
+                bossesModels3.add(bossesModels.get(i));
+            }
+
+        }
+        ListView listViewBosses = (ListView) findViewById(R.id.listViewBosses);
+        bossesModels.contains(search);
+        adapterBosses = new CustomAdapterBosses(this, bossesModels3);
+        listViewBosses.setAdapter(adapterBosses);
+
+        adapterBosses.notifyDataSetChanged();
+    }
 }
 
 

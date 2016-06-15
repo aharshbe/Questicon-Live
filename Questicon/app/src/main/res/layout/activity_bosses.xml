@@ -5,10 +5,30 @@
     android:layout_height="match_parent"
     tools:context=".BossesActivity">
 
+
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:hint="Enter bosses name here"
+        android:id="@+id/SearchBosses"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/listViewBosses"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/SearchBosses"/>
+
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        android:id="@+id/buttonSearch"
+        android:onClick="clickingSearch"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>
