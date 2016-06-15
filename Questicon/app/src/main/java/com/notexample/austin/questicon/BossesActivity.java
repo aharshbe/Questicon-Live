@@ -3,6 +3,9 @@ package com.notexample.austin.questicon;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.speech.tts.TextToSpeech;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.SearchView;
@@ -23,6 +26,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 import cz.msebera.android.httpclient.Header;
 
@@ -32,6 +36,9 @@ public class BossesActivity extends AppCompatActivity {
     CustomAdapterBosses adapterBosses;
     String theySearched = "";
     ArrayList<BossesModel> bossesModels3;
+    View.OnClickListener mOnClickListener;
+    TextToSpeech textToSpeech;
+    int postitionTHis;
     JsonHttpResponseHandler jsonHttpResponseHandler = new JsonHttpResponseHandler() {
 
 
@@ -55,20 +62,62 @@ public class BossesActivity extends AppCompatActivity {
                     adapterBosses.notifyDataSetChanged();
 
 
-                    ListView listViewBosses = (ListView) findViewById(R.id.listViewBosses);
+                    final ListView listViewBosses = (ListView) findViewById(R.id.listViewBosses);
 
 
                     assert listViewBosses != null;
                     listViewBosses.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
-                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
 
+
+                            postitionTHis = position;
+                            final BossesModel boss = bossesModels.get(position);
+
+
+                            Snackbar.make(findViewById(android.R.id.content), "Speaking text from: " + boss.getName(), Snackbar.LENGTH_INDEFINITE)
+                                    .setAction("Stop speaking", mOnClickListener)
+                                    .setActionTextColor(Color.RED)
+                                    .show();
+
+                            textToSpeech=new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+                                @Override
+                                public void onInit(int status) {
+
+                                    if(status != TextToSpeech.ERROR) {
+                                        textToSpeech.setLanguage(Locale.UK);
+
+                                        textToSpeech.speak(boss.getDescription().toString(),
+                                                TextToSpeech.QUEUE_FLUSH, null);
+
+
+
+
+                                    }
+                                }
+                            });
+
+
+                        }
+                    });
+
+                    mOnClickListener = new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            textToSpeech.stop();
+                        }
+                    };
+
+                    listViewBosses.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+                        @Override
+                        public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
+                                                       int pos, long arg3) {
                             if (theySearched.equalsIgnoreCase("")) {
 
-                                BossesModel boss = bossesModels.get(position);
+                                BossesModel boss = bossesModels.get(pos);
 
                                 Intent myIntent = new Intent(BossesActivity.this, BossesDetailView.class);
-                                myIntent.putExtra("position", position);
+                                myIntent.putExtra("position", pos);
                                 myIntent.putExtra("des", boss.getDescription());
                                 myIntent.putExtra("name", boss.getName());
 
@@ -76,10 +125,10 @@ public class BossesActivity extends AppCompatActivity {
 
 
                             } else {
-                                BossesModel boss = bossesModels3.get(position);
+                                BossesModel boss = bossesModels3.get(pos);
 
                                 Intent myIntent = new Intent(BossesActivity.this, BossesDetailView.class);
-                                myIntent.putExtra("position", position);
+                                myIntent.putExtra("position", pos);
                                 myIntent.putExtra("des", boss.getDescription());
                                 myIntent.putExtra("name", boss.getName());
 
@@ -87,7 +136,7 @@ public class BossesActivity extends AppCompatActivity {
 
                             }
 
-
+                            return false;
                         }
                     });
                 }
@@ -206,6 +255,7 @@ public class BossesActivity extends AppCompatActivity {
 
         return true;
     }
+
 
 
 }
