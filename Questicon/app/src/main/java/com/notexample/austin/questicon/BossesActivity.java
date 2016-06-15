@@ -72,28 +72,56 @@ public class BossesActivity extends AppCompatActivity {
 
 
                             postitionTHis = position;
-                            final BossesModel boss = bossesModels.get(position);
+
+                            if (theySearched.equalsIgnoreCase("")) {
+
+                                final BossesModel boss = bossesModels.get(position);
 
 
-                            Snackbar.make(findViewById(android.R.id.content), "Speaking text from: " + boss.getName(), Snackbar.LENGTH_INDEFINITE)
-                                    .setAction("Stop speaking", mOnClickListener)
-                                    .setActionTextColor(Color.RED)
-                                    .show();
+                                Snackbar.make(findViewById(android.R.id.content), "Speaking text from: " + boss.getName(), Snackbar.LENGTH_INDEFINITE)
+                                        .setAction("Stop speaking", mOnClickListener)
+                                        .setActionTextColor(Color.RED)
+                                        .show();
 
-                            textToSpeech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
-                                @Override
-                                public void onInit(int status) {
+                                textToSpeech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+                                    @Override
+                                    public void onInit(int status) {
 
-                                    if (status != TextToSpeech.ERROR) {
-                                        textToSpeech.setLanguage(Locale.UK);
+                                        if (status != TextToSpeech.ERROR) {
+                                            textToSpeech.setLanguage(Locale.UK);
 
-                                        textToSpeech.speak(boss.getDescription().toString(),
-                                                TextToSpeech.QUEUE_FLUSH, null);
+                                            textToSpeech.speak(boss.getDescription().toString(),
+                                                    TextToSpeech.QUEUE_FLUSH, null);
 
 
+                                        }
                                     }
-                                }
-                            });
+                                });
+                            }else {
+                                final BossesModel boss = bossesModels3.get(position);
+
+
+                                Snackbar.make(findViewById(android.R.id.content), "Speaking text from: " + boss.getName(), Snackbar.LENGTH_INDEFINITE)
+                                        .setAction("Stop speaking", mOnClickListener)
+                                        .setActionTextColor(Color.RED)
+                                        .show();
+
+                                textToSpeech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+                                    @Override
+                                    public void onInit(int status) {
+
+                                        if (status != TextToSpeech.ERROR) {
+                                            textToSpeech.setLanguage(Locale.UK);
+
+                                            textToSpeech.speak(boss.getDescription().toString(),
+                                                    TextToSpeech.QUEUE_FLUSH, null);
+
+
+                                        }
+                                    }
+                                });
+
+                            }
 
 
                         }

@@ -71,28 +71,54 @@ public class DungeonActivity extends AppCompatActivity {
 
 
                             postitionTHis = position;
-                            final DungeonModel dungeon2 = dungeonModels.get(position);
+                            if (theySearched.equalsIgnoreCase("")) {
+                                final DungeonModel dungeon2 = dungeonModels.get(position);
 
 
-                            Snackbar.make(findViewById(android.R.id.content), "Speaking text from: " + dungeon2.getNameD(), Snackbar.LENGTH_INDEFINITE)
-                                    .setAction("Stop speaking", mOnClickListener)
-                                    .setActionTextColor(Color.RED)
-                                    .show();
+                                Snackbar.make(findViewById(android.R.id.content), "Speaking text from: " + dungeon2.getNameD(), Snackbar.LENGTH_INDEFINITE)
+                                        .setAction("Stop speaking", mOnClickListener)
+                                        .setActionTextColor(Color.RED)
+                                        .show();
 
-                            textToSpeech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
-                                @Override
-                                public void onInit(int status) {
+                                textToSpeech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+                                    @Override
+                                    public void onInit(int status) {
 
-                                    if (status != TextToSpeech.ERROR) {
-                                        textToSpeech.setLanguage(Locale.UK);
+                                        if (status != TextToSpeech.ERROR) {
+                                            textToSpeech.setLanguage(Locale.UK);
 
-                                        textToSpeech.speak(dungeon2.descriptionD.toString(),
-                                                TextToSpeech.QUEUE_FLUSH, null);
+                                            textToSpeech.speak(dungeon2.descriptionD.toString(),
+                                                    TextToSpeech.QUEUE_FLUSH, null);
 
 
+                                        }
                                     }
-                                }
-                            });
+                                });
+                            }else{
+                                final DungeonModel dungeon2 = dungeonModels1.get(position);
+
+
+                                Snackbar.make(findViewById(android.R.id.content), "Speaking text from: " + dungeon2.getNameD(), Snackbar.LENGTH_INDEFINITE)
+                                        .setAction("Stop speaking", mOnClickListener)
+                                        .setActionTextColor(Color.RED)
+                                        .show();
+
+                                textToSpeech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+                                    @Override
+                                    public void onInit(int status) {
+
+                                        if (status != TextToSpeech.ERROR) {
+                                            textToSpeech.setLanguage(Locale.UK);
+
+                                            textToSpeech.speak(dungeon2.descriptionD.toString(),
+                                                    TextToSpeech.QUEUE_FLUSH, null);
+
+
+                                        }
+                                    }
+                                });
+
+                            }
 
 
                         }
