@@ -32,11 +32,11 @@ public class CustomAdapterCharacter extends ArrayAdapter<CharacterModel> {
 
         TextView name = (TextView) convertView.findViewById(R.id.name);
         TextView battlegroup = (TextView) convertView.findViewById(R.id.battlegroup);
-        TextView wowclass = (TextView) convertView.findViewById(R.id.wowclass);
-        TextView race = (TextView) convertView.findViewById(R.id.race);
-        TextView gender = (TextView) convertView.findViewById(R.id.gender);
+//        TextView wowclass = (TextView) convertView.findViewById(R.id.wowclass);
+//        TextView race = (TextView) convertView.findViewById(R.id.race);
+//        TextView gender = (TextView) convertView.findViewById(R.id.gender);
         TextView ap = (TextView) convertView.findViewById(R.id.ap);
-        TextView faction = (TextView) convertView.findViewById(R.id.faction);
+//        TextView faction = (TextView) convertView.findViewById(R.id.faction);
         TextView kills = (TextView) convertView.findViewById(R.id.kills);
         TextView level = (TextView) convertView.findViewById(R.id.level);
         ImageView imageChar  = (ImageView) convertView.findViewById(R.id.image);
@@ -48,11 +48,11 @@ public class CustomAdapterCharacter extends ArrayAdapter<CharacterModel> {
         name.setText("Character Name:"+ " " +character.name);
         level.setText("Character Level:"+ " "+character.faction);
         battlegroup.setText("Character Battlegroup:"+ " " +character.battlegroup);
-        wowclass.setText("Character Class:"+ " " +character.newClassName);
-        race.setText("Character Race:"+ " " +character.newRaceName);
-        gender.setText("Character Gender:"+ " " +character.newGender);
+//        wowclass.setText("Character Class:"+ " " +character.newClassName);
+//        race.setText("Character Race:"+ " " +character.newRaceName);
+//        gender.setText("Character Gender:"+ " " +character.newGender);
         ap.setText("Character Achievement Points:"+ " " +character.level);
-        faction.setText("Character Faction:"+ " " +character.newFaction);
+//        faction.setText("Character Faction:"+ " " +character.newFaction);
         kills.setText("Total Honor Kills:"+ " " +character.honorkills);
         Picasso.with(context).load("https://us.battle.net/static-render/us/" + character.getImage()).into(imageChar);
 

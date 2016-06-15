@@ -1,5 +1,6 @@
 package com.notexample.austin.questicon;
 
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -35,6 +36,7 @@ public class CharacterActivity extends AppCompatActivity {
     CustomAdapterCharacter adapter;
     ListView listView;
     EditText realm, charactername;
+    String characterImage;
 
 
     @Override
@@ -150,125 +152,6 @@ public class CharacterActivity extends AppCompatActivity {
                     CharacterModel character = new CharacterModel(name, battlegroup, image, classWow, race, gender, ap, faction, level, kills, newRaceName, newClassName, newFaction, newGender);
 
 
-                    switch (gender) {
-                        case 0:
-                            character.setNewGender("Male");
-                            break;
-                        case 1:
-                            character.setNewGender("Female");
-                            break;
-                        case 2:
-                            character.setNewGender("Unisex");
-                            break;
-                        default:
-                            character.setNewGender("No gender found");
-                            break;
-                    }
-
-
-                    switch (race) {
-                        case 1:
-                            character.setNewClassName("Warrior");
-                            break;
-                        case 2:
-                            character.setNewClassName("Paladin");
-                            break;
-                        case 3:
-                            character.setNewClassName("Hunter");
-                            break;
-                        case 4:
-                            character.setNewClassName("Rogue");
-                            break;
-                        case 5:
-                            character.setNewClassName("Priest");
-                            break;
-                        case 6:
-                            character.setNewClassName("Death Knight");
-                            break;
-                        case 7:
-                            character.setNewClassName("Shaman");
-                            break;
-                        case 8:
-                            character.setNewClassName("Mage");
-                            break;
-                        case 9:
-                            character.setNewClassName("Warlock");
-                            break;
-                        case 10:
-                            character.setNewClassName("Monk");
-                            break;
-                        case 11:
-                            character.setNewClassName("Druid");
-                            break;
-                        default:
-                            character.setNewClassName("No class found");
-                            break;
-                    }
-
-                    switch (faction) {
-                        case 0:
-                            character.setNewFaction("Alliance");
-                            break;
-                        case 1:
-                            character.setNewFaction("Horde");
-                            break;
-                        default:
-                            character.setNewFaction("No faction found");
-                            break;
-                    }
-
-
-                    switch (classWow) {
-                        case 1:
-                            character.setNewRaceName("Human");
-                            break;
-                        case 2:
-                            character.setNewRaceName("Orc");
-                            break;
-                        case 3:
-                            character.setNewRaceName("Dwarf");
-                            break;
-                        case 4:
-                            character.setNewRaceName("Night Elf");
-                            break;
-                        case 5:
-                            character.setNewRaceName("Undead");
-                            break;
-                        case 6:
-                            character.setNewRaceName("Tauren");
-                            break;
-                        case 7:
-                            character.setNewRaceName("Gnome");
-                            break;
-                        case 8:
-                            character.setNewRaceName("Troll");
-                            break;
-                        case 9:
-                            character.setNewRaceName("Goblin");
-                            break;
-                        case 10:
-                            character.setNewRaceName("Blood Elf");
-                            break;
-                        case 11:
-                            character.setNewRaceName("Draenei");
-                            break;
-                        case 22:
-                            character.setNewRaceName("Worgen");
-                            break;
-                        case 24:
-                            character.setNewRaceName("Pandaren");
-                            break;
-                        case 25:
-                            character.setNewRaceName("Pandaren");
-                            break;
-                        case 26:
-                            character.setNewRaceName("Pandaren");
-                            break;
-                        default:
-                            character.setNewRaceName("No race found");
-                            break;
-                    }
-
                     String imageThumb = responseBody.getString("thumbnail");
 
 
@@ -286,17 +169,18 @@ public class CharacterActivity extends AppCompatActivity {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                             Intent myIntent = new Intent(CharacterActivity.this, CharacterDetailView.class);
-                            myIntent.putExtra("position", position);
+
 
 
                             try {
 
-                                String image = responseBody.getString("thumbnail");
-                                String nameChar = searchVariableName;
-                                String nameRealm = searchVariableName;
-                                myIntent.putExtra("url2", image);
-                                myIntent.putExtra("nameChar", nameChar);
-                                myIntent.putExtra("nameRealm", nameRealm);
+                                realm = (EditText) findViewById(R.id.realm);
+                                charactername = (EditText) findViewById(R.id.charactername);
+
+                                characterImage = responseBody.getString("thumbnail");
+                                myIntent.putExtra("url2", characterImage);
+                                myIntent.putExtra("nameChar", charactername.getText().toString());
+                                myIntent.putExtra("nameRealm",  realm.getText().toString());
                                 startActivity(myIntent);
 
                             } catch (JSONException e) {
@@ -319,7 +203,7 @@ public class CharacterActivity extends AppCompatActivity {
             @Override
             public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
                 super.onFailure(statusCode, headers, throwable, errorResponse);
-                Toast.makeText(getApplicationContext(), "No character under the name: " + searchVariableName + " found.",
+                Toast.makeText(getApplicationContext(), "No character under the name " + searchVariableName + " found.",
                         Toast.LENGTH_LONG).show();
             }
         });
@@ -331,6 +215,18 @@ public class CharacterActivity extends AppCompatActivity {
 
 
         APICALL();
+
+        realm = (EditText) findViewById(R.id.realm);
+        charactername = (EditText) findViewById(R.id.charactername);
+
+        Intent myIntent = new Intent(CharacterActivity.this, CharacterDetailView.class);
+
+
+        myIntent.putExtra("url2", characterImage);
+        myIntent.putExtra("nameChar", charactername.getText().toString());
+        myIntent.putExtra("nameRealm", realm.getText().toString());
+        startActivity(myIntent);
+
 
     }
 }
