@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
@@ -81,6 +83,8 @@ public class BossesActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Process Not Successful",
                     Toast.LENGTH_SHORT).show();
         }
+
+
     };
 
 
@@ -89,8 +93,14 @@ public class BossesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bosses);
 
+
         bosses();
+
+
     }
+
+
+
 
     public void bosses() {
 
@@ -115,9 +125,9 @@ public class BossesActivity extends AppCompatActivity {
         search = (EditText) findViewById(R.id.SearchBosses);
         ArrayList<BossesModel> bossesModels3 = new ArrayList<>();
 
-        for (int i = 0; i < bossesModels.size() ; i++) {
+        for (int i = 0; i < bossesModels.size(); i++) {
 
-            if (bossesModels.get(i).getName().toLowerCase().contains(search.getText().toString().toLowerCase())){
+            if (bossesModels.get(i).getName().toLowerCase().contains(search.getText().toString().toLowerCase())) {
                 bossesModels3.add(bossesModels.get(i));
             }
 
@@ -129,6 +139,17 @@ public class BossesActivity extends AppCompatActivity {
 
         adapterBosses.notifyDataSetChanged();
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.options_menu, menu);
+
+
+        return true;
+    }
+
+
 }
 
 
