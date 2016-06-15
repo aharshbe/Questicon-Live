@@ -117,7 +117,7 @@ public class BossesActivity extends AppCompatActivity {
 
         for (int i = 0; i < bossesModels.size() ; i++) {
 
-            if (bossesModels.get(i).getName().equalsIgnoreCase(search.getText().toString())){
+            if (bossesModels.get(i).getName().toLowerCase().contains(search.getText().toString().toLowerCase())){
                 bossesModels3.add(bossesModels.get(i));
             }
 

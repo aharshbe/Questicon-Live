@@ -119,7 +119,7 @@ public class DungeonActivity extends AppCompatActivity {
 
         for (int i = 0; i < dungeonModels.size() ; i++) {
 
-            if (dungeonModels.get(i).getNameD().equalsIgnoreCase(search.getText().toString())){
+            if (dungeonModels.get(i).getNameD().toLowerCase().contains(search.getText().toString().toLowerCase())){
                 dungeonModels1.add(dungeonModels.get(i));
             }
 
