@@ -6,7 +6,7 @@ import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
 
-public class Main2Activity extends AppCompatActivity {
+public class CharacterDetailView extends AppCompatActivity {
 
     ImageView imageView;
 

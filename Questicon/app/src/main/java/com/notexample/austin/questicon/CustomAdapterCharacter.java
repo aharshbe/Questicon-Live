@@ -1,25 +1,24 @@
 package com.notexample.austin.questicon;
 
 import android.content.Context;
-import android.database.Cursor;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
-import android.widget.CursorAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class CustomAdapter extends ArrayAdapter<CharacterModel> {
+public class CustomAdapterCharacter extends ArrayAdapter<CharacterModel> {
 
-    public CustomAdapter(Context context, ArrayList<CharacterModel> users) {
+    private Context context;
+
+    public CustomAdapterCharacter(Context context, ArrayList<CharacterModel> users) {
         super(context, 0, users);
+        this.context = context;
     }
 
     @Override
@@ -28,7 +27,7 @@ public class CustomAdapter extends ArrayAdapter<CharacterModel> {
         CharacterModel character = getItem(position);
 
         if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.customlayout, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.customlayoutcharacter, parent, false);
         }
 
         TextView name = (TextView) convertView.findViewById(R.id.name);
@@ -55,6 +54,7 @@ public class CustomAdapter extends ArrayAdapter<CharacterModel> {
         ap.setText("Character Achievement Points:"+ " " +character.level);
         faction.setText("Character Faction:"+ " " +character.newFaction);
         kills.setText("Total Honor Kills:"+ " " +character.honorkills);
+        Picasso.with(context).load("https://us.battle.net/static-render/us/" + character.getImage()).into(imageChar);
 
 
 

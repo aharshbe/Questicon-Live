@@ -1,14 +1,9 @@
 package com.notexample.austin.questicon;
 
-import android.database.Cursor;
-import android.media.Image;
-import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Layout;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -18,25 +13,18 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.provider.Settings;
 import android.support.v7.app.NotificationCompat;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.CursorAdapter;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
-import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 
 import cz.msebera.android.httpclient.Header;
 
@@ -44,7 +32,7 @@ import cz.msebera.android.httpclient.Header;
 public class CharacterActivity extends AppCompatActivity {
 
     ArrayList<CharacterModel> characterModels;
-    CustomAdapter adapter;
+    CustomAdapterCharacter adapter;
     ListView listView;
     EditText realm, charactername;
 
@@ -60,7 +48,7 @@ public class CharacterActivity extends AppCompatActivity {
 
 
         characterModels = new ArrayList<>();
-        adapter = new CustomAdapter(this, characterModels);
+        adapter = new CustomAdapterCharacter(this, characterModels);
         listView.setAdapter(adapter);
 
 
@@ -283,13 +271,9 @@ public class CharacterActivity extends AppCompatActivity {
 
                     String imageThumb = responseBody.getString("thumbnail");
 
-                    ImageView imageViewcharacter  = (ImageView) findViewById(R.id.imagecharacter);
-
-                    Picasso.with(CharacterActivity.this).load("https://us.battle.net/static-render/us/"+ imageThumb).into(imageViewcharacter);
-
 
                     ArrayList<CharacterModel> characterModels = new ArrayList<>();
-                    CustomAdapter adapter = new CustomAdapter(CharacterActivity.this, characterModels);
+                    CustomAdapterCharacter adapter = new CustomAdapterCharacter(CharacterActivity.this, characterModels);
 
                     listView.setAdapter(adapter);
 
@@ -301,7 +285,7 @@ public class CharacterActivity extends AppCompatActivity {
                     listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            Intent myIntent = new Intent(CharacterActivity.this, Main2Activity.class);
+                            Intent myIntent = new Intent(CharacterActivity.this, CharacterDetailView.class);
                             myIntent.putExtra("position", position);
 
 

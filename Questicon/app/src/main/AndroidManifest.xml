@@ -17,7 +17,7 @@
         <activity
             android:name=".BossesActivity"
             android:label="Bosses" />
-        <activity android:name=".Main2Activity" />
+        <activity android:name=".CharacterDetailView" />
         <activity
             android:name=".NavD"
             android:label="Questicon"
