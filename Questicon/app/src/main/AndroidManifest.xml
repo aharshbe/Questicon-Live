@@ -35,11 +35,12 @@
             android:name=".MountsActivity"
             android:label="Mounts" />
         <activity
-            android:name=".Pets"
+            android:name=".PetsActivity"
             android:label="Pets" />
         <activity android:name=".BossesDetailView" />
         <activity android:name=".DunegonDetailView" />
-        <activity android:name=".MountDetailView"></activity>
+        <activity android:name=".MountDetailView" />
+        <activity android:name=".PetDetailView"></activity>
     </application>
 
 </manifest>
