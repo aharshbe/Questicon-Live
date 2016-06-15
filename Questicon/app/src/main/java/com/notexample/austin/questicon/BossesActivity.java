@@ -135,9 +135,6 @@ public class BossesActivity extends AppCompatActivity {
 
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
 
-            String query = intent.getStringExtra(SearchManager.QUERY);
-            //use the query to search your data somehow
-
 
         }
     }
@@ -162,35 +159,15 @@ public class BossesActivity extends AppCompatActivity {
 
     }
 
-    public void clickingSearch(View view) {
-        searchEditText = (EditText) findViewById(R.id.SearchBosses);
-        ArrayList<BossesModel> bossesModels3 = new ArrayList<>();
-
-        for (int i = 0; i < bossesModels.size(); i++) {
-
-            if (bossesModels.get(i).getName().toLowerCase().contains(searchEditText.getText().toString().toLowerCase())) {
-                bossesModels3.add(bossesModels.get(i));
-            }
-
-        }
-        ListView listViewBosses = (ListView) findViewById(R.id.listViewBosses);
-        bossesModels.contains(searchEditText);
-        adapterBosses = new CustomAdapterBosses(this, bossesModels3);
-        listViewBosses.setAdapter(adapterBosses);
-
-        adapterBosses.notifyDataSetChanged();
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.options_menu, menu);
 
-//        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
 
         SearchView searchView = (SearchView) menu.findItem(R.id.search).getActionView();
 
-//        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override

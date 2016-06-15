@@ -5,28 +5,13 @@
     android:layout_height="match_parent"
     tools:context=".DungeonActivity">
 
-    <EditText
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:hint="Enter dungeon name here"
-        android:id="@+id/SearchDungeon"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
 
     <ListView
+        android:id="@+id/listViewDungeon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/listViewDungeon"
-        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/SearchDungeon"/>
-    <Button
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:text="Search"
-        android:id="@+id/buttonSearch"
-        android:onClick="clickingSearchDungeon"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_centerVertical="true" />
+
 
 </RelativeLayout>
