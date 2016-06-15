@@ -1,10 +1,17 @@
 package com.notexample.austin.questicon;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.SearchView;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -21,7 +28,10 @@ import cz.msebera.android.httpclient.Header;
 
 public class BossesActivity extends AppCompatActivity {
     ArrayList<BossesModel> bossesModels;
+    EditText searchEditText;
     CustomAdapterBosses adapterBosses;
+    String theySearched = "";
+    ArrayList<BossesModel> bossesModels3;
     JsonHttpResponseHandler jsonHttpResponseHandler = new JsonHttpResponseHandler() {
 
 
@@ -48,17 +58,36 @@ public class BossesActivity extends AppCompatActivity {
                     ListView listViewBosses = (ListView) findViewById(R.id.listViewBosses);
 
 
+                    assert listViewBosses != null;
                     listViewBosses.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                            BossesModel boss = bossesModels.get(position);
+                            if (theySearched.equalsIgnoreCase("")) {
 
-                            Intent myIntent = new Intent(BossesActivity.this, BossesDetailView.class);
-                            myIntent.putExtra("position", position);
-                            myIntent.putExtra("des", boss.getDescription());
-                            myIntent.putExtra("name", boss.getName());
-                            startActivity(myIntent);
+                                BossesModel boss = bossesModels.get(position);
+
+                                Intent myIntent = new Intent(BossesActivity.this, BossesDetailView.class);
+                                myIntent.putExtra("position", position);
+                                myIntent.putExtra("des", boss.getDescription());
+                                myIntent.putExtra("name", boss.getName());
+
+                                startActivity(myIntent);
+
+
+                            } else {
+                                BossesModel boss = bossesModels3.get(position);
+
+                                Intent myIntent = new Intent(BossesActivity.this, BossesDetailView.class);
+                                myIntent.putExtra("position", position);
+                                myIntent.putExtra("des", boss.getDescription());
+                                myIntent.putExtra("name", boss.getName());
+
+                                startActivity(myIntent);
+
+                            }
+
+
                         }
                     });
                 }
@@ -78,6 +107,8 @@ public class BossesActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Process Not Successful",
                     Toast.LENGTH_SHORT).show();
         }
+
+
     };
 
 
@@ -86,8 +117,28 @@ public class BossesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bosses);
 
+
         bosses();
+
+        handleIntent(getIntent());
+
+
     }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+
+        handleIntent(intent);
+    }
+
+    private void handleIntent(Intent intent) {
+
+        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+
+
+        }
+    }
+
 
     public void bosses() {
 
@@ -107,6 +158,55 @@ public class BossesActivity extends AppCompatActivity {
 
 
     }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.options_menu, menu);
+
+
+        SearchView searchView = (SearchView) menu.findItem(R.id.search).getActionView();
+
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+
+
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+
+                theySearched = newText;
+
+                bossesModels3 = new ArrayList<>();
+
+                for (int i = 0; i < bossesModels.size(); i++) {
+
+                    if (bossesModels.get(i).getName().toLowerCase().contains(newText.toLowerCase())) {
+                        bossesModels3.add(bossesModels.get(i));
+                    }
+
+                }
+                ListView listViewBosses = (ListView) findViewById(R.id.listViewBosses);
+                bossesModels.contains(newText);
+                adapterBosses = new CustomAdapterBosses(BossesActivity.this, bossesModels3);
+                listViewBosses.setAdapter(adapterBosses);
+
+                adapterBosses.notifyDataSetChanged();
+
+
+                return false;
+            }
+        });
+
+
+        return true;
+    }
+
 
 }
 

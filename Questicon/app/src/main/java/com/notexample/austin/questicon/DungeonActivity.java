@@ -3,8 +3,12 @@ package com.notexample.austin.questicon;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.SearchView;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -22,6 +26,8 @@ import cz.msebera.android.httpclient.Header;
 public class DungeonActivity extends AppCompatActivity {
     ArrayList<DungeonModel> dungeonModels;
     CustomAdapterDungeon adapterDungeon;
+    ArrayList<DungeonModel> dungeonModels1;
+    String theySearched = "";
     JsonHttpResponseHandler jsonHttpResponseHandler = new JsonHttpResponseHandler() {
 
 
@@ -51,17 +57,33 @@ public class DungeonActivity extends AppCompatActivity {
                     ListView listViewDungeon = (ListView) findViewById(R.id.listViewDungeon);
 
 
+                    assert listViewDungeon != null;
                     listViewDungeon.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                            DungeonModel dungeon = dungeonModels.get(position);
 
-                            Intent myIntent = new Intent(DungeonActivity.this, DunegonDetailView.class);
-                            myIntent.putExtra("position", position);
-                            myIntent.putExtra("des", dungeon.getDescriptionD());
-                            myIntent.putExtra("name", dungeon.getNameD());
-                            startActivity(myIntent);
+                            if (theySearched.equalsIgnoreCase("")) {
+
+                                DungeonModel dungeon = dungeonModels.get(position);
+                                Intent myIntent = new Intent(DungeonActivity.this, DunegonDetailView.class);
+                                myIntent.putExtra("position", position);
+                                myIntent.putExtra("des", dungeon.getDescriptionD());
+                                myIntent.putExtra("name", dungeon.getNameD());
+                                startActivity(myIntent);
+
+                            } else {
+
+                                DungeonModel dungeon = dungeonModels1.get(position);
+                                Intent myIntent = new Intent(DungeonActivity.this, DunegonDetailView.class);
+                                myIntent.putExtra("position", position);
+                                myIntent.putExtra("des", dungeon.getDescriptionD());
+                                myIntent.putExtra("name", dungeon.getNameD());
+                                startActivity(myIntent);
+
+                            }
+
+
                         }
                     });
                 }
@@ -92,6 +114,53 @@ public class DungeonActivity extends AppCompatActivity {
         dungeon();
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.options_menu, menu);
+
+
+        SearchView searchView = (SearchView) menu.findItem(R.id.search).getActionView();
+
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+
+
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+
+                theySearched = newText;
+
+                dungeonModels1 = new ArrayList<>();
+
+                for (int i = 0; i < dungeonModels.size(); i++) {
+
+                    if (dungeonModels.get(i).getNameD().toLowerCase().contains(newText.toLowerCase())) {
+                        dungeonModels1.add(dungeonModels.get(i));
+                    }
+
+                }
+                ListView listViewDungeon = (ListView) findViewById(R.id.listViewDungeon);
+                dungeonModels.contains(newText);
+                adapterDungeon = new CustomAdapterDungeon(DungeonActivity.this, dungeonModels1);
+                listViewDungeon.setAdapter(adapterDungeon);
+
+                adapterDungeon.notifyDataSetChanged();
+
+
+                return false;
+            }
+        });
+
+
+        return true;
+    }
+
     public void dungeon() {
 
         ListView listViewDungeon = (ListView) findViewById(R.id.listViewDungeon);
@@ -110,4 +179,6 @@ public class DungeonActivity extends AppCompatActivity {
 
 
     }
+
+
 }
