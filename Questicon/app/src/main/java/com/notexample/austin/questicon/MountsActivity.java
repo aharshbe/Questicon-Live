@@ -3,6 +3,9 @@ package com.notexample.austin.questicon;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.SearchView;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -22,6 +25,8 @@ import cz.msebera.android.httpclient.Header;
 public class MountsActivity extends AppCompatActivity {
     ArrayList<MountModel> mountModels;
     CustomAdapterMount adapterMount;
+    String theySearched = "";
+    ArrayList<MountModel> mountModels2;
     JsonHttpResponseHandler jsonHttpResponseHandler = new JsonHttpResponseHandler() {
 
 
@@ -46,17 +51,31 @@ public class MountsActivity extends AppCompatActivity {
                     ListView listViewMount = (ListView) findViewById(R.id.listViewMounts);
 
 
+                    assert listViewMount != null;
                     listViewMount.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                            MountModel mount = mountModels.get(position);
+                            if (theySearched.equalsIgnoreCase("")) {
 
-                            Intent myIntent = new Intent(MountsActivity.this, MountDetailView.class);
-                            myIntent.putExtra("position", position);
-                            myIntent.putExtra("name", mount.getName());
-                            myIntent.putExtra("imageurl", mount.getImageurl());
-                            startActivity(myIntent);
+                                MountModel mount = mountModels.get(position);
+
+                                Intent myIntent = new Intent(MountsActivity.this, MountDetailView.class);
+                                myIntent.putExtra("position", position);
+                                myIntent.putExtra("name", mount.getName());
+                                myIntent.putExtra("imageurl", mount.getImageurl());
+                                startActivity(myIntent);
+                            }else {
+
+                                MountModel mount = mountModels2.get(position);
+
+                                Intent myIntent = new Intent(MountsActivity.this, MountDetailView.class);
+                                myIntent.putExtra("position", position);
+                                myIntent.putExtra("name", mount.getName());
+                                myIntent.putExtra("imageurl", mount.getImageurl());
+                                startActivity(myIntent);
+
+                            }
                         }
                     });
                 }
@@ -104,5 +123,52 @@ public class MountsActivity extends AppCompatActivity {
         client.get("https://us.api.battle.net/wow/mount/?locale=en_US&apikey=wheces9zargz65mhza5jfv9nentuy2gg", jsonHttpResponseHandler);
 
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.options_menu, menu);
+
+
+        SearchView searchView = (SearchView) menu.findItem(R.id.search).getActionView();
+
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+
+
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+
+                theySearched = newText;
+
+                mountModels2 = new ArrayList<>();
+
+                for (int i = 0; i < mountModels.size(); i++) {
+
+                    if (mountModels.get(i).getName().toLowerCase().contains(newText.toLowerCase())) {
+                        mountModels2.add(mountModels.get(i));
+                    }
+
+                }
+                ListView listViewMounts = (ListView) findViewById(R.id.listViewMounts);
+                mountModels.contains(newText);
+                adapterMount = new CustomAdapterMount(MountsActivity.this, mountModels2);
+                listViewMounts.setAdapter(adapterMount);
+
+                adapterMount.notifyDataSetChanged();
+
+
+                return false;
+            }
+        });
+
+
+        return true;
     }
 }
