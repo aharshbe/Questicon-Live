@@ -167,6 +167,7 @@ public class BossesActivity extends AppCompatActivity {
                         }
                     });
                 }
+                Toast.makeText(BossesActivity.this, "There are "+jsonArray.length()+ " bosses to search through.", Toast.LENGTH_SHORT).show();
 
 
             } catch (JSONException e) {

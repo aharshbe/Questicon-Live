@@ -81,6 +81,7 @@ public class PetsActivity extends AppCompatActivity {
                     });
 
                 }
+                Toast.makeText(PetsActivity.this, "There are "+jsonArray.length()+ " pets to search through.", Toast.LENGTH_SHORT).show();
 
 
             } catch (JSONException e) {

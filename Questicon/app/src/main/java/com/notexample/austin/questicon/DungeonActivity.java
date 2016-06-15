@@ -159,6 +159,7 @@ public class DungeonActivity extends AppCompatActivity {
                         }
                     });
                 }
+                Toast.makeText(DungeonActivity.this, "There are "+jsonArray.length()+ " dungeons to search through.", Toast.LENGTH_SHORT).show();
 
 
             } catch (JSONException e) {

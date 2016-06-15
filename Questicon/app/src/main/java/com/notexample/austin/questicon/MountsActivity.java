@@ -48,6 +48,7 @@ public class MountsActivity extends AppCompatActivity {
                     adapterMount.notifyDataSetChanged();
 
 
+
                     ListView listViewMount = (ListView) findViewById(R.id.listViewMounts);
 
 
@@ -79,6 +80,7 @@ public class MountsActivity extends AppCompatActivity {
                         }
                     });
                 }
+                Toast.makeText(MountsActivity.this, "There are "+jsonArray.length()+ " mounts to search through.", Toast.LENGTH_SHORT).show();
 
 
             } catch (JSONException e) {
