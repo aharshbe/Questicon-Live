@@ -1,9 +1,13 @@
 package com.notexample.austin.questicon;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -12,6 +16,8 @@ import android.widget.TextView;
 public class BossesDetailView extends AppCompatActivity {
 
     WebView bossesName;
+    String name, URLString, URLString2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +28,7 @@ public class BossesDetailView extends AppCompatActivity {
         bossesName = (WebView) findViewById(R.id.webViewBossesDetail);
 
 
-        final String name = getIntent().getStringExtra("name");
+        name = getIntent().getStringExtra("name");
 
 
         final ProgressDialog pd = ProgressDialog.show(this, "", "Loading...", true);
@@ -49,7 +55,22 @@ public class BossesDetailView extends AppCompatActivity {
         });
 
         bossesName.loadUrl("http://wow.gamepedia.com/" + name);
+        URLString = "http://wow.gamepedia.com/" + name;
+        URLString2 = URLString.replaceAll("\\s+", "_");
 
 
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.share, menu);
+        return true;
+    }
+
+    public void clickingShare(MenuItem item) {
+        Intent sharingIntent = new Intent(Intent.ACTION_SEND);
+        sharingIntent.setType("text/plain");
+        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, URLString2);
+        startActivity(Intent.createChooser(sharingIntent, getString(R.string.send_intent_title)));
     }
 }

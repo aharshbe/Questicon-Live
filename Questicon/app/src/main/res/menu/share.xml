@@ -4,6 +4,7 @@
     <item
         android:title="shareIconMenu"
         android:icon="@drawable/share"
+        android:onClick="clickingShare"
         app:showAsAction="ifRoom"
         />
 
