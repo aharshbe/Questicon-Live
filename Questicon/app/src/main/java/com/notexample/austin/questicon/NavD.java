@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 public class NavD extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -81,6 +82,8 @@ public class NavD extends AppCompatActivity
 
         } else if (id == R.id.nav_items) {
 
+        } else if (id == R.id.nav_Lore) {
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -110,6 +113,12 @@ public class NavD extends AppCompatActivity
 
     public void clickingPets(MenuItem item) {
         Intent intent = new Intent(NavD.this, PetsActivity.class);
+        startActivity(intent);
+    }
+
+
+    public void clickingLore(MenuItem item) {
+        Intent intent = new Intent(NavD.this, LoreActivity.class);
         startActivity(intent);
     }
 }

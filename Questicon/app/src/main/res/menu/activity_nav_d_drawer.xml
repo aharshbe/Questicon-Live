@@ -27,6 +27,11 @@
             android:icon="@drawable/ic_menu_send"
             android:title="Pets"
             android:onClick="clickingPets"/>
+        <item
+            android:id="@+id/nav_Lore"
+            android:icon="@drawable/ic_menu_send"
+            android:title="Lore from Nobbel87!"
+            android:onClick="clickingLore"/>
 
     </group>
 

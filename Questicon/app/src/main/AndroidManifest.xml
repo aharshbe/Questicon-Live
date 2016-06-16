@@ -6,7 +6,6 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_questicon"
         android:label="Questicon"
@@ -18,7 +17,6 @@
         <activity
             android:name=".BossesActivity"
             android:label="Bosses">
-
             <meta-data
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
@@ -27,8 +25,6 @@
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
         </activity>
-
-
         <activity android:name=".CharacterDetailView" />
         <activity
             android:name=".NavD"
@@ -60,7 +56,10 @@
         <activity android:name=".BossesDetailView" />
         <activity android:name=".DunegonDetailView" />
         <activity android:name=".MountDetailView" />
-        <activity android:name=".PetDetailView"></activity>
+        <activity android:name=".PetDetailView" />
+        <activity android:name=".LoreActivity"
+            android:label="Top 50 from Nobbel87's YouTube"/>
+        <activity android:name=".DetailViewLore"></activity>
     </application>
 
 </manifest>
