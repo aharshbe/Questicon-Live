@@ -34,7 +34,7 @@ public class DetailViewLore extends AppCompatActivity {
             @Override
             public void onPageStarted(WebView view, String url, Bitmap favicon) {
                 super.onPageStarted(view, url, favicon);
-                pd.setMessage("Loading dungeon info, just one second more...");
+                pd.setMessage("Loading video on YouTube info, just one second more...");
             }
 
 
