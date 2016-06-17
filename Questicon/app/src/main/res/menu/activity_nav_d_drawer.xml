@@ -30,7 +30,7 @@
         <item
             android:id="@+id/nav_Lore"
             android:icon="@drawable/ic_menu_send"
-            android:title="Lore from Nobbel87!"
+            android:title="Lore: Nobbel87's YouTube"
             android:onClick="clickingLore"/>
 
     </group>
