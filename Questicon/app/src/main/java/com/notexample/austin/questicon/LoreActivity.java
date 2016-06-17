@@ -42,18 +42,16 @@ public class LoreActivity extends AppCompatActivity {
                 JSONArray jsonArrayItems = responseBody.getJSONArray("items");
 
 
-
                 for (int i = 0; i < jsonArrayItems.length(); i++) {
 
                     final JSONObject items = jsonArrayItems.getJSONObject(i);
-
 
 
                     if (!items.has("snippet"))
                         continue;
                     final LoreModel loreModel = new LoreModel(items.getJSONObject("snippet").getString("title"), items
                             .getJSONObject("snippet").getJSONObject("thumbnails")
-                            .getJSONObject("default").getString("url"), items.getJSONObject("id").getString("videoId"));
+                            .getJSONObject("default").getString("url"), items.getJSONObject("snippet").getJSONObject("resourceId").getString("videoId"));
                     loreModelArrayList.add(loreModel);
                     adapterLore.notifyDataSetChanged();
 
@@ -74,19 +72,19 @@ public class LoreActivity extends AppCompatActivity {
                             Toast.makeText(LoreActivity.this, "Opening video", Toast.LENGTH_SHORT).show();
 
 
-
-
-
                         }
                     });
 
-                }
 
+                }
 
 
             } catch (JSONException e) {
                 e.printStackTrace();
             }
+
+            Toast.makeText(LoreActivity.this, "There are "+loreModelArrayList.size()+ " videos to search through.", Toast.LENGTH_SHORT).show();
+
 
 
         }
@@ -121,9 +119,13 @@ public class LoreActivity extends AppCompatActivity {
 
 
         // Not sure why this boolean isn't working but the objective was to make it so that if a user enter's nothing, the search doesn't happen
+        client.get("https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=PL6037698E84060287&key=AIzaSyA-7BAluixrnUtFKMwOW_sV0as0loF7pok&maxResults=50&pageToken=CJYBEAA", jsonHttpResponseHandler);
 
+        client.get("https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=PL6037698E84060287&key=AIzaSyA-7BAluixrnUtFKMwOW_sV0as0loF7pok&maxResults=50&pageToken=CGQQAA", jsonHttpResponseHandler);
 
-        client.get("https://www.googleapis.com/youtube/v3/search?key=AIzaSyA-7BAluixrnUtFKMwOW_sV0as0loF7pok&channelId=UCX34tk-noBVC4WVC9qQGyMw&part=snippet,id&order=date&maxResults=50", jsonHttpResponseHandler);
+        client.get("https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=PL6037698E84060287&key=AIzaSyA-7BAluixrnUtFKMwOW_sV0as0loF7pok&maxResults=50&pageToken=CDIQAA", jsonHttpResponseHandler);
+
+        client.get("https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=PL6037698E84060287&key=AIzaSyA-7BAluixrnUtFKMwOW_sV0as0loF7pok&maxResults=50", jsonHttpResponseHandler);
 
 
     }
