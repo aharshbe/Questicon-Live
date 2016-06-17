@@ -29,7 +29,10 @@ import cz.msebera.android.httpclient.Header;
 
 public class LoreActivity extends AppCompatActivity {
     ArrayList<LoreModel> loreModelArrayList;
+    ArrayList<LoreModel> loreModelArrayList2;
     CustomAdapterLore adapterLore;
+    String theySearched = "";
+    int postitionTHis;
 
     JsonHttpResponseHandler jsonHttpResponseHandler = new JsonHttpResponseHandler() {
 
@@ -64,12 +67,24 @@ public class LoreActivity extends AppCompatActivity {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                            LoreModel loreVideo = loreModelArrayList.get(position);
-                            Intent myIntent = new Intent(LoreActivity.this, DetailViewLore.class);
-                            myIntent.putExtra("position", position);
-                            myIntent.putExtra("urlVideo", loreVideo.getURLVideo());
-                            startActivity(myIntent);
-                            Toast.makeText(LoreActivity.this, "Opening video", Toast.LENGTH_SHORT).show();
+
+                            if (theySearched.equalsIgnoreCase("")) {
+
+                                LoreModel loreVideo = loreModelArrayList.get(position);
+                                Intent myIntent = new Intent(LoreActivity.this, DetailViewLore.class);
+                                myIntent.putExtra("position", position);
+                                myIntent.putExtra("urlVideo", loreVideo.getURLVideo());
+                                startActivity(myIntent);
+                                Toast.makeText(LoreActivity.this, "Opening video", Toast.LENGTH_SHORT).show();
+                            } else {
+
+                                LoreModel loreVideo = loreModelArrayList2.get(position);
+                                Intent myIntent = new Intent(LoreActivity.this, DetailViewLore.class);
+                                myIntent.putExtra("position", position);
+                                myIntent.putExtra("urlVideo", loreVideo.getURLVideo());
+                                startActivity(myIntent);
+                                Toast.makeText(LoreActivity.this, "Opening video", Toast.LENGTH_SHORT).show();
+                            }
 
 
                         }
@@ -83,8 +98,7 @@ public class LoreActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-            Toast.makeText(LoreActivity.this, "There are "+loreModelArrayList.size()+ " videos to search through.", Toast.LENGTH_SHORT).show();
-
+            Toast.makeText(LoreActivity.this, "There are " + loreModelArrayList.size() + " videos to search through.", Toast.LENGTH_SHORT).show();
 
 
         }
@@ -129,6 +143,55 @@ public class LoreActivity extends AppCompatActivity {
 
 
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.info, menu);
+        inflater.inflate(R.menu.options_menu, menu);
+
+
+        SearchView searchView = (SearchView) menu.findItem(R.id.search).getActionView();
+
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+
+
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+
+                theySearched = newText;
+
+                loreModelArrayList2 = new ArrayList<>();
+
+                for (int i = 0; i < loreModelArrayList.size(); i++) {
+
+                    if (loreModelArrayList.get(i).getTitleLore().toLowerCase().contains(newText.toLowerCase())) {
+                        loreModelArrayList2.add(loreModelArrayList.get(i));
+                    }
+
+                }
+                ListView listViewMovie = (ListView) findViewById(R.id.listViewLore);
+                loreModelArrayList.contains(newText);
+                adapterLore = new CustomAdapterLore(LoreActivity.this, loreModelArrayList2);
+                listViewMovie.setAdapter(adapterLore);
+
+                adapterLore.notifyDataSetChanged();
+
+
+                return false;
+            }
+        });
+
+
+        return true;
+    }
+
 
 }
 
