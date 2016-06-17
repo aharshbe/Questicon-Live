@@ -84,6 +84,8 @@ public class NavD extends AppCompatActivity
 
         } else if (id == R.id.nav_Lore) {
 
+        } else if (id == R.id.nav_media) {
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
