@@ -121,4 +121,9 @@ public class NavD extends AppCompatActivity
         Intent intent = new Intent(NavD.this, LoreActivity.class);
         startActivity(intent);
     }
+
+    public void clickingMedia(MenuItem item) {
+        Intent intent = new Intent(NavD.this, MediaAcitvity.class);
+        startActivity(intent);
+    }
 }

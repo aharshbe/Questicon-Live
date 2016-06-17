@@ -32,6 +32,11 @@
             android:icon="@drawable/ic_menu_send"
             android:title="Lore: Nobbel87's YouTube"
             android:onClick="clickingLore"/>
+        <item
+            android:id="@+id/nav_media"
+            android:icon="@drawable/ic_menu_send"
+            android:title="WoW Media"
+            android:onClick="clickingMedia"/>
 
     </group>
 

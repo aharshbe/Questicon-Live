@@ -57,9 +57,15 @@
         <activity android:name=".DunegonDetailView" />
         <activity android:name=".MountDetailView" />
         <activity android:name=".PetDetailView" />
-        <activity android:name=".LoreActivity"
-            android:label="Lore of Warcraft Playlist"/>
-        <activity android:name=".DetailViewLore"></activity>
+        <activity
+            android:name=".LoreActivity"
+            android:label="Lore of Warcraft Playlist" />
+        <activity android:name=".DetailViewLore" />
+        <activity android:name=".MediaAcitvity" />
+        <activity android:name=".WallpaperAcitivty"
+            android:label="Wallpapers"/>
+        <activity android:name=".MusicActivity"
+            android:label="Music"></activity>
     </application>
 
 </manifest>

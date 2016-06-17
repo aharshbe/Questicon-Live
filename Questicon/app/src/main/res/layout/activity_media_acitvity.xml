@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.notexample.austin.questicon.MediaAcitvity">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wallpapers"
+        android:onClick="clickingWallpapers"
+        android:id="@+id/tvWallpapers"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="106dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Music"
+        android:onClick="clickingMusic"
+        android:id="@+id/tvMusic"
+        android:layout_below="@+id/tvWallpapers"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="65dp" />
+</RelativeLayout>
