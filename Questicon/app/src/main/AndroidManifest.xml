@@ -58,7 +58,7 @@
         <activity android:name=".MountDetailView" />
         <activity android:name=".PetDetailView" />
         <activity android:name=".LoreActivity"
-            android:label="Top 50 from Nobbel87's YouTube"/>
+            android:label="Nobbel87's: Lore of Warcraft Playlist"/>
         <activity android:name=".DetailViewLore"></activity>
     </application>
 
