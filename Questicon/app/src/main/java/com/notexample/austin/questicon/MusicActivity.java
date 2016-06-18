@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.MediaController;
 import android.widget.SeekBar;
 import android.widget.Spinner;
@@ -28,9 +29,11 @@ import java.util.concurrent.TimeUnit;
 
 public class MusicActivity extends ActionBarActivity {
     private MediaPlayer mediaPlayer, mediaPlayer2;
+    private ImageView mp3Icon;
     private TextView songDuration;
     private TextView songName;
     private String url, url2;
+    private int i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13, i14, i15, i16, i17, i18, i19, i20, i21, i22, i23, i24, i25, i26, i27, i28, i29, i30;
     private Spinner spinner;
     private SeekBar seekBar;
     private double timeStart = 0, finalTime = 0;
@@ -54,6 +57,40 @@ public class MusicActivity extends ActionBarActivity {
 
 
 //        songName = (TextView) findViewById(R.id.songName);
+        mp3Icon = (ImageView) findViewById(R.id.mp3Icon);
+        i1 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
+        i2 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
+        i3 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
+        i4 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
+        i5 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
+        i6 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
+        i7 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
+        i8 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
+        i9 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
+        i10 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
+        i11 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
+        i12 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
+        i13 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
+        i14 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
+        i15 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
+        i16 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
+        i17 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
+        i18 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
+        i19 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
+        i20 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
+        i21 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
+        i22 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
+        i23 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
+        i24 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
+        i25 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
+        i26 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
+        i27 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
+        i28 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
+        i29 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
+        i30 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
+
+
+
         spinner = (Spinner) findViewById(R.id.spinner);
         songDuration = (TextView) findViewById(R.id.songDuration);
         mediaPlayer = MediaPlayer.create(this, mySong[2]);
@@ -211,6 +248,7 @@ public class MusicActivity extends ActionBarActivity {
                     timeStart = mediaPlayer.getCurrentPosition();
                     seekBar.setProgress((int) timeStart);
                     durationHandler.postDelayed(updateSeekBarTime, 100);
+                    mp3Icon.setImageResource(idImageAlbum);
                     url2 = "https://docs.google.com/uc?export=download&id=0B7NezlAJoyHJeTNUdVd4QzdTb2c";
                     url = url2;
                     break;
