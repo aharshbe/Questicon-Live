@@ -65,13 +65,13 @@
             android:onClick="play"
             android:src="@android:drawable/ic_media_play" />
 
-        <ImageButton
-            android:id="@+id/btn_forword"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="14dp"
-            android:onClick="forward"
-            android:src="@android:drawable/ic_media_ff" />
+        <!--<ImageButton-->
+            <!--android:id="@+id/btn_forword"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="14dp"-->
+            <!--android:onClick="forward"-->
+            <!--android:src="@android:drawable/ic_media_ff" />-->
     </LinearLayout>
 
     <ImageButton
