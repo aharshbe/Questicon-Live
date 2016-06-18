@@ -58,36 +58,37 @@ public class MusicActivity extends ActionBarActivity {
 
 //        songName = (TextView) findViewById(R.id.songName);
         mp3Icon = (ImageView) findViewById(R.id.mp3Icon);
-        i1 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
-        i2 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
-        i3 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
-        i4 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
-        i5 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
-        i6 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
-        i7 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
-        i8 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
-        i9 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
-        i10 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
-        i11 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
-        i12 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
-        i13 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
-        i14 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
-        i15 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
-        i16 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
-        i17 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
-        i18 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
-        i19 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
-        i20 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
-        i21 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
-        i22 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
-        i23 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
-        i24 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
-        i25 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
-        i26 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
-        i27 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
+        i1 = getResources().getIdentifier(String.valueOf(R.drawable.i1), null, null);
+        i2 = getResources().getIdentifier(String.valueOf(R.drawable.i2), null, null);
+        i3 = getResources().getIdentifier(String.valueOf(R.drawable.i3), null, null);
+        i4 = getResources().getIdentifier(String.valueOf(R.drawable.i4), null, null);
+        i5 = getResources().getIdentifier(String.valueOf(R.drawable.i5), null, null);
+        i6 = getResources().getIdentifier(String.valueOf(R.drawable.i6), null, null);
+        i7 = getResources().getIdentifier(String.valueOf(R.drawable.i8), null, null);
+        i8 = getResources().getIdentifier(String.valueOf(R.drawable.i9), null, null);
+        i9 = getResources().getIdentifier(String.valueOf(R.drawable.i10), null, null);
+        i10 = getResources().getIdentifier(String.valueOf(R.drawable.i11), null, null);
+        i11 = getResources().getIdentifier(String.valueOf(R.drawable.i12), null, null);
+        i12 = getResources().getIdentifier(String.valueOf(R.drawable.i13), null, null);
+        i13 = getResources().getIdentifier(String.valueOf(R.drawable.i14), null, null);
+        i14 = getResources().getIdentifier(String.valueOf(R.drawable.i16), null, null);
+        i15 = getResources().getIdentifier(String.valueOf(R.drawable.i17), null, null);
+        i16 = getResources().getIdentifier(String.valueOf(R.drawable.i18), null, null);
+        i17 = getResources().getIdentifier(String.valueOf(R.drawable.i19), null, null);
+        i18 = getResources().getIdentifier(String.valueOf(R.drawable.i20), null, null);
+        i19 = getResources().getIdentifier(String.valueOf(R.drawable.i21), null, null);
+        i20 = getResources().getIdentifier(String.valueOf(R.drawable.i22), null, null);
+        i21 = getResources().getIdentifier(String.valueOf(R.drawable.i23), null, null);
+        i22 = getResources().getIdentifier(String.valueOf(R.drawable.i24), null, null);
+        i23 = getResources().getIdentifier(String.valueOf(R.drawable.i25), null, null);
+        i24 = getResources().getIdentifier(String.valueOf(R.drawable.i26), null, null);
+        i25 = getResources().getIdentifier(String.valueOf(R.drawable.i27), null, null);
+        i26 = getResources().getIdentifier(String.valueOf(R.drawable.i28), null, null);
+        i27 = getResources().getIdentifier(String.valueOf(R.drawable.i29), null, null);
         i28 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
-        i29 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
-        i30 = getResources().getIdentifier(String.valueOf(R.drawable.wifi), null, null);
+        i29 = getResources().getIdentifier(String.valueOf(R.drawable.album), null, null);
+        i30 = getResources().getIdentifier(String.valueOf(R.drawable.album), null, null);
+
 
 
 
@@ -229,6 +230,7 @@ public class MusicActivity extends ActionBarActivity {
                     mediaPlayer.reset();
                     mediaPlayer.release();
                     mediaPlayer = MediaPlayer.create(MusicActivity.this, mySong[2]);
+                    mp3Icon.setImageResource(i30);
                     url2 = "https://docs.google.com/uc?export=download&id=0B7NezlAJoyHJeTNUdVd4QzdTb2c";
                     url = url2;
                     break;
@@ -237,6 +239,7 @@ public class MusicActivity extends ActionBarActivity {
                     mediaPlayer.reset();
                     mediaPlayer.release();
                     mediaPlayer = MediaPlayer.create(MusicActivity.this, mySong[2]);
+                    mp3Icon.setImageResource(i30);
                     url2 = "https://docs.google.com/uc?export=download&id=0B7NezlAJoyHJeTNUdVd4QzdTb2c";
                     url = url2;
                     break;
@@ -248,7 +251,7 @@ public class MusicActivity extends ActionBarActivity {
                     timeStart = mediaPlayer.getCurrentPosition();
                     seekBar.setProgress((int) timeStart);
                     durationHandler.postDelayed(updateSeekBarTime, 100);
-                    mp3Icon.setImageResource(idImageAlbum);
+                    mp3Icon.setImageResource(i1);
                     url2 = "https://docs.google.com/uc?export=download&id=0B7NezlAJoyHJeTNUdVd4QzdTb2c";
                     url = url2;
                     break;
@@ -260,6 +263,7 @@ public class MusicActivity extends ActionBarActivity {
                     timeStart = mediaPlayer.getCurrentPosition();
                     seekBar.setProgress((int) timeStart);
                     durationHandler.postDelayed(updateSeekBarTime, 100);
+                    mp3Icon.setImageResource(i2);
                     url2 = "https://docs.google.com/uc?export=download&id=0B7NezlAJoyHJc3h4TmQ2ZmJZWW8";
                     url = url2;
                     break;
@@ -271,6 +275,7 @@ public class MusicActivity extends ActionBarActivity {
                     timeStart = mediaPlayer.getCurrentPosition();
                     seekBar.setProgress((int) timeStart);
                     durationHandler.postDelayed(updateSeekBarTime, 100);
+                    mp3Icon.setImageResource(i3);
                     url2 = "https://docs.google.com/uc?export=download&id=0B7NezlAJoyHJYzBoSXVtRDRPQ2c";
                     url = url2;
                     break;
@@ -282,6 +287,7 @@ public class MusicActivity extends ActionBarActivity {
                     timeStart = mediaPlayer.getCurrentPosition();
                     seekBar.setProgress((int) timeStart);
                     durationHandler.postDelayed(updateSeekBarTime, 100);
+                    mp3Icon.setImageResource(i4);
                     url2 = "https://docs.google.com/uc?export=download&id=0B7NezlAJoyHJcUp5YkZIanF6RlU";
                     url = url2;
                     break;
@@ -294,6 +300,7 @@ public class MusicActivity extends ActionBarActivity {
                     timeStart = mediaPlayer.getCurrentPosition();
                     seekBar.setProgress((int) timeStart);
                     durationHandler.postDelayed(updateSeekBarTime, 100);
+                    mp3Icon.setImageResource(i5);
                     url2 = "https://docs.google.com/uc?export=download&id=0B7NezlAJoyHJeGVOaXR0ZHRzZlk";
                     url = url2;
                     break;
@@ -305,6 +312,7 @@ public class MusicActivity extends ActionBarActivity {
                     timeStart = mediaPlayer.getCurrentPosition();
                     seekBar.setProgress((int) timeStart);
                     durationHandler.postDelayed(updateSeekBarTime, 100);
+                    mp3Icon.setImageResource(i6);
                     url2 = "https://docs.google.com/uc?export=download&id=0B7NezlAJoyHJSHEtd3pQYXNHZlE";
                     url = url2;
                     break;
@@ -316,6 +324,7 @@ public class MusicActivity extends ActionBarActivity {
                     timeStart = mediaPlayer.getCurrentPosition();
                     seekBar.setProgress((int) timeStart);
                     durationHandler.postDelayed(updateSeekBarTime, 100);
+                    mp3Icon.setImageResource(i6);
                     url2 = "https://docs.google.com/uc?export=download&id=0B7NezlAJoyHJVWh3bExLN016UHc";
                     url = url2;
                     break;
@@ -327,6 +336,7 @@ public class MusicActivity extends ActionBarActivity {
                     timeStart = mediaPlayer.getCurrentPosition();
                     seekBar.setProgress((int) timeStart);
                     durationHandler.postDelayed(updateSeekBarTime, 100);
+                    mp3Icon.setImageResource(i7);
                     url2 = "https://docs.google.com/uc?export=download&id=0B7NezlAJoyHJNTdaWl9uZlFxUXc";
                     url = url2;
                     break;
@@ -338,6 +348,7 @@ public class MusicActivity extends ActionBarActivity {
                     timeStart = mediaPlayer.getCurrentPosition();
                     seekBar.setProgress((int) timeStart);
                     durationHandler.postDelayed(updateSeekBarTime, 100);
+                    mp3Icon.setImageResource(i8);
                     url2 = "https://docs.google.com/uc?export=download&id=0B7NezlAJoyHJNGRZUjAxUjlBTmM";
                     url = url2;
                     break;
@@ -349,6 +360,7 @@ public class MusicActivity extends ActionBarActivity {
                     timeStart = mediaPlayer.getCurrentPosition();
                     seekBar.setProgress((int) timeStart);
                     durationHandler.postDelayed(updateSeekBarTime, 100);
+                    mp3Icon.setImageResource(i9);
                     url2 = "https://docs.google.com/uc?export=download&id=0B7NezlAJoyHJQ3hBV0oxNkJWVFU";
                     url = url2;
                     break;
@@ -360,6 +372,7 @@ public class MusicActivity extends ActionBarActivity {
                     timeStart = mediaPlayer.getCurrentPosition();
                     seekBar.setProgress((int) timeStart);
                     durationHandler.postDelayed(updateSeekBarTime, 100);
+                    mp3Icon.setImageResource(i10);
                     url2 = "https://docs.google.com/uc?export=download&id=0B7NezlAJoyHJNUg1VTZWWFJuTTA";
                     url = url2;
                     break;
@@ -371,6 +384,7 @@ public class MusicActivity extends ActionBarActivity {
                     timeStart = mediaPlayer.getCurrentPosition();
                     seekBar.setProgress((int) timeStart);
                     durationHandler.postDelayed(updateSeekBarTime, 100);
+                    mp3Icon.setImageResource(i11);
                     url2 = "https://docs.google.com/uc?export=download&id=0B7NezlAJoyHJVUl2OW4wQkJpYU0";
                     url = url2;
                     break;
@@ -382,6 +396,7 @@ public class MusicActivity extends ActionBarActivity {
                     timeStart = mediaPlayer.getCurrentPosition();
                     seekBar.setProgress((int) timeStart);
                     durationHandler.postDelayed(updateSeekBarTime, 100);
+                    mp3Icon.setImageResource(i12);
                     url2 = "https://docs.google.com/uc?export=download&id=0B7NezlAJoyHJQzFydGlkNGJuajg";
                     url = url2;
 
@@ -394,6 +409,7 @@ public class MusicActivity extends ActionBarActivity {
                     timeStart = mediaPlayer.getCurrentPosition();
                     seekBar.setProgress((int) timeStart);
                     durationHandler.postDelayed(updateSeekBarTime, 100);
+                    mp3Icon.setImageResource(i13);
                     url2 = "https://docs.google.com/uc?export=download&id=0B7NezlAJoyHJY1JuRGV3U0pkdHc";
                     url = url2;
                     break;
@@ -405,6 +421,7 @@ public class MusicActivity extends ActionBarActivity {
                     timeStart = mediaPlayer.getCurrentPosition();
                     seekBar.setProgress((int) timeStart);
                     durationHandler.postDelayed(updateSeekBarTime, 100);
+                    mp3Icon.setImageResource(i14);
                     url2 = "https://docs.google.com/uc?export=download&id=0B7NezlAJoyHJZXVfRTl5bGFKTHM";
                     url = url2;
                     break;
@@ -416,6 +433,7 @@ public class MusicActivity extends ActionBarActivity {
                     timeStart = mediaPlayer.getCurrentPosition();
                     seekBar.setProgress((int) timeStart);
                     durationHandler.postDelayed(updateSeekBarTime, 100);
+                    mp3Icon.setImageResource(i15);
                     url2 = "https://docs.google.com/uc?export=download&id=0B7NezlAJoyHJOTktb1NjeVhDREE";
                     url = url2;
                     break;
@@ -427,6 +445,7 @@ public class MusicActivity extends ActionBarActivity {
                     timeStart = mediaPlayer.getCurrentPosition();
                     seekBar.setProgress((int) timeStart);
                     durationHandler.postDelayed(updateSeekBarTime, 100);
+                    mp3Icon.setImageResource(i15);
                     url2 = "https://docs.google.com/uc?export=download&id=0B7NezlAJoyHJVUJ6VVFfQlRuZUE";
                     url = url2;
                     break;
@@ -438,6 +457,7 @@ public class MusicActivity extends ActionBarActivity {
                     timeStart = mediaPlayer.getCurrentPosition();
                     seekBar.setProgress((int) timeStart);
                     durationHandler.postDelayed(updateSeekBarTime, 100);
+                    mp3Icon.setImageResource(i16);
                     url2 = "https://docs.google.com/uc?export=download&id=0B7NezlAJoyHJaFVDNlRfS2cwcUE";
                     url = url2;
                     break;
@@ -449,6 +469,7 @@ public class MusicActivity extends ActionBarActivity {
                     timeStart = mediaPlayer.getCurrentPosition();
                     seekBar.setProgress((int) timeStart);
                     durationHandler.postDelayed(updateSeekBarTime, 100);
+                    mp3Icon.setImageResource(i17);
                     url2 = "https://docs.google.com/uc?export=download&id=0B7NezlAJoyHJQ1RmcThucXZ0Qjg";
                     url = url2;
                     break;
@@ -460,6 +481,7 @@ public class MusicActivity extends ActionBarActivity {
                     timeStart = mediaPlayer.getCurrentPosition();
                     seekBar.setProgress((int) timeStart);
                     durationHandler.postDelayed(updateSeekBarTime, 100);
+                    mp3Icon.setImageResource(i18);
                     url2 = "https://docs.google.com/uc?export=download&id=0B7NezlAJoyHJZ0FJal9FNFdlYnc";
                     url = url2;
                     break;
@@ -471,6 +493,7 @@ public class MusicActivity extends ActionBarActivity {
                     timeStart = mediaPlayer.getCurrentPosition();
                     seekBar.setProgress((int) timeStart);
                     durationHandler.postDelayed(updateSeekBarTime, 100);
+                    mp3Icon.setImageResource(i19);
                     url2 = "https://docs.google.com/uc?export=download&id=0B7NezlAJoyHJWFlwR2ZpV3g4c1U";
                     url = url2;
                     break;
@@ -482,6 +505,7 @@ public class MusicActivity extends ActionBarActivity {
                     timeStart = mediaPlayer.getCurrentPosition();
                     seekBar.setProgress((int) timeStart);
                     durationHandler.postDelayed(updateSeekBarTime, 100);
+                    mp3Icon.setImageResource(i20);
                     url2 = "https://docs.google.com/uc?export=download&id=0B7NezlAJoyHJYVZFZWJ4RklKNk0";
                     url = url2;
 
@@ -494,6 +518,7 @@ public class MusicActivity extends ActionBarActivity {
                     timeStart = mediaPlayer.getCurrentPosition();
                     seekBar.setProgress((int) timeStart);
                     durationHandler.postDelayed(updateSeekBarTime, 100);
+                    mp3Icon.setImageResource(i21);
                     url2 = "https://docs.google.com/uc?export=download&id=0B7NezlAJoyHJZU9GaG16ajNLUnc";
                     url = url2;
 
@@ -506,6 +531,7 @@ public class MusicActivity extends ActionBarActivity {
                     timeStart = mediaPlayer.getCurrentPosition();
                     seekBar.setProgress((int) timeStart);
                     durationHandler.postDelayed(updateSeekBarTime, 100);
+                    mp3Icon.setImageResource(i22);
                     url2 = "https://docs.google.com/uc?export=download&id=0B7NezlAJoyHJc09wNDRwT2pNQjQ";
                     url = url2;
 
@@ -518,6 +544,7 @@ public class MusicActivity extends ActionBarActivity {
                     timeStart = mediaPlayer.getCurrentPosition();
                     seekBar.setProgress((int) timeStart);
                     durationHandler.postDelayed(updateSeekBarTime, 100);
+                    mp3Icon.setImageResource(i23);
                     url2 = "https://docs.google.com/uc?export=download&id=0B7NezlAJoyHJVnE0VHBscXg5NzQ";
                     url = url2;
                     break;
@@ -529,6 +556,7 @@ public class MusicActivity extends ActionBarActivity {
                     timeStart = mediaPlayer.getCurrentPosition();
                     seekBar.setProgress((int) timeStart);
                     durationHandler.postDelayed(updateSeekBarTime, 100);
+                    mp3Icon.setImageResource(i24);
                     url2 = "https://docs.google.com/uc?export=download&id=0B7NezlAJoyHJQzN1SHhpWHd1c2s";
                     url = url2;
                     break;
@@ -540,6 +568,7 @@ public class MusicActivity extends ActionBarActivity {
                     timeStart = mediaPlayer.getCurrentPosition();
                     seekBar.setProgress((int) timeStart);
                     durationHandler.postDelayed(updateSeekBarTime, 100);
+                    mp3Icon.setImageResource(i25);
                     url2 = "https://docs.google.com/uc?export=download&id=0B7NezlAJoyHJMzN4NUUxMjJGOVk";
                     url = url2;
                     break;
@@ -551,6 +580,7 @@ public class MusicActivity extends ActionBarActivity {
                     timeStart = mediaPlayer.getCurrentPosition();
                     seekBar.setProgress((int) timeStart);
                     durationHandler.postDelayed(updateSeekBarTime, 100);
+                    mp3Icon.setImageResource(i26);
                     url2 = "https://docs.google.com/uc?export=download&id=0B7NezlAJoyHJblg3Vm1QckZEdjQ";
                     url = url2;
                     break;
@@ -562,6 +592,7 @@ public class MusicActivity extends ActionBarActivity {
                     timeStart = mediaPlayer.getCurrentPosition();
                     seekBar.setProgress((int) timeStart);
                     durationHandler.postDelayed(updateSeekBarTime, 100);
+                    mp3Icon.setImageResource(i27);
                     url2 = "https://docs.google.com/uc?export=download&id=0B7NezlAJoyHJOXY1YjkxZFFGbVk";
                     url = url2;
                     break;
@@ -573,6 +604,7 @@ public class MusicActivity extends ActionBarActivity {
                     timeStart = mediaPlayer.getCurrentPosition();
                     seekBar.setProgress((int) timeStart);
                     durationHandler.postDelayed(updateSeekBarTime, 100);
+                    mp3Icon.setImageResource(i28);
                     url2 = "https://docs.google.com/uc?export=download&id=0B7NezlAJoyHJRXJmUTRoRjlKdG8";
                     url = url2;
                     break;
@@ -585,6 +617,7 @@ public class MusicActivity extends ActionBarActivity {
                     timeStart = mediaPlayer.getCurrentPosition();
                     seekBar.setProgress((int) timeStart);
                     durationHandler.postDelayed(updateSeekBarTime, 100);
+                    mp3Icon.setImageResource(i30);
                     url2 = "https://docs.google.com/uc?export=download&id=0B7NezlAJoyHJLTdOcW1jZjdUXzQ";
                     url = url2;
                     break;
@@ -597,6 +630,7 @@ public class MusicActivity extends ActionBarActivity {
                     seekBar.setProgress((int) timeStart);
                     durationHandler.postDelayed(updateSeekBarTime, 100);
                     url2 = "http://www.worldofwarcraft.com";
+                    mp3Icon.setImageResource(i30);
                     url = url2;
                     break;
 
