@@ -37,6 +37,11 @@
             android:icon="@drawable/ic_menu_send"
             android:title="WoW Media"
             android:onClick="clickingMedia"/>
+        <item
+            android:id="@+id/nav_chooser"
+            android:icon="@drawable/ic_menu_send"
+            android:title="Character Helper"
+            android:onClick="clickingChooser"/>
 
     </group>
 

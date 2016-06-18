@@ -8,4 +8,6 @@
     <string name="action_settings">Settings</string>
     <string name="search_hint_bosses">Search for bosses</string>
     <string name="send_intent_title">Share url</string>
+    <string name="title_activity_hordeor_alliance">HordeorAllianceActivity</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 </resources>

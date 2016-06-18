@@ -128,4 +128,9 @@ public class NavD extends AppCompatActivity
         Intent intent = new Intent(NavD.this, MediaAcitvity.class);
         startActivity(intent);
     }
+
+    public void clickingChooser(MenuItem item) {
+        Intent intent = new Intent(NavD.this, HordeorAllianceActivity.class);
+        startActivity(intent);
+    }
 }
