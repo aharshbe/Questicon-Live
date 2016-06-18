@@ -36,13 +36,13 @@ public class MusicActivity extends ActionBarActivity {
     private double timeStart = 0, finalTime = 0;
     private int forwardTime = 2000, backwardTime = 2000;
     private Handler durationHandler = new Handler();
-    final int mySong[] = {0, 0, R.raw.song1, R.raw.song2,R.raw.song3, R.raw.song4,
-            R.raw.song5, R.raw.song6,R.raw.song7, R.raw.song8,
-            R.raw.song9, R.raw.song10,R.raw.song11, R.raw.song12,
-            R.raw.song13, R.raw.song14,R.raw.song15, R.raw.song16,
-            R.raw.song17, R.raw.song18,R.raw.song19, R.raw.song20,
-            R.raw.song21, R.raw.song22,R.raw.song23, R.raw.song24,
-            R.raw.song25, R.raw.song26,R.raw.song27, R.raw.song28,
+    final int mySong[] = {0, 0, R.raw.song1, R.raw.song2, R.raw.song3, R.raw.song4,
+            R.raw.song5, R.raw.song6, R.raw.song7, R.raw.song8,
+            R.raw.song9, R.raw.song10, R.raw.song11, R.raw.song12,
+            R.raw.song13, R.raw.song14, R.raw.song15, R.raw.song16,
+            R.raw.song17, R.raw.song18, R.raw.song19, R.raw.song20,
+            R.raw.song21, R.raw.song22, R.raw.song23, R.raw.song24,
+            R.raw.song25, R.raw.song26, R.raw.song27, R.raw.song28,
             R.raw.song29, R.raw.song30};
     int currentSongIndex = 0;
 
@@ -184,11 +184,9 @@ public class MusicActivity extends ActionBarActivity {
     public class CustomOnItemSelectedListener implements AdapterView.OnItemSelectedListener {
 
         public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-            Toast.makeText(parent.getContext(),
-                    "OnItemSelectedListener : " + parent.getItemAtPosition(pos).toString(),
-                    Toast.LENGTH_SHORT).show();
 
-            switch (pos){
+
+            switch (pos) {
                 case 0:
                     mediaPlayer.stop();
                     mediaPlayer.reset();
@@ -201,7 +199,6 @@ public class MusicActivity extends ActionBarActivity {
                     mediaPlayer.release();
                     mediaPlayer = MediaPlayer.create(MusicActivity.this, mySong[2]);
                 case 2:
-                    Toast.makeText(MusicActivity.this, "Media Player for song: " + parent.getItemAtPosition(pos).toString() + "created.", Toast.LENGTH_SHORT).show();
                     mediaPlayer.stop();
                     mediaPlayer.reset();
                     mediaPlayer.release();
@@ -214,7 +211,6 @@ public class MusicActivity extends ActionBarActivity {
 
                     break;
                 case 3:
-                    Toast.makeText(MusicActivity.this, "Media Player for song: " + parent.getItemAtPosition(pos).toString() + "created.", Toast.LENGTH_SHORT).show();
                     mediaPlayer.stop();
                     mediaPlayer.reset();
                     mediaPlayer.release();
@@ -227,7 +223,6 @@ public class MusicActivity extends ActionBarActivity {
 
                     break;
                 case 4:
-                    Toast.makeText(MusicActivity.this, "Media Player for song: " + parent.getItemAtPosition(pos).toString() + "created.", Toast.LENGTH_SHORT).show();
                     mediaPlayer.stop();
                     mediaPlayer.reset();
                     mediaPlayer.release();
@@ -239,7 +234,6 @@ public class MusicActivity extends ActionBarActivity {
                     url = url2;
                     break;
                 case 5:
-                    Toast.makeText(MusicActivity.this, "Media Player for song: " + parent.getItemAtPosition(pos).toString() + "created.", Toast.LENGTH_SHORT).show();
                     mediaPlayer.stop();
                     mediaPlayer.reset();
                     mediaPlayer.release();
@@ -251,7 +245,6 @@ public class MusicActivity extends ActionBarActivity {
                     url = url2;
                     break;
                 case 6:
-                    Toast.makeText(MusicActivity.this, "Media Player for song: " + parent.getItemAtPosition(pos).toString() + "created.", Toast.LENGTH_SHORT).show();
                     mediaPlayer.stop();
                     mediaPlayer.reset();
                     mediaPlayer.release();
@@ -263,7 +256,6 @@ public class MusicActivity extends ActionBarActivity {
                     url = url2;
                     break;
                 case 7:
-                    Toast.makeText(MusicActivity.this, "Media Player for song: " + parent.getItemAtPosition(pos).toString() + "created.", Toast.LENGTH_SHORT).show();
                     mediaPlayer.stop();
                     mediaPlayer.reset();
                     mediaPlayer.release();
@@ -275,7 +267,6 @@ public class MusicActivity extends ActionBarActivity {
                     url = url2;
                     break;
                 case 8:
-                    Toast.makeText(MusicActivity.this, "Media Player for song: " + parent.getItemAtPosition(pos).toString() + "created.", Toast.LENGTH_SHORT).show();
                     mediaPlayer.stop();
                     mediaPlayer.reset();
                     mediaPlayer.release();
@@ -287,7 +278,6 @@ public class MusicActivity extends ActionBarActivity {
                     url = url2;
                     break;
                 case 9:
-                    Toast.makeText(MusicActivity.this, "Media Player for song: " + parent.getItemAtPosition(pos).toString() + "created.", Toast.LENGTH_SHORT).show();
                     mediaPlayer.stop();
                     mediaPlayer.reset();
                     mediaPlayer.release();
@@ -299,7 +289,6 @@ public class MusicActivity extends ActionBarActivity {
                     url = url2;
                     break;
                 case 10:
-                    Toast.makeText(MusicActivity.this, "Media Player for song: " + parent.getItemAtPosition(pos).toString() + "created.", Toast.LENGTH_SHORT).show();
                     mediaPlayer.stop();
                     mediaPlayer.reset();
                     mediaPlayer.release();
@@ -311,7 +300,6 @@ public class MusicActivity extends ActionBarActivity {
                     url = url2;
                     break;
                 case 11:
-                    Toast.makeText(MusicActivity.this, "Media Player for song: " + parent.getItemAtPosition(pos).toString() + "created.", Toast.LENGTH_SHORT).show();
                     mediaPlayer.stop();
                     mediaPlayer.reset();
                     mediaPlayer.release();
@@ -323,7 +311,6 @@ public class MusicActivity extends ActionBarActivity {
                     url = url2;
                     break;
                 case 12:
-                    Toast.makeText(MusicActivity.this, "Media Player for song: " + parent.getItemAtPosition(pos).toString() + "created.", Toast.LENGTH_SHORT).show();
                     mediaPlayer.stop();
                     mediaPlayer.reset();
                     mediaPlayer.release();
@@ -335,7 +322,6 @@ public class MusicActivity extends ActionBarActivity {
                     url = url2;
                     break;
                 case 13:
-                    Toast.makeText(MusicActivity.this, "Media Player for song: " + parent.getItemAtPosition(pos).toString() + "created.", Toast.LENGTH_SHORT).show();
                     mediaPlayer.stop();
                     mediaPlayer.reset();
                     mediaPlayer.release();
@@ -347,7 +333,6 @@ public class MusicActivity extends ActionBarActivity {
                     url = url2;
                     break;
                 case 14:
-                    Toast.makeText(MusicActivity.this, "Media Player for song: " + parent.getItemAtPosition(pos).toString() + "created.", Toast.LENGTH_SHORT).show();
                     mediaPlayer.stop();
                     mediaPlayer.reset();
                     mediaPlayer.release();
@@ -360,7 +345,6 @@ public class MusicActivity extends ActionBarActivity {
 
                     break;
                 case 15:
-                    Toast.makeText(MusicActivity.this, "Media Player for song: " + parent.getItemAtPosition(pos).toString() + "created.", Toast.LENGTH_SHORT).show();
                     mediaPlayer.stop();
                     mediaPlayer.reset();
                     mediaPlayer.release();
@@ -372,7 +356,6 @@ public class MusicActivity extends ActionBarActivity {
                     url = url2;
                     break;
                 case 16:
-                    Toast.makeText(MusicActivity.this, "Media Player for song: " + parent.getItemAtPosition(pos).toString() + "created.", Toast.LENGTH_SHORT).show();
                     mediaPlayer.stop();
                     mediaPlayer.reset();
                     mediaPlayer.release();
@@ -384,7 +367,6 @@ public class MusicActivity extends ActionBarActivity {
                     url = url2;
                     break;
                 case 17:
-                    Toast.makeText(MusicActivity.this, "Media Player for song: " + parent.getItemAtPosition(pos).toString() + "created.", Toast.LENGTH_SHORT).show();
                     mediaPlayer.stop();
                     mediaPlayer.reset();
                     mediaPlayer.release();
@@ -396,7 +378,6 @@ public class MusicActivity extends ActionBarActivity {
                     url = url2;
                     break;
                 case 18:
-                    Toast.makeText(MusicActivity.this, "Media Player for song: " + parent.getItemAtPosition(pos).toString() + "created.", Toast.LENGTH_SHORT).show();
                     mediaPlayer.stop();
                     mediaPlayer.reset();
                     mediaPlayer.release();
@@ -408,7 +389,6 @@ public class MusicActivity extends ActionBarActivity {
                     url = url2;
                     break;
                 case 19:
-                    Toast.makeText(MusicActivity.this, "Media Player for song: " + parent.getItemAtPosition(pos).toString() + "created.", Toast.LENGTH_SHORT).show();
                     mediaPlayer.stop();
                     mediaPlayer.reset();
                     mediaPlayer.release();
@@ -420,7 +400,6 @@ public class MusicActivity extends ActionBarActivity {
                     url = url2;
                     break;
                 case 20:
-                    Toast.makeText(MusicActivity.this, "Media Player for song: " + parent.getItemAtPosition(pos).toString() + "created.", Toast.LENGTH_SHORT).show();
                     mediaPlayer.stop();
                     mediaPlayer.reset();
                     mediaPlayer.release();
@@ -432,7 +411,6 @@ public class MusicActivity extends ActionBarActivity {
                     url = url2;
                     break;
                 case 21:
-                    Toast.makeText(MusicActivity.this, "Media Player for song: " + parent.getItemAtPosition(pos).toString() + "created.", Toast.LENGTH_SHORT).show();
                     mediaPlayer.stop();
                     mediaPlayer.reset();
                     mediaPlayer.release();
@@ -444,7 +422,6 @@ public class MusicActivity extends ActionBarActivity {
                     url = url2;
                     break;
                 case 22:
-                    Toast.makeText(MusicActivity.this, "Media Player for song: " + parent.getItemAtPosition(pos).toString() + "created.", Toast.LENGTH_SHORT).show();
                     mediaPlayer.stop();
                     mediaPlayer.reset();
                     mediaPlayer.release();
@@ -456,7 +433,6 @@ public class MusicActivity extends ActionBarActivity {
                     url = url2;
                     break;
                 case 23:
-                    Toast.makeText(MusicActivity.this, "Media Player for song: " + parent.getItemAtPosition(pos).toString() + "created.", Toast.LENGTH_SHORT).show();
                     mediaPlayer.stop();
                     mediaPlayer.reset();
                     mediaPlayer.release();
@@ -469,7 +445,6 @@ public class MusicActivity extends ActionBarActivity {
 
                     break;
                 case 24:
-                    Toast.makeText(MusicActivity.this, "Media Player for song: " + parent.getItemAtPosition(pos).toString() + "created.", Toast.LENGTH_SHORT).show();
                     mediaPlayer.stop();
                     mediaPlayer.reset();
                     mediaPlayer.release();
@@ -482,7 +457,6 @@ public class MusicActivity extends ActionBarActivity {
 
                     break;
                 case 25:
-                    Toast.makeText(MusicActivity.this, "Media Player for song: " + parent.getItemAtPosition(pos).toString() + "created.", Toast.LENGTH_SHORT).show();
                     mediaPlayer.stop();
                     mediaPlayer.reset();
                     mediaPlayer.release();
@@ -495,7 +469,6 @@ public class MusicActivity extends ActionBarActivity {
 
                     break;
                 case 26:
-                    Toast.makeText(MusicActivity.this, "Media Player for song: " + parent.getItemAtPosition(pos).toString() + "created.", Toast.LENGTH_SHORT).show();
                     mediaPlayer.stop();
                     mediaPlayer.reset();
                     mediaPlayer.release();
@@ -507,7 +480,6 @@ public class MusicActivity extends ActionBarActivity {
                     url = url2;
                     break;
                 case 27:
-                    Toast.makeText(MusicActivity.this, "Media Player for song: " + parent.getItemAtPosition(pos).toString() + "created.", Toast.LENGTH_SHORT).show();
                     mediaPlayer.stop();
                     mediaPlayer.reset();
                     mediaPlayer.release();
@@ -519,7 +491,6 @@ public class MusicActivity extends ActionBarActivity {
                     url = url2;
                     break;
                 case 28:
-                    Toast.makeText(MusicActivity.this, "Media Player for song: " + parent.getItemAtPosition(pos).toString() + "created.", Toast.LENGTH_SHORT).show();
                     mediaPlayer.stop();
                     mediaPlayer.reset();
                     mediaPlayer.release();
@@ -531,7 +502,6 @@ public class MusicActivity extends ActionBarActivity {
                     url = url2;
                     break;
                 case 29:
-                    Toast.makeText(MusicActivity.this, "Media Player for song: " + parent.getItemAtPosition(pos).toString() + "created.", Toast.LENGTH_SHORT).show();
                     mediaPlayer.stop();
                     mediaPlayer.reset();
                     mediaPlayer.release();
@@ -543,7 +513,6 @@ public class MusicActivity extends ActionBarActivity {
                     url = url2;
                     break;
                 case 30:
-                    Toast.makeText(MusicActivity.this, "Media Player for song: " + parent.getItemAtPosition(pos).toString() + "created.", Toast.LENGTH_SHORT).show();
                     mediaPlayer.stop();
                     mediaPlayer.reset();
                     mediaPlayer.release();
@@ -555,7 +524,6 @@ public class MusicActivity extends ActionBarActivity {
                     url = url2;
                     break;
                 case 31:
-                    Toast.makeText(MusicActivity.this, "Media Player for song: " + parent.getItemAtPosition(pos).toString() + "created.", Toast.LENGTH_SHORT).show();
                     mediaPlayer.stop();
                     mediaPlayer.reset();
                     mediaPlayer.release();
@@ -567,7 +535,6 @@ public class MusicActivity extends ActionBarActivity {
                     url = url2;
                     break;
                 case 32:
-                    Toast.makeText(MusicActivity.this, "Media Player for song: " + parent.getItemAtPosition(pos).toString() + "created.", Toast.LENGTH_SHORT).show();
                     mediaPlayer.stop();
                     mediaPlayer.reset();
                     mediaPlayer.release();
