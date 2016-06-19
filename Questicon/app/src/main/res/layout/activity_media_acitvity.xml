@@ -3,26 +3,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.notexample.austin.questicon.MediaAcitvity">
+    tools:context="com.notexample.austin.questicon.MediaAcitvity"
+    android:background="#eebe00">
 
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
         android:text="Wallpapers"
+        android:textSize="50sp"
+        android:fontFamily="cursive"
+        android:textColor="#70eebe00"
         android:onClick="clickingWallpapers"
         android:id="@+id/tvWallpapers"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="106dp" />
+        android:background="@drawable/wallpaperhd" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:text="Music"
         android:onClick="clickingMusic"
+        android:fontFamily="cursive"
         android:id="@+id/tvMusic"
-        android:layout_below="@+id/tvWallpapers"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="65dp" />
+        android:background="@drawable/soundtrack"
+        android:textColor="#70eebe00"
+        android:textSize="50sp"
+        android:layout_below="@+id/tvWallpapers" />
 </RelativeLayout>

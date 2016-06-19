@@ -15,7 +15,8 @@
         android:layout_height="3dp"
         android:layout_above="@+id/gallery_relative_layout"
         android:layout_marginTop="300dp"
-        android:background="@color/colorAccent" />
+        android:background="@color/colorAccent"
+        android:id="@+id/view" />
 
     <RelativeLayout
         android:id="@+id/gallery_relative_layout"
@@ -147,7 +148,7 @@
                     android:layout_height="150dp"
                     android:layout_marginLeft="5dp"
                     android:onClick="biggerView"
-                    android:src="@drawable/i1" />
+                    android:src="@drawable/album" />
 
                 <ImageView
                     android:id="@+id/image15"
@@ -155,7 +156,7 @@
                     android:layout_height="150dp"
                     android:layout_marginLeft="5dp"
                     android:onClick="biggerView"
-                    android:src="@drawable/i2" />
+                    android:src="@drawable/alliancecrest" />
 
                 <ImageView
                     android:id="@+id/image16"
@@ -163,7 +164,7 @@
                     android:layout_height="150dp"
                     android:layout_marginLeft="5dp"
                     android:onClick="biggerView"
-                    android:src="@drawable/i3" />
+                    android:src="@drawable/hordecrest" />
 
                 <ImageView
                     android:id="@+id/image17"
@@ -171,7 +172,7 @@
                     android:layout_height="150dp"
                     android:layout_marginLeft="5dp"
                     android:onClick="biggerView"
-                    android:src="@drawable/i4" />
+                    android:src="@drawable/wow1" />
 
                 <ImageView
                     android:id="@+id/image18"
@@ -179,7 +180,7 @@
                     android:layout_height="150dp"
                     android:layout_marginLeft="5dp"
                     android:onClick="biggerView"
-                    android:src="@drawable/i5" />
+                    android:src="@drawable/wow2" />
 
                 <ImageView
                     android:id="@+id/image19"
@@ -187,7 +188,7 @@
                     android:layout_height="150dp"
                     android:layout_marginLeft="5dp"
                     android:onClick="biggerView"
-                    android:src="@drawable/i6" />
+                    android:src="@drawable/wow3" />
 
                 <ImageView
                     android:id="@+id/image20"
@@ -195,7 +196,7 @@
                     android:layout_height="150dp"
                     android:layout_marginLeft="5dp"
                     android:onClick="biggerView"
-                    android:src="@drawable/i8" />
+                    android:src="@drawable/wow4" />
 
                 <ImageView
                     android:id="@+id/image21"
@@ -263,4 +264,12 @@
             </LinearLayout>
         </HorizontalScrollView>
     </RelativeLayout>
+
+    <Button
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@android:drawable/ic_menu_save"
+        android:id="@+id/buttonSavewallaper"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>

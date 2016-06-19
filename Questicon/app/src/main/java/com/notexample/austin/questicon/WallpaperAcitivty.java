@@ -13,6 +13,11 @@ public class WallpaperAcitivty extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wallpaper_acitivty);
+
+        im=(ImageView)findViewById(R.id.selected);
+        im.setImageResource(R.drawable.wallpaperhd);
+
+
     }
 
 
@@ -48,19 +53,19 @@ public class WallpaperAcitivty extends AppCompatActivity {
                 break;
             case R.id.image13: im.setImageResource(R.drawable.w13);
                 break;
-            case R.id.image14: im.setImageResource(R.drawable.i1);
+            case R.id.image14: im.setImageResource(R.drawable.album);
                 break;
-            case R.id.image15: im.setImageResource(R.drawable.i2);
+            case R.id.image15: im.setImageResource(R.drawable.alliancecrest);
                 break;
-            case R.id.image16: im.setImageResource(R.drawable.i3);
+            case R.id.image16: im.setImageResource(R.drawable.hordecrest);
                 break;
-            case R.id.image17: im.setImageResource(R.drawable.i4);
+            case R.id.image17: im.setImageResource(R.drawable.wow1);
                 break;
-            case R.id.image18: im.setImageResource(R.drawable.i5);
+            case R.id.image18: im.setImageResource(R.drawable.wow2);
                 break;
-            case R.id.image19: im.setImageResource(R.drawable.i6);
+            case R.id.image19: im.setImageResource(R.drawable.wow3);
                 break;
-            case R.id.image20: im.setImageResource(R.drawable.i8);
+            case R.id.image20: im.setImageResource(R.drawable.wow4);
                 break;
             case R.id.image21: im.setImageResource(R.drawable.i9);
                 break;
@@ -78,6 +83,8 @@ public class WallpaperAcitivty extends AppCompatActivity {
                 break;
             case R.id.image28: im.setImageResource(R.drawable.i16);
                 break;
+            default:
+                im.setImageResource(R.drawable.wallpaperhd);
 
 
         }

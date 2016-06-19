@@ -68,7 +68,6 @@
         <activity
             android:name=".MusicActivity"
             android:label="Music" />
-        <activity android:name=".SongListAcitivty" />
         <activity
             android:name=".HordeorAllianceActivity"
             android:label="Character Chooser" />
