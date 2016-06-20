@@ -303,4 +303,52 @@ public class HordeSelectActivity extends AppCompatActivity {
         AlertDialog alert11 = builder1.create();
         alert11.show();
     }
+
+    public void clickingFrameUndead(View view) {
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
+        builder1.setIcon(R.mipmap.ic_undeadicon);
+        builder1.setTitle("Undead: The Forsaken");
+        builder1.setMessage("Death offered no escape for the scores of humans killed during the Lich King’s campaign to scour the living from Lordaeron. Instead, the kingdom’s fallen were risen into undeath as Scourge minions and forced to wage an unholy war against everything… and everyone… that they once held dear.");
+        builder1.setCancelable(true);
+
+        builder1.setPositiveButton(
+                "Select Undead",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent intent = new Intent(HordeSelectActivity.this, HordeSelectActivity.class);
+                        startActivity(intent);
+
+
+                        return;
+                    }
+                });
+
+        builder1.setNegativeButton(
+                "Further info",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW);
+                        browserIntent.setData(Uri.parse("http://us.battle.net/wow/en/game/race/undead"));
+                        startActivity(browserIntent);
+
+                        return;
+                    }
+                });
+
+        builder1.setNeutralButton(
+                "Undead Video",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW);
+                        browserIntent.setData(Uri.parse("https://www.youtube.com/watch?v=F9NtgU5Y7NE"));
+                        startActivity(browserIntent);
+
+                        return;
+                    }
+                });
+
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
+    }
 }

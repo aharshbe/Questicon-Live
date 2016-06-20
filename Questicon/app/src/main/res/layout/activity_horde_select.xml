@@ -228,7 +228,8 @@
             android:layout_height="match_parent"
             android:layout_below="@+id/framtroll"
             android:layout_marginTop="10dp"
-            android:background="#45A52A2A">
+            android:background="#45A52A2A"
+            android:onClick="clickingFrameUndead">
 
             <TextView
                 android:id="@+id/undead"
