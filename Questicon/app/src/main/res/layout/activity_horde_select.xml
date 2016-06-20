@@ -157,7 +157,8 @@
             android:layout_height="match_parent"
             android:layout_below="@+id/frameorc"
             android:layout_marginTop="10dp"
-            android:background="#45A52A2A">
+            android:background="#45A52A2A"
+            android:onClick="clickingFrameTauren">
 
             <TextView
                 android:id="@+id/Tauren"
@@ -191,7 +192,8 @@
             android:layout_height="match_parent"
             android:layout_below="@+id/frameTauren"
             android:layout_marginTop="10dp"
-            android:background="#45000000">
+            android:background="#45000000"
+            android:onClick="clickingFrameTroll">
 
             <TextView
                 android:id="@+id/Troll"

@@ -208,4 +208,99 @@ public class HordeSelectActivity extends AppCompatActivity {
         alert11.show();
     }
 
+    public void clickingFrameTauren(View view) {
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
+        builder1.setIcon(R.mipmap.ic_taurencrest);
+        builder1.setTitle("Turen: The Tranquil");
+        builder1.setMessage("The peaceful tauren—known in their own tongue as the shu’halo—have long dwelled in Kalimdor, striving to preserve the balance of nature at the behest of their goddess, the Earth Mother. Until recently, the tauren lived as nomads scattered throughout the Barrens, hunting the great kodo beasts native to the arid region.");
+        builder1.setCancelable(true);
+
+        builder1.setPositiveButton(
+                "Select Tauren",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent intent = new Intent(HordeSelectActivity.this, HordeSelectActivity.class);
+                        startActivity(intent);
+
+
+                        return;
+                    }
+                });
+
+        builder1.setNegativeButton(
+                "Further info",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW);
+                        browserIntent.setData(Uri.parse("http://us.battle.net/wow/en/game/race/tauren"));
+                        startActivity(browserIntent);
+
+                        return;
+                    }
+                });
+
+        builder1.setNeutralButton(
+                "Tauren Video",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW);
+                        browserIntent.setData(Uri.parse("https://www.youtube.com/watch?v=JftJjAvUWcE"));
+                        startActivity(browserIntent);
+
+                        return;
+                    }
+                });
+
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
+    }
+
+    public void clickingFrameTroll(View view) {
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
+        builder1.setIcon(R.mipmap.ic_trollcresticon);
+        builder1.setTitle("Troll: The Islanders");
+        builder1.setMessage("The savage trolls of Azeroth are infamous for their cruelty, dark mysticism, and seething hatred for all other races. Yet one exception among the trolls is the Darkspear tribe and its cunning leader, Vol’jin. Plagued by a history of subservience and exile, this proud tribe was on the brink of extinction when Warchief Thrall and his mighty Horde forces were driven to the trolls’ remote island home in the South Seas during a violent storm.");
+        builder1.setCancelable(true);
+
+        builder1.setPositiveButton(
+                "Select Troll",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent intent = new Intent(HordeSelectActivity.this, HordeSelectActivity.class);
+                        startActivity(intent);
+
+
+                        return;
+                    }
+                });
+
+        builder1.setNegativeButton(
+                "Further info",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW);
+                        browserIntent.setData(Uri.parse("http://us.battle.net/wow/en/game/race/troll"));
+                        startActivity(browserIntent);
+
+                        return;
+                    }
+                });
+
+        builder1.setNeutralButton(
+                "Troll Video",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW);
+                        browserIntent.setData(Uri.parse("https://www.youtube.com/watch?v=35J2dHUDrvM"));
+                        startActivity(browserIntent);
+
+                        return;
+                    }
+                });
+
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
+    }
 }
