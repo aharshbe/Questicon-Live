@@ -15,7 +15,8 @@
             android:id="@+id/framepandarin"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#45A52A2A">
+            android:background="#45A52A2A"
+            android:onClick="clickingFramePandarinHorde">
 
             <TextView
                 android:id="@+id/PandarenHorde"
@@ -50,7 +51,8 @@
             android:layout_height="match_parent"
             android:layout_below="@+id/framepandarin"
             android:layout_marginTop="10dp"
-            android:background="#45000000">
+            android:background="#45000000"
+            android:onClick="clickingFrameGoblin">
 
             <TextView
                 android:id="@+id/Golbin"
