@@ -162,4 +162,145 @@ public class AllianceSelectActivity extends AppCompatActivity {
         AlertDialog alert11 = builder1.create();
         alert11.show();
     }
+
+    public void clickingFrameDwarf(View view) {
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
+        builder1.setIcon(R.mipmap.ic_dwarficon);
+        builder1.setTitle("Dwarf: The Bold");
+        builder1.setMessage("The bold and courageous dwarves are an ancient race descended from the earthen—beings of living stone created by the titans when the world was young. Due to a strange malady known as the curse of flesh, the dwarves’ earthen progenitors underwent a transformation that turned their rocky hides into soft skin. Ultimately, these creatures of flesh and blood dubbed themselves dwarves and carved out the mighty city of Ironforge in the snowy peaks of Khaz Modan.");
+
+        builder1.setPositiveButton(
+                "Select Dwarf",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent intent = new Intent(AllianceSelectActivity.this, AllianceSelectActivity.class);
+                        startActivity(intent);
+
+
+                        return;
+                    }
+                });
+
+        builder1.setNegativeButton(
+                "Further info",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW);
+                        browserIntent.setData(Uri.parse("http://us.battle.net/wow/en/game/race/dwarf"));
+                        startActivity(browserIntent);
+
+                        return;
+                    }
+                });
+
+        builder1.setNeutralButton(
+                "Dwarf Video",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW);
+                        browserIntent.setData(Uri.parse("https://www.youtube.com/watch?v=QorR7yB3g0E"));
+                        startActivity(browserIntent);
+
+                        return;
+                    }
+                });
+
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
+    }
+
+    public void clickingFramGnome(View view) {
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
+        builder1.setIcon(R.mipmap.ic_gnomeicon);
+        builder1.setTitle("Gnome: The Clever");
+        builder1.setMessage("The clever, spunky, and oftentimes eccentric gnomes present a unique paradox among the civilized races of Azeroth. Brilliant inventors with an irrepressibly cheerful disposition, this race has suffered treachery, displacement, and near-genocide. It is their remarkable optimism in the face of such calamity that symbolizes the truly unshakable spirit of the gnomes.");
+
+        builder1.setPositiveButton(
+                "Select Gnome",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent intent = new Intent(AllianceSelectActivity.this, AllianceSelectActivity.class);
+                        startActivity(intent);
+
+
+                        return;
+                    }
+                });
+
+        builder1.setNegativeButton(
+                "Further info",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW);
+                        browserIntent.setData(Uri.parse("http://us.battle.net/wow/en/game/race/gnome"));
+                        startActivity(browserIntent);
+
+                        return;
+                    }
+                });
+
+        builder1.setNeutralButton(
+                "Gnome Video",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW);
+                        browserIntent.setData(Uri.parse("https://www.youtube.com/watch?v=yB6SxWVdkpw"));
+                        startActivity(browserIntent);
+
+                        return;
+                    }
+                });
+
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
+    }
+
+    public void clickingFrameHuman(View view) {
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
+        builder1.setIcon(R.mipmap.ic_humanicon);
+        builder1.setTitle("Human: The Resilient");
+        builder1.setMessage("Recent discoveries have shown that humans are descended from the barbaric vrykul, half-giant warriors who live in Northrend. Early humans were primarily a scattered and tribal people for several millennia, until the rising strength of the troll empire forced their strategic unification. Thus the nation of Arathor was formed, along with its capital, the city-state of Strom.");
+
+        builder1.setPositiveButton(
+                "Select Human",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent intent = new Intent(AllianceSelectActivity.this, AllianceSelectActivity.class);
+                        startActivity(intent);
+
+
+                        return;
+                    }
+                });
+
+        builder1.setNegativeButton(
+                "Further info",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW);
+                        browserIntent.setData(Uri.parse("http://us.battle.net/wow/en/game/race/human"));
+                        startActivity(browserIntent);
+
+                        return;
+                    }
+                });
+
+        builder1.setNeutralButton(
+                "Human Video",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW);
+                        browserIntent.setData(Uri.parse("https://www.youtube.com/watch?v=J3wbr-kCWkY"));
+                        startActivity(browserIntent);
+
+                        return;
+                    }
+                });
+
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
+    }
 }

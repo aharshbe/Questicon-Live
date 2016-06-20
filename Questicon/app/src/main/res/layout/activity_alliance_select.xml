@@ -121,7 +121,8 @@
             android:layout_height="match_parent"
             android:layout_below="@+id/framedraeni"
             android:layout_marginTop="10dp"
-            android:background="#45eebe00">
+            android:background="#45eebe00"
+            android:onClick="clickingFrameDwarf">
 
             <TextView
                 android:id="@+id/Dwarf"
@@ -156,7 +157,8 @@
             android:layout_height="match_parent"
             android:layout_below="@+id/framedwarf"
             android:layout_marginTop="10dp"
-            android:background="#456495ED">
+            android:background="#456495ED"
+            android:onClick="clickingFramGnome">
 
             <TextView
                 android:id="@+id/Gnome"
@@ -190,7 +192,8 @@
             android:layout_height="match_parent"
             android:layout_below="@+id/framegnome"
             android:layout_marginTop="10dp"
-            android:background="#45eebe00">
+            android:background="#45eebe00"
+            android:onClick="clickingFrameHuman">
 
             <TextView
                 android:id="@+id/Human"
