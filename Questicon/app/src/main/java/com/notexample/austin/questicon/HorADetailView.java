@@ -44,10 +44,22 @@ public class HorADetailView extends AppCompatActivity {
         builder1.setCancelable(true);
 
         builder1.setPositiveButton(
-                "Okay",
+                "Still reading...",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         dialog.cancel();
+
+
+                        return;
+                    }
+                });
+
+        builder1.setNegativeButton(
+                "I choose The Alliance!",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent intent = new Intent(HorADetailView.this, AllianceSelectActivity.class);
+                        startActivity(intent);
 
 
                         return;
@@ -66,10 +78,21 @@ public class HorADetailView extends AppCompatActivity {
         builder1.setCancelable(true);
 
         builder1.setPositiveButton(
-                "Okay",
+                "Still reading...",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         dialog.cancel();
+
+
+                        return;
+                    }
+                });
+        builder1.setNegativeButton(
+                "I choose The Horde!",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent intent = new Intent(HorADetailView.this, HordeSelectActivity.class);
+                        startActivity(intent);
 
 
                         return;

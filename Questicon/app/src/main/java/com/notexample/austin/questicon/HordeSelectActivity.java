@@ -311,6 +311,7 @@ public class HordeSelectActivity extends AppCompatActivity {
         builder1.setMessage("Death offered no escape for the scores of humans killed during the Lich King’s campaign to scour the living from Lordaeron. Instead, the kingdom’s fallen were risen into undeath as Scourge minions and forced to wage an unholy war against everything… and everyone… that they once held dear.");
         builder1.setCancelable(true);
 
+
         builder1.setPositiveButton(
                 "Select Undead",
                 new DialogInterface.OnClickListener() {
