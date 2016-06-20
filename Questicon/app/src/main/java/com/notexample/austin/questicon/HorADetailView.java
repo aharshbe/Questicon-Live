@@ -3,6 +3,7 @@ package com.notexample.austin.questicon;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.annotation.StringRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -69,6 +70,7 @@ public class HorADetailView extends AppCompatActivity {
         AlertDialog alert11 = builder1.create();
         alert11.show();
     }
+
     public void HordeInfoDialogue() {
         AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
         builder1.setIcon(R.mipmap.ic_hordecresticon);
@@ -92,6 +94,8 @@ public class HorADetailView extends AppCompatActivity {
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         Intent intent = new Intent(HorADetailView.this, HordeSelectActivity.class);
+                        MediaPlayer mediaPlayer = MediaPlayer.create(HorADetailView.this, R.raw.glorytothehorde );
+                        mediaPlayer.start();
                         startActivity(intent);
 
 
