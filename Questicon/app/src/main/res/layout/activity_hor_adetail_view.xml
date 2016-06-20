@@ -25,7 +25,7 @@
         android:layout_width="150dp"
         android:layout_height="230dp"
         android:onClick="clickingHordeSelect"
-        android:background="@drawable/hordecrest"
+        android:background="@drawable/hordecresticon"
         android:layout_centerVertical="true"
         android:layout_alignParentStart="true" />
 
@@ -34,7 +34,7 @@
         android:layout_width="150dp"
         android:layout_height="220dp"
         android:onClick="clickingAllianceSelect"
-        android:background="@drawable/alliancecrest"
+        android:background="@drawable/alliancecresticon"
         android:layout_above="@+id/buttonInfoAlliance"
         android:layout_alignParentEnd="true" />
 
