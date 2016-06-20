@@ -15,7 +15,8 @@
             android:id="@+id/framepandarin"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#456495ED">
+            android:background="#456495ED"
+            android:onClick="clickingFramePandarin">
 
             <TextView
                 android:id="@+id/PandarenAlliance"
@@ -38,7 +39,8 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_gravity="right|top"
-                android:background="@drawable/info1" />
+                android:background="@drawable/info1"
+                />
 
         </FrameLayout>
 
