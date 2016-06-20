@@ -86,7 +86,8 @@
             android:layout_height="match_parent"
             android:layout_below="@+id/frameGoblin"
             android:layout_marginTop="10dp"
-            android:background="#45A52A2A">
+            android:background="#45A52A2A"
+            android:onClick="clickingFrameBloodElf">
 
             <TextView
                 android:id="@+id/Blood_elf"
