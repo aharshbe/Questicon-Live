@@ -25,12 +25,12 @@ public class HorADetailView extends AppCompatActivity {
     }
 
     public void clickingHordeSelect(View view) {
-        Intent intent = new Intent(HorADetailView.this, AllianceSelectActivity.class);
+        Intent intent = new Intent(HorADetailView.this, HordeSelectActivity.class);
         startActivity(intent);
     }
 
     public void clickingAllianceSelect(View view) {
-        Intent intent = new Intent(HorADetailView.this, HordeSelectActivity.class);
+        Intent intent = new Intent(HorADetailView.this, AllianceSelectActivity.class);
         startActivity(intent);
     }
 

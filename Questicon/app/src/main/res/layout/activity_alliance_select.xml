@@ -1,12 +1,254 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.notexample.austin.questicon.AllianceSelectActivity">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView01"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
 
-</RelativeLayout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000"
+        tools:context="com.notexample.austin.questicon.AllianceSelectActivity">
+
+        <FrameLayout
+            android:id="@+id/framepandarin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#456495ED">
+
+            <TextView
+                android:id="@+id/PandarenAlliance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pandaren"
+                android:textColor="#F0FFFF"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/PandarinImage"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center"
+                android:background="@drawable/pandarenicon" />
+
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right|top"
+                android:background="@drawable/info1" />
+
+        </FrameLayout>
+
+
+        <FrameLayout
+            android:id="@+id/framworgen"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/framepandarin"
+            android:layout_marginTop="10dp"
+            android:background="#45eebe00">
+
+            <TextView
+                android:id="@+id/Worgen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Worgen"
+                android:textColor="#F0FFFF"
+                android:textSize="20sp" />
+
+
+            <ImageView
+                android:id="@+id/WorgenImage"
+                android:layout_width="170dp"
+                android:layout_height="100dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center_horizontal|top"
+                android:background="@drawable/worgenicon" />
+
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right|top"
+                android:background="@drawable/info1" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/framedraeni"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/framworgen"
+            android:layout_marginTop="10dp"
+            android:background="#456495ED">
+
+            <TextView
+                android:id="@+id/Draenei"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Draenei"
+                android:textColor="#F0FFFF"
+                android:textSize="20sp" />
+
+
+            <ImageView
+                android:id="@+id/DraeneiImage"
+                android:layout_width="170dp"
+                android:layout_height="100dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center"
+                android:background="@drawable/draeniicon2" />
+
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right|top"
+                android:background="@drawable/info1" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/framedwarf"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/framedraeni"
+            android:layout_marginTop="10dp"
+            android:background="#45eebe00">
+
+            <TextView
+                android:id="@+id/Dwarf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dwarf"
+                android:textColor="#F0FFFF"
+                android:textSize="20sp" />
+
+
+            <ImageView
+                android:id="@+id/DwarfImage"
+                android:layout_width="110dp"
+                android:layout_height="100dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center"
+                android:background="@drawable/dwarficon" />
+
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right|top"
+                android:background="@drawable/info1" />
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/framegnome"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/framedwarf"
+            android:layout_marginTop="10dp"
+            android:background="#456495ED">
+
+            <TextView
+                android:id="@+id/Gnome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gnome"
+                android:textColor="#F0FFFF"
+                android:textSize="20sp" />
+
+
+            <ImageView
+                android:id="@+id/GnomeImage"
+                android:layout_width="170dp"
+                android:layout_height="100dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center_horizontal|top"
+                android:background="@drawable/gnomeicon2" />
+
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right|top"
+                android:background="@drawable/info1" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/framehuman"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/framegnome"
+            android:layout_marginTop="10dp"
+            android:background="#45eebe00">
+
+            <TextView
+                android:id="@+id/Human"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Human"
+                android:textColor="#F0FFFF"
+                android:textSize="20sp" />
+
+
+            <ImageView
+                android:id="@+id/HumanImage"
+                android:layout_width="170dp"
+                android:layout_height="100dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center"
+                android:background="@drawable/humanicon" />
+
+
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right|top"
+                android:background="@drawable/info1" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/framenightelf"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/framehuman"
+            android:layout_marginTop="10dp"
+            android:background="#456495ED">
+
+            <TextView
+                android:id="@+id/Night_elf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Night Elf"
+                android:textColor="#F0FFFF"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right|top"
+                android:background="@drawable/info1" />
+
+            <ImageView
+                android:id="@+id/Night_elfImage"
+                android:layout_width="170dp"
+                android:layout_height="100dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/nightelficon" />
+
+        </FrameLayout>
+
+
+    </RelativeLayout>
+</ScrollView>
