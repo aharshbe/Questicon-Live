@@ -7,7 +7,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher_questicon"
+        android:icon="@mipmap/ic_pandaren"
         android:label="Questicon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
