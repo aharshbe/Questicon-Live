@@ -159,4 +159,53 @@ public class HordeSelectActivity extends AppCompatActivity {
         AlertDialog alert11 = builder1.create();
         alert11.show();
     }
+
+    public void clickingFrameOrc(View view) {
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
+        builder1.setIcon(R.mipmap.ic_orcicon);
+        builder1.setTitle("Orc: The Alien");
+        builder1.setMessage("Unlike the other races of the Horde, orcs are not native to Azeroth. Initially, they lived as shamanic clans on the lush world of Draenor. They abandoned their peaceful culture when Kil’jaeden, a demon lord of the Burning Legion, corrupted the orcs and used them in his vengeful plot against the draenei, who were exiles from Kil’jaeden’s homeworld.");
+        builder1.setCancelable(true);
+
+        builder1.setPositiveButton(
+                "Select Orc",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent intent = new Intent(HordeSelectActivity.this, HordeSelectActivity.class);
+                        startActivity(intent);
+
+
+                        return;
+                    }
+                });
+
+        builder1.setNegativeButton(
+                "Further info",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW);
+                        browserIntent.setData(Uri.parse("http://us.battle.net/wow/en/game/race/orc"));
+                        startActivity(browserIntent);
+
+                        return;
+                    }
+                });
+
+        builder1.setNeutralButton(
+                "Orc Video",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW);
+                        browserIntent.setData(Uri.parse("https://www.youtube.com/watch?v=eNR_mnnzgzo"));
+                        startActivity(browserIntent);
+
+                        return;
+                    }
+                });
+
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
+    }
+
 }
