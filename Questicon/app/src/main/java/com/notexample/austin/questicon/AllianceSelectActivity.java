@@ -114,4 +114,52 @@ public class AllianceSelectActivity extends AppCompatActivity {
         AlertDialog alert11 = builder1.create();
         alert11.show();
     }
+
+    public void clickingFrameDraenei(View view) {
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
+        builder1.setIcon(R.mipmap.ic_draenei);
+        builder1.setTitle("Draenei: The Holy");
+        builder1.setMessage("Long before the fallen titan, Sargeras, unleashed his demonic Legion on Azeroth, he turned his baleful gaze upon the world of Argus and its highly intelligent inhabitants, the eredar. Believing that this magically gifted race would be a crucial component in his dark quest to undo all of creation, Sargeras contacted the eredar’s three leaders – Kil’jaeden, Archimonde, and Velen – and offered them knowledge and power in exchange for their loyalty.");
+        builder1.setCancelable(true);
+
+        builder1.setPositiveButton(
+                "Select Draenei",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent intent = new Intent(AllianceSelectActivity.this, AllianceSelectActivity.class);
+                        startActivity(intent);
+
+
+                        return;
+                    }
+                });
+
+        builder1.setNegativeButton(
+                "Further info",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW);
+                        browserIntent.setData(Uri.parse("http://us.battle.net/wow/en/game/race/draenei"));
+                        startActivity(browserIntent);
+
+                        return;
+                    }
+                });
+
+        builder1.setNeutralButton(
+                "Draenei Video",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW);
+                        browserIntent.setData(Uri.parse("https://www.youtube.com/watch?v=1JZpYvlWZiw"));
+                        startActivity(browserIntent);
+
+                        return;
+                    }
+                });
+
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
+    }
 }
