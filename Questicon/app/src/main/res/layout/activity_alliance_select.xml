@@ -228,7 +228,8 @@
             android:layout_height="match_parent"
             android:layout_below="@+id/framehuman"
             android:layout_marginTop="10dp"
-            android:background="#456495ED">
+            android:background="#456495ED"
+            android:onClick="clickingFrameNightElf">
 
             <TextView
                 android:id="@+id/Night_elf"
