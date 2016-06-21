@@ -2,8 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/ScrollView01"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="@drawable/dback">
+    android:layout_height="fill_parent">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
@@ -13,13 +12,14 @@
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
-        tools:context="com.notexample.austin.questicon.UndeadActivity">
+        tools:context="com.notexample.austin.questicon.UndeadActivity"
+        android:background="@drawable/trollbackground1">
 
         <FrameLayout
             android:id="@+id/playerUndead"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#478A2BE2">
+            android:background="#47228B22">
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -105,8 +105,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/playerUndead"
-            android:layout_marginTop="360dp"
-            android:background="#478A2BE2">
+            android:layout_marginTop="460dp"
+            android:background="#47228B22">
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -181,7 +181,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/undeadRacials"
             android:layout_marginTop="20dp"
-            android:background="#478A2BE2">
+            android:background="#47228B22">
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -313,7 +313,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/playerUndead"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="60dp"
             android:background="@drawable/trollicon" />
 
 
