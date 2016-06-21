@@ -35,8 +35,6 @@ public class UndeadActivity extends AppCompatActivity {
                 mediaPlayer2.reset();
                 mediaPlayer2.release();
 
-            } else {
-                Toast.makeText(UndeadActivity.this, "Didn't destroy becuase it's already been stopped", Toast.LENGTH_SHORT).show();
             }
 
         }catch (IllegalStateException i){

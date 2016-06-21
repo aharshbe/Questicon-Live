@@ -3,7 +3,7 @@
     android:id="@+id/ScrollView01"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#000000">
+    android:background="@drawable/dback">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
@@ -16,6 +16,7 @@
         tools:context="com.notexample.austin.questicon.UndeadActivity">
 
         <FrameLayout
+            android:id="@+id/playerUndead"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#478A2BE2">
@@ -47,10 +48,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:textColor="#F8F8FF"
                     android:layout_marginLeft="250dp"
                     android:fontFamily="cursive"
                     android:text="status"
+                    android:textColor="#F8F8FF"
                     android:textSize="20sp" />
 
                 <SeekBar
@@ -70,10 +71,8 @@
                     <ImageButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@android:drawable/ic_delete"
                         android:onClick="clickingStop"
-                        />
-
+                        android:src="@android:drawable/ic_delete" />
 
 
                     <ImageButton
@@ -105,6 +104,193 @@
 
 
         </FrameLayout>
+
+
+        <FrameLayout
+            android:id="@+id/undeadRacials"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/playerUndead"
+            android:layout_marginTop="310dp"
+            android:background="#478A2BE2">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/undeadRacialsTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:text="Undead Racials"
+                    android:textColor="#F8F8FF"
+                    android:textSize="20sp" />
+
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutRacials0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/undeadRacialsTitle"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/cannabalize"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cannabalize" />
+
+
+                    <ImageButton
+                        android:id="@+id/touchofgrave"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="14dp"
+                        android:background="@drawable/touchofgrave" />
+
+                    <ImageButton
+                        android:id="@+id/shadowresist"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="14dp"
+                        android:background="@drawable/shadowresist" />
+
+                    <ImageButton
+                        android:id="@+id/willoffor"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="14dp"
+                        android:background="@drawable/willofforsaken" />
+
+                </LinearLayout>
+            </RelativeLayout>
+
+
+        </FrameLayout>
+
+
+        <FrameLayout
+            android:id="@+id/undeadClassesFrame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/undeadRacials"
+            android:layout_marginTop="20dp"
+            android:background="#478A2BE2">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:id="@+id/undeadClasses"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:text="Undead Classes"
+                    android:textColor="#F8F8FF"
+                    android:textSize="20sp" />
+
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutClasses0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/undeadClasses"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/monkIconU"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/monk" />
+
+
+                    <ImageButton
+                        android:id="@+id/hunterIconU"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="14dp"
+                        android:background="@drawable/hunter" />
+
+                    <ImageButton
+                        android:id="@+id/priestIconU"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="14dp"
+                        android:background="@drawable/priest" />
+
+                    <ImageButton
+                        android:id="@+id/warlockIconU"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="14dp"
+                        android:background="@drawable/warlock" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutClasses"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/linearLayoutClasses0"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/deathIconU"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/deathknight" />
+
+
+                    <ImageButton
+                        android:id="@+id/mageIconU"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="14dp"
+                        android:background="@drawable/mage" />
+
+                    <ImageButton
+                        android:id="@+id/rogueIconU"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="14dp"
+                        android:background="@drawable/rogue" />
+
+                    <ImageButton
+                        android:id="@+id/warriorIconU"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="14dp"
+                        android:background="@drawable/warrior" />
+
+                </LinearLayout>
+            </RelativeLayout>
+
+
+        </FrameLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView2"
+            android:background="@drawable/undeadcharacter"
+            android:layout_below="@+id/playerUndead"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp" />
+
 
     </RelativeLayout>
 </ScrollView>
