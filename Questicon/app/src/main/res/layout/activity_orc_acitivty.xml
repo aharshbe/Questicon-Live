@@ -8,7 +8,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/taurenbackground"
+        android:background="@drawable/orcbackground"
         android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
@@ -19,7 +19,7 @@
             android:id="@+id/playerUndead"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#478B4513">
+            android:background="#47808000">
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -29,7 +29,7 @@
                     android:id="@+id/imageButton2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@mipmap/ic_taurencrest" />
+                    android:background="@mipmap/ic_orcicon" />
 
                 <TextView
                     android:id="@+id/undeadTitle"
@@ -39,7 +39,7 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="20dp"
                     android:layout_toEndOf="@+id/imageButton2"
-                    android:text="Tauren Narration"
+                    android:text="Orc Narration"
                     android:textColor="#F8F8FF"
                     android:textSize="20sp" />
 
@@ -106,7 +106,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/playerUndead"
             android:layout_marginTop="400dp"
-            android:background="#478B4513">
+            android:background="#47808000">
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -119,7 +119,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_gravity="center"
                     android:layout_marginLeft="20dp"
-                    android:text="Tauren Racials"
+                    android:text="Orc Racials"
                     android:textColor="#F8F8FF"
                     android:textSize="20sp" />
 
@@ -135,39 +135,25 @@
                     android:orientation="horizontal">
 
                     <ImageButton
-                        android:id="@+id/stomp"
+                        android:id="@+id/bloodfury"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:background="@drawable/warstomp" />
+                        android:background="@drawable/bloodfury" />
 
 
                     <ImageButton
-                        android:id="@+id/natureresist"
+                        android:id="@+id/hardiness"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="14dp"
-                        android:background="@drawable/natureresist" />
+                        android:background="@drawable/hardiness" />
 
                     <ImageButton
-                        android:id="@+id/endurance"
+                        android:id="@+id/command"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="14dp"
-                        android:background="@drawable/endurance" />
-
-                    <ImageButton
-                        android:id="@+id/cultivation"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_marginLeft="14dp"
-                        android:background="@drawable/cultivation" />
-
-                    <ImageButton
-                        android:id="@+id/brawn"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_marginLeft="14dp"
-                        android:background="@drawable/brawn" />
+                        android:background="@drawable/command" />
 
                 </LinearLayout>
             </RelativeLayout>
@@ -182,7 +168,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/undeadRacials"
             android:layout_marginTop="20dp"
-            android:background="#478B4513">
+            android:background="#47808000">
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -196,7 +182,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_gravity="center"
                     android:layout_marginLeft="20dp"
-                    android:text="Tauren Classes"
+                    android:text="Orc Classes"
                     android:textColor="#F8F8FF"
                     android:textSize="20sp" />
 
@@ -218,25 +204,25 @@
 
 
                     <ImageButton
-                        android:id="@+id/druidIconU"
+                        android:id="@+id/hunterIconU"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="14dp"
-                        android:background="@drawable/druid" />
+                        android:background="@drawable/hunter" />
 
                     <ImageButton
-                        android:id="@+id/paladinIconU"
+                        android:id="@+id/rogueIconU"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="14dp"
-                        android:background="@drawable/paladin" />
+                        android:background="@drawable/rogue" />
 
                     <ImageButton
-                        android:id="@+id/shamanIconU"
+                        android:id="@+id/warlockIconU"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="14dp"
-                        android:background="@drawable/shaman" />
+                        android:background="@drawable/warlock" />
 
                 </LinearLayout>
 
@@ -257,18 +243,18 @@
 
 
                     <ImageButton
-                        android:id="@+id/hunterIconU"
+                        android:id="@+id/mageIconU"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="14dp"
-                        android:background="@drawable/hunter" />
+                        android:background="@drawable/mage" />
 
                     <ImageButton
-                        android:id="@+id/priestIconU"
+                        android:id="@+id/shamanIconU"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="14dp"
-                        android:background="@drawable/priest" />
+                        android:background="@drawable/shaman" />
 
                     <ImageButton
                         android:id="@+id/warriorIconU"
@@ -291,7 +277,7 @@
             android:layout_below="@+id/playerUndead"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="60dp"
-            android:background="@drawable/taurenicon" />
+            android:background="@drawable/orccharacter" />
 
 
     </RelativeLayout>

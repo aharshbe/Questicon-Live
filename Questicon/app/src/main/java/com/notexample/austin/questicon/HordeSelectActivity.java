@@ -171,7 +171,7 @@ public class HordeSelectActivity extends AppCompatActivity {
                 "Select Orc",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        Intent intent = new Intent(HordeSelectActivity.this, HordeSelectActivity.class);
+                        Intent intent = new Intent(HordeSelectActivity.this, OrcAcitivty.class);
                         startActivity(intent);
 
 

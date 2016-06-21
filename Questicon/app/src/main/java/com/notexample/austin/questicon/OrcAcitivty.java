@@ -9,7 +9,8 @@ import android.widget.TextView;
 
 import java.util.concurrent.TimeUnit;
 
-public class TaurenAcitivty extends AppCompatActivity {
+public class OrcAcitivty extends AppCompatActivity {
+
     MediaPlayer mediaPlayer2;
     private TextView songDuration;
     private double timeStart = 0, finalTime = 0;
@@ -40,10 +41,10 @@ public class TaurenAcitivty extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tauren_acitivty);
+        setContentView(R.layout.activity_orc_acitivty);
 
         songDuration = (TextView) findViewById(R.id.undeadNarration);
-        mediaPlayer2 = MediaPlayer.create(this, R.raw.taurennarration);
+        mediaPlayer2 = MediaPlayer.create(this, R.raw.orgnarration);
 
 
     }
