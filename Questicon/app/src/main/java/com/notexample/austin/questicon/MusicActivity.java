@@ -96,7 +96,6 @@ public class MusicActivity extends ActionBarActivity {
         songDuration = (TextView) findViewById(R.id.songDuration);
         mediaPlayer = MediaPlayer.create(this, mySong[2]);
         seekBar = (SeekBar) findViewById(R.id.seekBar);
-//        songName.setText("Song.mp3");
         seekBar.setMax((int) finalTime);
         seekBar.setClickable(false);
         addItemsOnSpinner2();

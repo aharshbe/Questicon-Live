@@ -32,7 +32,6 @@ import cz.msebera.android.httpclient.Header;
 
 public class BossesActivity extends AppCompatActivity {
     ArrayList<BossesModel> bossesModels;
-    EditText searchEditText;
     CustomAdapterBosses adapterBosses;
     String theySearched = "";
     ArrayList<BossesModel> bossesModels3;

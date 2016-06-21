@@ -73,7 +73,8 @@
             android:label="Character Chooser" />
         <activity android:name=".HorADetailView" />
         <activity android:name=".AllianceSelectActivity" />
-        <activity android:name=".HordeSelectActivity"></activity>
+        <activity android:name=".HordeSelectActivity" />
+        <activity android:name=".UndeadActivity"></activity>
     </application>
 
 </manifest>
