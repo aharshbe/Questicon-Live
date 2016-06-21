@@ -26,10 +26,23 @@ public class UndeadActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
 
-        durationHandler.removeCallbacks(updateSeekBarTime);
-        mediaPlayer2.stop();
-        mediaPlayer2.reset();
-        mediaPlayer2.release();
+        try {
+
+            if (mediaPlayer2.isPlaying() == true) {
+
+                durationHandler.removeCallbacks(updateSeekBarTime);
+                mediaPlayer2.stop();
+                mediaPlayer2.reset();
+                mediaPlayer2.release();
+
+            } else {
+                Toast.makeText(UndeadActivity.this, "Didn't destroy becuase it's already been stopped", Toast.LENGTH_SHORT).show();
+            }
+
+        }catch (IllegalStateException i){
+            i.printStackTrace();
+        }
+
     }
 
     @Override
@@ -41,9 +54,6 @@ public class UndeadActivity extends AppCompatActivity {
         mediaPlayer2 = MediaPlayer.create(this, R.raw.undeadsound);
 
 
-
-
-
     }
 
     private Runnable updateSeekBarTime = new Runnable() {
@@ -52,7 +62,7 @@ public class UndeadActivity extends AppCompatActivity {
             try {
                 timeStart = mediaPlayer2.getCurrentPosition();
 
-            }catch (java.lang.IllegalStateException s){
+            } catch (java.lang.IllegalStateException s) {
                 s.printStackTrace();
                 timeStart = 0;
             }
@@ -83,5 +93,13 @@ public class UndeadActivity extends AppCompatActivity {
             timeStart = timeStart - backwardTime;
             mediaPlayer2.seekTo((int) timeStart);
         }
+    }
+
+    public void clickingStop(View view) {
+
+        durationHandler.removeCallbacks(updateSeekBarTime);
+        mediaPlayer2.stop();
+        mediaPlayer2.reset();
+        mediaPlayer2.release();
     }
 }
