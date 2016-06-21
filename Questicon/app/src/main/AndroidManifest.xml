@@ -77,7 +77,8 @@
         <activity android:name=".UndeadActivity" />
         <activity android:name=".TrollAcitivty" />
         <activity android:name=".TaurenAcitivty" />
-        <activity android:name=".OrcAcitivty"></activity>
+        <activity android:name=".OrcAcitivty" />
+        <activity android:name=".BloodElfAcitivty"></activity>
     </application>
 
 </manifest>
