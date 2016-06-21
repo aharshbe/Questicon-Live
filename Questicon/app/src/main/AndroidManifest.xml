@@ -74,7 +74,8 @@
         <activity android:name=".HorADetailView" />
         <activity android:name=".AllianceSelectActivity" />
         <activity android:name=".HordeSelectActivity" />
-        <activity android:name=".UndeadActivity"></activity>
+        <activity android:name=".UndeadActivity" />
+        <activity android:name=".TrollAcitivty"></activity>
     </application>
 
 </manifest>
