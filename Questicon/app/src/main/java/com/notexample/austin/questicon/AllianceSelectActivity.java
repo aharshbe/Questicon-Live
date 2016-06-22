@@ -78,7 +78,7 @@ public class AllianceSelectActivity extends AppCompatActivity {
                 "Select Worgen",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        Intent intent = new Intent(AllianceSelectActivity.this, AllianceSelectActivity.class);
+                        Intent intent = new Intent(AllianceSelectActivity.this, WorgenActivity.class);
                         startActivity(intent);
 
 

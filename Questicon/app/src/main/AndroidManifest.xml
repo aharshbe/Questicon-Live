@@ -81,7 +81,8 @@
         <activity android:name=".BloodElfAcitivty" />
         <activity android:name=".GoblinAcitivty" />
         <activity android:name=".PandarinHordeActivity" />
-        <activity android:name=".PandarinAllianceActivity"></activity>
+        <activity android:name=".PandarinAllianceActivity" />
+        <activity android:name=".WorgenActivity"></activity>
     </application>
 
 </manifest>
