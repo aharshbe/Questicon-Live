@@ -136,6 +136,7 @@
 
                     <ImageButton
                         android:id="@+id/voodoo"
+                        android:onClick="clickingVoodoo"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:background="@drawable/vodoo" />
@@ -143,6 +144,7 @@
 
                     <ImageButton
                         android:id="@+id/regeneration"
+                        android:onClick="clickingRegeneration"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="14dp"
@@ -150,6 +152,7 @@
 
                     <ImageButton
                         android:id="@+id/beastslay"
+                        android:onClick="clickingBeastSlay"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="14dp"
@@ -157,12 +160,14 @@
 
                     <ImageButton
                         android:id="@+id/ranged"
+                        android:onClick="clickingRanged"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="14dp"
                         android:background="@drawable/ranged" />
                     <ImageButton
                         android:id="@+id/berserking"
+                        android:onClick="clickingBerserking"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="14dp"
