@@ -136,6 +136,7 @@
 
                     <ImageButton
                         android:id="@+id/everymanfor"
+                        android:onClick="everyManForHim"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:background="@drawable/everymanforhimself" />
@@ -143,6 +144,7 @@
 
                     <ImageButton
                         android:id="@+id/diplomacy"
+                        android:onClick="clickingDiplo"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="14dp"
@@ -150,6 +152,7 @@
 
                     <ImageButton
                         android:id="@+id/thehumanspirit"
+                        android:onClick="clickingTheHumanSpirit"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="14dp"

@@ -1,5 +1,7 @@
 package com.notexample.austin.questicon;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.media.MediaPlayer;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -94,5 +96,65 @@ public class HumanActivity extends AppCompatActivity {
         mediaPlayer2.stop();
         mediaPlayer2.reset();
         mediaPlayer2.release();
+    }
+
+    public void everyManForHim(View view) {
+        final AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
+        builder1.setIcon(R.mipmap.ic_everymanforhimself);
+        builder1.setTitle("EVERY MAN FOR HIMSELF");
+        builder1.setMessage("Humans can shake off speed altering and trapping effects.");
+        builder1.setPositiveButton(
+                "Cool!",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+
+                        return;
+                    }
+                });
+
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
+    }
+
+    public void clickingDiplo(View view) {
+        final AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
+        builder1.setIcon(R.mipmap.ic_diplomacy);
+        builder1.setTitle("DIPLOMACY");
+        builder1.setMessage("The straightforward and outspoken humans tend to get along well with other races and gain their trust with relative ease.");
+        builder1.setPositiveButton(
+                "Cool!",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+
+                        return;
+                    }
+                });
+
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
+    }
+
+    public void clickingTheHumanSpirit(View view) {
+        final AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
+        builder1.setIcon(R.mipmap.ic_humanspirit);
+        builder1.setTitle("THE HUMAN SPIRIT");
+        builder1.setMessage("Humans are known for their indomitable spirit and receive a slight bonus to their spirit attribute.");
+        builder1.setPositiveButton(
+                "Cool!",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+
+                        return;
+                    }
+                });
+
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
     }
 }
