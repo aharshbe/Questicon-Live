@@ -1,5 +1,7 @@
 package com.notexample.austin.questicon;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.media.MediaPlayer;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -94,5 +96,65 @@ public class OrcAcitivty extends AppCompatActivity {
         mediaPlayer2.stop();
         mediaPlayer2.reset();
         mediaPlayer2.release();
+    }
+
+    public void clickingBloodfury(View view) {
+        final AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
+        builder1.setIcon(R.mipmap.ic_bloodfury);
+        builder1.setTitle("BLOOD FURY");
+        builder1.setMessage("Orcs can fly into a rage that increases their attack power for a short time.");
+        builder1.setPositiveButton(
+                "Cool!",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+
+                        return;
+                    }
+                });
+
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
+    }
+
+    public void clickingHardiness(View view) {
+        final AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
+        builder1.setIcon(R.mipmap.ic_hardiness);
+        builder1.setTitle("HARDINESS");
+        builder1.setMessage("Rugged by nature, orcs recover from stun effects more quickly than other races.");
+        builder1.setPositiveButton(
+                "Cool!",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+
+                        return;
+                    }
+                });
+
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
+    }
+
+    public void clickingCommand(View view) {
+        final AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
+        builder1.setIcon(R.mipmap.ic_commandorc);
+        builder1.setTitle("COMMAND");
+        builder1.setMessage("Orcs work well with combat pets, which receive a bonus to damage output under their care.");
+        builder1.setPositiveButton(
+                "Cool!",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+
+                        return;
+                    }
+                });
+
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
     }
 }

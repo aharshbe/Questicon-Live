@@ -136,6 +136,7 @@
 
                     <ImageButton
                         android:id="@+id/bloodfury"
+                        android:onClick="clickingBloodfury"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:background="@drawable/bloodfury" />
@@ -143,6 +144,7 @@
 
                     <ImageButton
                         android:id="@+id/hardiness"
+                        android:onClick="clickingHardiness"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="14dp"
@@ -150,6 +152,7 @@
 
                     <ImageButton
                         android:id="@+id/command"
+                        android:onClick="clickingCommand"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="14dp"
