@@ -136,6 +136,7 @@
 
                     <ImageButton
                         android:id="@+id/runningwild"
+                        android:onClick="clickingRUnningWIld"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:background="@drawable/runningwild" />
@@ -143,6 +144,7 @@
 
                     <ImageButton
                         android:id="@+id/abberation"
+                        android:onClick="clickingAbbreation"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="14dp"
@@ -150,6 +152,7 @@
 
                     <ImageButton
                         android:id="@+id/darkflight"
+                        android:onClick="clickingDarkFlight"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="14dp"
@@ -157,6 +160,7 @@
 
                     <ImageButton
                         android:id="@+id/twoforms"
+                        android:onClick="clickingTwoForms"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="14dp"
@@ -164,6 +168,7 @@
 
                     <ImageButton
                         android:id="@+id/alteredform"
+                        android:onClick="clickingAlteredForm"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="14dp"
@@ -184,12 +189,14 @@
 
                     <ImageButton
                         android:id="@+id/flayer"
+                        android:onClick="clickingFlayer"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:background="@drawable/flayer" />
 
                     <ImageButton
                         android:id="@+id/vicousness"
+                        android:onClick="clickingViciousness"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="14dp"

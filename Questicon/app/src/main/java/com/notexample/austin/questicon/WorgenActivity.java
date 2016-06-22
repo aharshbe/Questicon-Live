@@ -1,5 +1,7 @@
 package com.notexample.austin.questicon;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.media.MediaPlayer;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -93,5 +95,145 @@ public class WorgenActivity extends AppCompatActivity {
         mediaPlayer2.stop();
         mediaPlayer2.reset();
         mediaPlayer2.release();
+    }
+
+    public void clickingRUnningWIld(View view) {
+        final AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
+        builder1.setIcon(R.mipmap.ic_runningwild);
+        builder1.setTitle("RUNNING WILD");
+        builder1.setMessage("Drop to all fours to run as fast as a wild animal. Who needs a mount when you can run?");
+        builder1.setPositiveButton(
+                "Cool!",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+
+                        return;
+                    }
+                });
+
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
+    }
+
+    public void clickingAbbreation(View view) {
+        final AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
+        builder1.setIcon(R.mipmap.ic_abbreation);
+        builder1.setTitle("ABERRATION");
+        builder1.setMessage("The duration of all curses and diseases used against worgen is slightly reduced.");
+        builder1.setPositiveButton(
+                "Cool!",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+
+                        return;
+                    }
+                });
+
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
+    }
+
+    public void clickingDarkFlight(View view) {
+        final AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
+        builder1.setIcon(R.mipmap.ic_darkflight);
+        builder1.setTitle("DARKFLIGHT");
+        builder1.setMessage("Worgen can shift from human to their true form, drastically increasing movement speed for a short time.");
+        builder1.setPositiveButton(
+                "Cool!",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+
+                        return;
+                    }
+                });
+
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
+    }
+
+    public void clickingTwoForms(View view) {
+        final AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
+        builder1.setIcon(R.mipmap.ic_twoforms);
+        builder1.setTitle("TWO FORMS");
+        builder1.setMessage("Worgen can shift into their inactive form.");
+        builder1.setPositiveButton(
+                "Cool!",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+
+                        return;
+                    }
+                });
+
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
+    }
+
+    public void clickingAlteredForm(View view) {
+        final AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
+        builder1.setIcon(R.mipmap.ic_alteredform);
+        builder1.setTitle("ALTERED FORM");
+        builder1.setMessage("When not in combat, Worgen can switch between human and worgen form at will.");
+        builder1.setPositiveButton(
+                "Cool!",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+
+                        return;
+                    }
+                });
+
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
+    }
+
+    public void clickingFlayer(View view) {
+        final AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
+        builder1.setIcon(R.mipmap.ic_flayer);
+        builder1.setTitle("FLAYER");
+        builder1.setMessage("Worgen claws are extremely sharp and can skin a slain beast rapidly.");
+        builder1.setPositiveButton(
+                "Cool!",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+
+                        return;
+                    }
+                });
+
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
+    }
+
+    public void clickingViciousness(View view) {
+        final AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
+        builder1.setIcon(R.mipmap.ic_viciousness);
+        builder1.setTitle("VICIOUSNESS");
+        builder1.setMessage("Worgen fight with the ferocity of an apex predator and gain a bonus to critical strikes.");
+        builder1.setPositiveButton(
+                "Cool!",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+
+                        return;
+                    }
+                });
+
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
     }
 }
