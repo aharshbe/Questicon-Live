@@ -142,6 +142,7 @@
 
                     <ImageButton
                         android:id="@+id/cannabalize"
+                        android:onClick="clickingCanna"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:background="@drawable/cannabalize" />
@@ -149,6 +150,7 @@
 
                     <ImageButton
                         android:id="@+id/touchofgrave"
+                        android:onClick="clickingTouchofgrave"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="14dp"
@@ -156,6 +158,7 @@
 
                     <ImageButton
                         android:id="@+id/shadowresist"
+                        android:onClick="clickingShadowResist"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="14dp"
@@ -163,10 +166,19 @@
 
                     <ImageButton
                         android:id="@+id/willoffor"
+                        android:onClick="clickingWillOf"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="14dp"
                         android:background="@drawable/willofforsaken" />
+
+                    <ImageButton
+                        android:id="@+id/underwaterbreath"
+                        android:onClick="clickingUnderwaterBreath"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="14dp"
+                        android:background="@drawable/underwaterbreath" />
 
                 </LinearLayout>
             </RelativeLayout>
