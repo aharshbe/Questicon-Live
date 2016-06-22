@@ -30,7 +30,7 @@ public class AllianceSelectActivity extends AppCompatActivity {
                 "Select Pandarin",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        Intent intent = new Intent(AllianceSelectActivity.this, AllianceSelectActivity.class);
+                        Intent intent = new Intent(AllianceSelectActivity.this, PandarinAllianceActivity.class);
                         startActivity(intent);
 
 
