@@ -51,7 +51,7 @@
             android:layout_height="match_parent"
             android:layout_below="@+id/framepandarin"
             android:layout_marginTop="10dp"
-            android:background="#45eebe00"
+            android:background="#45000000"
             android:onClick="clickingFrameWorgen">
 
             <TextView
@@ -121,7 +121,7 @@
             android:layout_height="match_parent"
             android:layout_below="@+id/framedraeni"
             android:layout_marginTop="10dp"
-            android:background="#45eebe00"
+            android:background="#45000000"
             android:onClick="clickingFrameDwarf">
 
             <TextView
@@ -192,7 +192,7 @@
             android:layout_height="match_parent"
             android:layout_below="@+id/framegnome"
             android:layout_marginTop="10dp"
-            android:background="#45eebe00"
+            android:background="#45000000"
             android:onClick="clickingFrameHuman">
 
             <TextView

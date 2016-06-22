@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView01"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gnomeback"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context="com.notexample.austin.questicon.UndeadActivity">
+
+        <FrameLayout
+            android:id="@+id/playerUndead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#676A5ACD">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/imageButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/ic_gnomeicon" />
+
+                <TextView
+                    android:id="@+id/undeadTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toEndOf="@+id/imageButton2"
+                    android:text="Gnome Narration"
+                    android:textColor="#F8F8FF"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/undeadNarration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="250dp"
+                    android:fontFamily="cursive"
+                    android:text="status"
+                    android:textColor="#F8F8FF"
+                    android:textSize="20sp" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/undeadNarration"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="clickingStop"
+                        android:src="@android:drawable/ic_delete" />
+
+
+                    <ImageButton
+                        android:id="@+id/btn_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="14dp"
+                        android:onClick="backforwardUndead"
+                        android:src="@android:drawable/ic_media_rew" />
+
+                    <ImageButton
+                        android:id="@+id/btn_pause"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="14dp"
+                        android:onClick="pauseUndead"
+                        android:src="@android:drawable/ic_media_pause" />
+
+                    <ImageButton
+                        android:id="@+id/btn_Play"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="14dp"
+                        android:onClick="playUndead"
+                        android:src="@android:drawable/ic_media_play" />
+
+                </LinearLayout>
+            </RelativeLayout>
+
+
+        </FrameLayout>
+
+
+        <FrameLayout
+            android:id="@+id/undeadRacials"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/playerUndead"
+            android:layout_marginTop="300dp"
+            android:background="#476A5ACD">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/undeadRacialsTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:text="Gnome Racials"
+                    android:textColor="#F8F8FF"
+                    android:textSize="20sp" />
+
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutRacials0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/undeadRacialsTitle"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/escapeartist"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/escapeartist" />
+
+
+                    <ImageButton
+                        android:id="@+id/arcaneresist"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="14dp"
+                        android:background="@drawable/arcanetorrent" />
+
+                    <ImageButton
+                        android:id="@+id/expansivemind"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="14dp"
+                        android:background="@drawable/expansivemind" />
+
+                    <ImageButton
+                        android:id="@+id/engspecial"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="14dp"
+                        android:background="@drawable/engspecil" />
+
+                    <ImageButton
+                        android:id="@+id/nimblefingers"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="14dp"
+                        android:background="@drawable/nimblefingers" />
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+        </FrameLayout>
+
+
+        <FrameLayout
+            android:id="@+id/undeadClassesFrame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/undeadRacials"
+            android:layout_marginTop="50dp"
+            android:background="#476A5ACD">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:id="@+id/undeadClasses"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:text="Gnome Classes"
+                    android:textColor="#F8F8FF"
+                    android:textSize="20sp" />
+
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutClasses0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/undeadClasses"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/monkIconU"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/monk" />
+
+
+                    <ImageButton
+                        android:id="@+id/mageIconU"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="14dp"
+                        android:background="@drawable/mage" />
+
+                    <ImageButton
+                        android:id="@+id/rogueIconUI"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="14dp"
+                        android:background="@drawable/rogue" />
+
+                    <ImageButton
+                        android:id="@+id/warriorIconU"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="14dp"
+                        android:background="@drawable/warrior" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutClasses"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/linearLayoutClasses0"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/deathknightIconU"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/deathknight" />
+
+
+                    <ImageButton
+                        android:id="@+id/priestIconU"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="14dp"
+                        android:background="@drawable/priest" />
+
+                    <ImageButton
+                        android:id="@+id/warlockIconU"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="14dp"
+                        android:background="@drawable/warlock" />
+
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+
+        </FrameLayout>
+
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="400dp"
+            android:layout_height="210dp"
+            android:layout_below="@+id/playerUndead"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/gnomeicon2" />
+
+
+    </RelativeLayout>
+</ScrollView>

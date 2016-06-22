@@ -84,7 +84,8 @@
         <activity android:name=".PandarinAllianceActivity" />
         <activity android:name=".WorgenActivity" />
         <activity android:name=".DraeneiAcitivity" />
-        <activity android:name=".DwarfActivity"></activity>
+        <activity android:name=".DwarfActivity" />
+        <activity android:name=".GnomeActivity"></activity>
     </application>
 
 </manifest>
