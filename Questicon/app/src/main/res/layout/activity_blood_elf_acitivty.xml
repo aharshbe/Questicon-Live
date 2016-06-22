@@ -136,6 +136,7 @@
 
                     <ImageButton
                         android:id="@+id/arcaneacuity"
+                        android:onClick="clickingArcaneA"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:background="@drawable/arcaneacuity" />
@@ -145,6 +146,7 @@
                         android:id="@+id/arcanetorrent"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
+                        android:onClick="clickingArcaneTorrent"
                         android:layout_marginLeft="14dp"
                         android:background="@drawable/arcanetorrent" />
 
@@ -152,12 +154,14 @@
                         android:id="@+id/arcaneaffinity"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
+                        android:onClick="clickingArcaneAffinity"
                         android:layout_marginLeft="14dp"
                         android:background="@drawable/arcaneaffinity" />
 
                     <ImageButton
                         android:id="@+id/magicresit"
                         android:layout_width="50dp"
+                        android:onClick="clickingMagicResist"
                         android:layout_height="50dp"
                         android:layout_marginLeft="14dp"
                         android:background="@drawable/magicresit" />
