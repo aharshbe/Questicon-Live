@@ -136,6 +136,7 @@
 
                     <ImageButton
                         android:id="@+id/escapeartist"
+                        android:onClick="clickingEscapeArtist"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:background="@drawable/escapeartist" />
@@ -143,6 +144,7 @@
 
                     <ImageButton
                         android:id="@+id/arcaneresist"
+                        android:onClick="clickingArcaneResist"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="14dp"
@@ -150,6 +152,7 @@
 
                     <ImageButton
                         android:id="@+id/expansivemind"
+                        android:onClick="clickingExpansiveMind"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="14dp"
@@ -157,6 +160,7 @@
 
                     <ImageButton
                         android:id="@+id/engspecial"
+                        android:onClick="clickingEngSpec"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="14dp"
@@ -164,6 +168,7 @@
 
                     <ImageButton
                         android:id="@+id/nimblefingers"
+                        android:onClick="clickingNimble"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="14dp"
