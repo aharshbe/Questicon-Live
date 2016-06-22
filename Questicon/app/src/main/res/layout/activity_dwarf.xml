@@ -136,6 +136,7 @@
 
                     <ImageButton
                         android:id="@+id/stoneform"
+                        android:onClick="clickingStoneForm"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:background="@drawable/stoneform" />
@@ -143,6 +144,7 @@
 
                     <ImageButton
                         android:id="@+id/frostresist"
+                        android:onClick="clickingFrostRes"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="14dp"
@@ -150,6 +152,7 @@
 
                     <ImageButton
                         android:id="@+id/explorer"
+                        android:onClick="clickingExporer"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="14dp"
@@ -157,6 +160,7 @@
 
                     <ImageButton
                         android:id="@+id/mightofthemountain"
+                        android:onClick="clickingMightof"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="14dp"
