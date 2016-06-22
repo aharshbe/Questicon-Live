@@ -137,6 +137,7 @@
                     <ImageButton
                         android:id="@+id/rocketjump"
                         android:layout_width="50dp"
+                        android:onClick="clickingRocketJump"
                         android:layout_height="50dp"
                         android:background="@drawable/rocketjump" />
 
@@ -145,6 +146,7 @@
                         android:id="@+id/rocketbarrage"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
+                        android:onClick="clickingRocketBar"
                         android:layout_marginLeft="14dp"
                         android:background="@drawable/rocketbarrage" />
 
@@ -152,6 +154,7 @@
                         android:id="@+id/hob"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
+                        android:onClick="clickingHobGoblin"
                         android:layout_marginLeft="14dp"
                         android:background="@drawable/pack" />
 
@@ -159,11 +162,13 @@
                         android:id="@+id/deals"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
+                        android:onClick="clickingDeals"
                         android:layout_marginLeft="14dp"
                         android:background="@drawable/betterdeals" />
 
                     <ImageButton
                         android:id="@+id/timeismoney"
+                        android:onClick="clickingTimeisMoney"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="14dp"
@@ -184,6 +189,7 @@
 
                     <ImageButton
                         android:id="@+id/chemistry"
+                        android:onClick="clickingChemisry"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:background="@drawable/chemistry" />
