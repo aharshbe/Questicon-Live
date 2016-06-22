@@ -82,7 +82,8 @@
         <activity android:name=".GoblinAcitivty" />
         <activity android:name=".PandarinHordeActivity" />
         <activity android:name=".PandarinAllianceActivity" />
-        <activity android:name=".WorgenActivity"></activity>
+        <activity android:name=".WorgenActivity" />
+        <activity android:name=".DraeneiAcitivity"></activity>
     </application>
 
 </manifest>
