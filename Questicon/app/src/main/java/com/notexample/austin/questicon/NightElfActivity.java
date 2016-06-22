@@ -1,5 +1,7 @@
 package com.notexample.austin.questicon;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.media.MediaPlayer;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -94,5 +96,105 @@ public class NightElfActivity extends AppCompatActivity {
         mediaPlayer2.stop();
         mediaPlayer2.reset();
         mediaPlayer2.release();
+    }
+
+    public void clickingShadowMeld(View view) {
+        final AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
+        builder1.setIcon(R.mipmap.ic_shadowmeld);
+        builder1.setTitle("SHADOWMELD");
+        builder1.setMessage("Slipping into the shadows and waiting for the right moment to strike is second nature to the elusive night elves.");
+        builder1.setPositiveButton(
+                "Cool!",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+
+                        return;
+                    }
+                });
+
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
+    }
+
+    public void clickingWisp(View view) {
+        final AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
+        builder1.setIcon(R.mipmap.ic_wisp);
+        builder1.setTitle("WISP SPIRIT");
+        builder1.setMessage("Fallen night elves assume the form of wisp spirits, which navigate the spirit world much faster than normal spirits.");
+        builder1.setPositiveButton(
+                "Cool!",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+
+                        return;
+                    }
+                });
+
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
+    }
+
+    public void clickingNatureResist(View view) {
+        final AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
+        builder1.setIcon(R.mipmap.ic_natureresist);
+        builder1.setTitle("NATURE RESISTANCE");
+        builder1.setMessage("Night elves have a natural resistance to Nature magic.");
+        builder1.setPositiveButton(
+                "Cool!",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+
+                        return;
+                    }
+                });
+
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
+    }
+
+    public void clickingQuickness(View view) {
+        final AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
+        builder1.setIcon(R.mipmap.ic_quickness);
+        builder1.setTitle("QUICKNESS");
+        builder1.setMessage("The nimble night elves have a slight chance to completely avoid being hit by melee and ranged attacks.");
+        builder1.setPositiveButton(
+                "Cool!",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+
+                        return;
+                    }
+                });
+
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
+    }
+
+    public void clickingTouchOfElune(View view) {
+        final AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
+        builder1.setIcon(R.mipmap.ic_touchofelune);
+        builder1.setTitle("TOUCH OF ELUNE");
+        builder1.setMessage("Night elves are especially attuned to the cycles of the sun and moon and are empowered with a unique benefit at day and night time.");
+        builder1.setPositiveButton(
+                "Cool!",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+
+                        return;
+                    }
+                });
+
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
     }
 }

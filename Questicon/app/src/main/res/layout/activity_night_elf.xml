@@ -136,6 +136,7 @@
 
                     <ImageButton
                         android:id="@+id/shadowmeld"
+                        android:onClick="clickingShadowMeld"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:background="@drawable/shadowmeld" />
@@ -143,6 +144,7 @@
 
                     <ImageButton
                         android:id="@+id/wisp"
+                        android:onClick="clickingWisp"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="14dp"
@@ -150,6 +152,7 @@
 
                     <ImageButton
                         android:id="@+id/natureresist"
+                        android:onClick="clickingNatureResist"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="14dp"
@@ -158,6 +161,7 @@
 
                     <ImageButton
                         android:id="@+id/quickness"
+                        android:onClick="clickingQuickness"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="14dp"
@@ -165,6 +169,7 @@
 
                     <ImageButton
                         android:id="@+id/touchofelune"
+                        android:onClick="clickingTouchOfElune"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="14dp"
