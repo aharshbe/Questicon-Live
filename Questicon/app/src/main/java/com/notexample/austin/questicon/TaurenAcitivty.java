@@ -1,5 +1,7 @@
 package com.notexample.austin.questicon;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.media.MediaPlayer;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -93,5 +95,105 @@ public class TaurenAcitivty extends AppCompatActivity {
         mediaPlayer2.stop();
         mediaPlayer2.reset();
         mediaPlayer2.release();
+    }
+
+    public void clickingStomp(View view) {
+        final AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
+        builder1.setIcon(R.mipmap.ic_stomp);
+        builder1.setTitle("WAR STOMP");
+        builder1.setMessage("Shaking the ground with a mighty stomp of their hooves, tauren can briefly stun small groups of enemies.");
+        builder1.setPositiveButton(
+                "Cool!",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+
+                        return;
+                    }
+                });
+
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
+    }
+
+    public void clickingNatureResist(View view) {
+        final AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
+        builder1.setIcon(R.mipmap.ic_natureresist);
+        builder1.setTitle("NATURE RESISTANCE");
+        builder1.setMessage("Tauren have a natural resistance to Nature magic.");
+        builder1.setPositiveButton(
+                "Cool!",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+
+                        return;
+                    }
+                });
+
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
+    }
+
+    public void clickingEndurance(View view) {
+        final AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
+        builder1.setIcon(R.mipmap.ic_endurance);
+        builder1.setTitle("ENDURANCE");
+        builder1.setMessage("Their exceptional constitution grants the tauren a bonus to their base health.");
+        builder1.setPositiveButton(
+                "Cool!",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+
+                        return;
+                    }
+                });
+
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
+    }
+
+    public void clickingCultivation(View view) {
+        final AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
+        builder1.setIcon(R.mipmap.ic_cultivation);
+        builder1.setTitle("CULTIVATION");
+        builder1.setMessage("Tauren receive a skill bonus to herbalism, and they gather herbs at a much faster rate than herbalists of other races.");
+        builder1.setPositiveButton(
+                "Cool!",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+
+                        return;
+                    }
+                });
+
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
+    }
+
+    public void clickingBrawn(View view) {
+        final AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
+        builder1.setIcon(R.mipmap.ic_brawn);
+        builder1.setTitle("BRAWN");
+        builder1.setMessage("Tauren are large, able-bodied warriors and gain a bonus to critical strikes.");
+        builder1.setPositiveButton(
+                "Cool!",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+
+                        return;
+                    }
+                });
+
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
     }
 }

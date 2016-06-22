@@ -136,6 +136,7 @@
 
                     <ImageButton
                         android:id="@+id/stomp"
+                        android:onClick="clickingStomp"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:background="@drawable/warstomp" />
@@ -144,6 +145,7 @@
                     <ImageButton
                         android:id="@+id/natureresist"
                         android:layout_width="50dp"
+                        android:onClick="clickingNatureResist"
                         android:layout_height="50dp"
                         android:layout_marginLeft="14dp"
                         android:background="@drawable/natureresist" />
@@ -151,12 +153,14 @@
                     <ImageButton
                         android:id="@+id/endurance"
                         android:layout_width="50dp"
+                        android:onClick="clickingEndurance"
                         android:layout_height="50dp"
                         android:layout_marginLeft="14dp"
                         android:background="@drawable/endurance" />
 
                     <ImageButton
                         android:id="@+id/cultivation"
+                        android:onClick="clickingCultivation"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="14dp"
@@ -164,6 +168,7 @@
 
                     <ImageButton
                         android:id="@+id/brawn"
+                        android:onClick="clickingBrawn"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="14dp"
