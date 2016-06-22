@@ -136,6 +136,7 @@
 
                     <ImageButton
                         android:id="@+id/giftofnaru"
+                        android:onClick="clickingGiftofNaru"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:background="@drawable/giftofnaru" />
@@ -143,6 +144,7 @@
 
                     <ImageButton
                         android:id="@+id/shadowresist"
+                        android:onClick="clickingShadowResist2"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="14dp"
@@ -150,6 +152,7 @@
 
                     <ImageButton
                         android:id="@+id/heroicpres"
+                        android:onClick="clickingHeroicPresence"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="14dp"
@@ -157,6 +160,7 @@
 
                     <ImageButton
                         android:id="@+id/gemcutting"
+                        android:onClick="clickingGemSpe"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="14dp"
