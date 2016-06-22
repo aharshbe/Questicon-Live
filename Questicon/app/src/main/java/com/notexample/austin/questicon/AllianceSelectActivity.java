@@ -267,7 +267,7 @@ public class AllianceSelectActivity extends AppCompatActivity {
                 "Select Human",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        Intent intent = new Intent(AllianceSelectActivity.this, AllianceSelectActivity.class);
+                        Intent intent = new Intent(AllianceSelectActivity.this, HumanActivity.class);
                         startActivity(intent);
 
 

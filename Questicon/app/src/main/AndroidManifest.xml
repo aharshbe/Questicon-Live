@@ -85,7 +85,8 @@
         <activity android:name=".WorgenActivity" />
         <activity android:name=".DraeneiAcitivity" />
         <activity android:name=".DwarfActivity" />
-        <activity android:name=".GnomeActivity"></activity>
+        <activity android:name=".GnomeActivity" />
+        <activity android:name=".HumanActivity"></activity>
     </application>
 
 </manifest>
