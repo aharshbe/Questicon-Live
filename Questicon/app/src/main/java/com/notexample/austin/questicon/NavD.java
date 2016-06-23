@@ -1,6 +1,9 @@
 package com.notexample.austin.questicon;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -11,9 +14,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 
 public class NavD extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    ImageView gyro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +27,15 @@ public class NavD extends AppCompatActivity
         setContentView(R.layout.activity_nav_d);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        WelcomeDiaglogue();
+
+        gyro = (ImageView) findViewById(R.id.gyro);
+        gyro.setBackgroundResource(R.drawable.character_animation);
+        AnimationDrawable gyroAnimation = (AnimationDrawable) gyro.getBackground();
+        gyroAnimation.start();
+
+
 
 
 
@@ -130,7 +145,27 @@ public class NavD extends AppCompatActivity
     }
 
     public void clickingChooser(MenuItem item) {
-        Intent intent = new Intent(NavD.this, HordeorAllianceActivity.class);
+        Intent intent = new Intent(NavD.this, SplashScreenLoadingCharacters.class);
         startActivity(intent);
+    }
+    public void WelcomeDiaglogue() {
+        AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
+        builder2.setTitle("Dear WoW player...");
+        builder2.setIcon(R.mipmap.ic_launcher_questicon);
+        builder2.setMessage("Welcome to Questicon: Your World of Warcraft Companion \n\n To get started, swipe from the left, there you'll have access to all the bosses, characters and dungeons WoW has to offer. \n\nFeel free to checkout media for some fun stuff too!");
+        builder2.setCancelable(true);
+
+        builder2.setPositiveButton(
+                "Thanks!",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+
+                        return;
+                    }
+                });
+
+        AlertDialog alert12 = builder2.create();
+        alert12.show();
     }
 }

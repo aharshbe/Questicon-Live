@@ -4,91 +4,81 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SplashScreenMain"
-    android:background="#eb5c5b">
+    android:background="#333333">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/splash"
-        android:background="@drawable/touchofelune"
-        android:alpha="12"
+        android:background="#000"
         android:layout_centerVertical="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_centerHorizontal="true" />
 
     <ImageButton
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:id="@+id/iconforanim"
+        android:id="@+id/icon"
         android:shadowColor="#eb5c5b"
-        android:layout_marginTop="10dp"
         android:shadowDx="4"
         android:shadowDy="4"
         android:shadowRadius="4.5"
         android:background="@drawable/orccharacter"
-        android:layout_alignParentTop="true"
+        android:layout_above="@+id/Welcome"
         android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Welcome"
-        android:textColor="#F0FFFF"
-        android:shadowColor="#eb5c5b"
+        android:textColor="#bc8954"
+        android:shadowColor="#bc8954"
         android:shadowDx="4"
         android:shadowDy="4"
         android:shadowRadius="4.5"
         android:textSize="70sp"
         android:id="@+id/Welcome"
-        android:fontFamily="cursive"
-        android:layout_marginTop="25dp"
-        android:layout_below="@+id/iconforanim"
-        android:layout_centerHorizontal="true" />
+        android:layout_above="@+id/to"
+        android:layout_alignStart="@+id/newhag" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="To"
-        android:shadowColor="#eb5c5b"
+        android:shadowColor="#bc8954"
         android:shadowDx="4"
         android:shadowDy="4"
         android:shadowRadius="4.5"
-        android:textColor="#F0FFFF"
+        android:textColor="#bc8954"
         android:textSize="50sp"
         android:fontFamily="cursive"
         android:id="@+id/to"
-        android:layout_below="@+id/Welcome"
+        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="News Hag"
-        android:fontFamily="cursive"
+        android:text="Questicon"
         android:shadowColor="#eb5c5b"
         android:shadowDx="4"
         android:shadowDy="4"
         android:shadowRadius="4.5"
         android:textSize="70sp"
-        android:textColor="#F0FFFF"
+        android:textColor="#bc8954"
         android:id="@+id/newhag"
         android:layout_below="@+id/to"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignEnd="@+id/your" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:textColor="#F0FFFF"
-        android:fontFamily="cursive"
-        android:textSize="25sp"
-        android:shadowColor="#eb5c5b"
-        android:shadowDx="4"
-        android:shadowDy="4"
-        android:shadowRadius="4.5"
+        android:textColor="#bc8954"
+        android:textSize="20sp"
         android:layout_marginRight="10dp"
-        android:text="..your daily source of news"
+        android:text="...the ultimate World of Warcraft Companion"
         android:id="@+id/your"
-        android:layout_below="@+id/newhag"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true" />
 </RelativeLayout>
