@@ -17,11 +17,13 @@
             android:id="@+id/card_view"
             android:layout_width="match_parent"
             android:layout_height="105dp"
-            android:layout_marginBottom="1dp">
+            android:layout_marginBottom="1dp"
+            android:background="@color/colorAccent">
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="#47FFD700">
 
                 <TextView
                     android:id="@+id/name"
@@ -29,7 +31,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="3dp"
                     android:text="Character Name"
-                    android:textColor="#000000"
+                    android:textColor="#000"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -43,8 +45,6 @@
                     android:text="Level" />
 
 
-
-
                 <TextView
                     android:id="@+id/battlegroup"
                     android:layout_width="wrap_content"
@@ -53,29 +53,6 @@
                     android:layout_marginLeft="3dp"
                     android:text="Battlegroup" />
 
-                <!--<TextView-->
-                    <!--android:id="@+id/wowclass"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_below="@id/battlegroup"-->
-                    <!--android:layout_marginLeft="3dp"-->
-                    <!--android:text="Class" />-->
-
-                <!--<TextView-->
-                    <!--android:id="@+id/race"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_below="@id/wowclass"-->
-                    <!--android:layout_marginLeft="3dp"-->
-                    <!--android:text="Race" />-->
-
-                <!--<TextView-->
-                    <!--android:id="@+id/gender"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_below="@id/race"-->
-                    <!--android:layout_marginLeft="3dp"-->
-                    <!--android:text="Gender" />-->
 
                 <TextView
                     android:id="@+id/ap"
@@ -85,13 +62,7 @@
                     android:layout_marginLeft="3dp"
                     android:text="Achievment Points" />
 
-                <!--<TextView-->
-                    <!--android:id="@+id/faction"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_below="@id/ap"-->
-                    <!--android:layout_marginLeft="3dp"-->
-                    <!--android:text="Faction" />-->
+
 
                 <TextView
                     android:id="@+id/kills"

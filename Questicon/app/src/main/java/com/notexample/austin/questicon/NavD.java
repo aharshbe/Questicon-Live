@@ -144,8 +144,6 @@ public class NavD extends AppCompatActivity
     }
 
 
-
-
     public void clickingLore(MenuItem item) {
         Intent intent = new Intent(NavD.this, LoreActivity.class);
         startActivity(intent);
@@ -162,7 +160,6 @@ public class NavD extends AppCompatActivity
         Intent intent = new Intent(NavD.this, MusicActivity.class);
         startActivity(intent);
     }
-
 
 
     public void clickingChooser(MenuItem item) {

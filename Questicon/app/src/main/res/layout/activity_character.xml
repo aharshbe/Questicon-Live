@@ -5,45 +5,65 @@
     android:layout_height="match_parent"
     tools:context=".CharacterActivity">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/backmain"
+        android:alpha="0.3"/>
 
-    <EditText
-        android:hint="Realm Name"
-        android:id="@+id/realm"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:imeOptions="actionDone"
-        android:inputType="text"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#57000000">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
 
-    <EditText
-        android:id="@+id/charactername"
-        android:hint="Character Name"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="82dp"
-        android:imeOptions="actionDone"
-        android:inputType="text"
-        android:layout_alignTop="@+id/realm"
-        android:layout_alignParentEnd="true" />
+        <EditText
+            android:hint="Realm Name"
+            android:id="@+id/realm"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:id="@+id/charactername"
+            android:hint="Character Name"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="82dp"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:layout_alignTop="@+id/realm"
+            android:layout_alignParentEnd="true" />
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:id="@+id/listView"
+            android:layout_below="@+id/realm"
+            android:layout_alignParentStart="true" />
+
+    </RelativeLayout>
+
+</FrameLayout>
+
 
     <Button
         android:id="@+id/searchButton"
         android:onClick="clickingSearch"
+        android:background="#000"
+        android:textColor="#F0F8FF"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Search"
-
-
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true" />
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:id="@+id/listView"
-        android:layout_below="@+id/realm"
-        android:layout_alignParentStart="true" />
+
 
 
 
