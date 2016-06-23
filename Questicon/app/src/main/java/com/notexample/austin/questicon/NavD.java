@@ -30,13 +30,10 @@ public class NavD extends AppCompatActivity
 
         WelcomeDiaglogue();
 
-        gyro = (ImageView) findViewById(R.id.gyro);
-        gyro.setBackgroundResource(R.drawable.loading_tenticles_annimation);
-        AnimationDrawable gyroAnimation = (AnimationDrawable) gyro.getBackground();
-        gyroAnimation.start();
-
-
-
+//        gyro = (ImageView) findViewById(R.id.gyro);
+//        gyro.setBackgroundResource(R.drawable.loading_tenticles_annimation);
+//        AnimationDrawable gyroAnimation = (AnimationDrawable) gyro.getBackground();
+//        gyroAnimation.start();
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -99,7 +96,7 @@ public class NavD extends AppCompatActivity
 
         } else if (id == R.id.nav_Lore) {
 
-        } else if (id == R.id.nav_media) {
+        } else if (id == R.id.nav_Media) {
 
         }
 
@@ -119,7 +116,7 @@ public class NavD extends AppCompatActivity
     }
 
     public void clickingDungeons(MenuItem item) {
-        Intent intent = new Intent(NavD.this, SplashScreenDungeons.class);
+        Intent intent = new Intent(NavD.this, DungeonActivity.class);
         startActivity(intent);
     }
 
@@ -133,21 +130,23 @@ public class NavD extends AppCompatActivity
         startActivity(intent);
     }
 
+    public void clickingMedia(MenuItem item) {
+        Intent intent = new Intent(NavD.this, MediaAcitvity.class);
+        startActivity(intent);
+    }
+
 
     public void clickingLore(MenuItem item) {
         Intent intent = new Intent(NavD.this, LoreActivity.class);
         startActivity(intent);
     }
 
-    public void clickingMedia(MenuItem item) {
-        Intent intent = new Intent(NavD.this, MediaAcitvity.class);
-        startActivity(intent);
-    }
 
     public void clickingChooser(MenuItem item) {
         Intent intent = new Intent(NavD.this, SplashScreenLoadingCharacters.class);
         startActivity(intent);
     }
+
     public void WelcomeDiaglogue() {
         AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
         builder2.setTitle("Dear WoW player...");
@@ -168,4 +167,6 @@ public class NavD extends AppCompatActivity
         AlertDialog alert12 = builder2.create();
         alert12.show();
     }
+
+
 }

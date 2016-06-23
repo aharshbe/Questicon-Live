@@ -6,7 +6,12 @@
             android:id="@+id/nav_char"
             android:onClick="clickingCharacter"
             android:icon="@drawable/ic_menu_camera"
-            android:title="Characters" />
+            android:title="Your character search" />
+        <item
+            android:id="@+id/nav_chooser"
+            android:icon="@drawable/ic_menu_send"
+            android:title="Characters"
+            android:onClick="clickingChooser"/>
         <item
             android:id="@+id/nav_bosses"
             android:onClick="clickingBosses"
@@ -33,15 +38,11 @@
             android:title="Lore: Nobbel87's YouTube"
             android:onClick="clickingLore"/>
         <item
-            android:id="@+id/nav_media"
+            android:id="@+id/nav_Media"
             android:icon="@drawable/ic_menu_send"
-            android:title="WoW Media"
+            android:title="Media"
             android:onClick="clickingMedia"/>
-        <item
-            android:id="@+id/nav_chooser"
-            android:icon="@drawable/ic_menu_send"
-            android:title="Character Helper"
-            android:onClick="clickingChooser"/>
+
 
     </group>
 
