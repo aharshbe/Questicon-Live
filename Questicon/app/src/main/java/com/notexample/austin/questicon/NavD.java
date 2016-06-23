@@ -33,20 +33,14 @@ public class NavD extends AppCompatActivity
         checkFirstRun();
 
 
-<<<<<<< HEAD
-=======
 
->>>>>>> splash
 //        gyro = (ImageView) findViewById(R.id.gyro);
 //        gyro.setBackgroundResource(R.drawable.loading_tenticles_annimation);
 //        AnimationDrawable gyroAnimation = (AnimationDrawable) gyro.getBackground();
 //        gyroAnimation.start();
-<<<<<<< HEAD
-=======
 
 
 
->>>>>>> splash
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -112,13 +106,10 @@ public class NavD extends AppCompatActivity
 
         } else if (id == R.id.nav_Lore) {
 
-<<<<<<< HEAD
-        } else if (id == R.id.nav_Media) {
-=======
         } else if (id == R.id.nav_Music) {
 
         } else if (id == R.id.nav_Gallery) {
->>>>>>> splash
+
 
         }
 
@@ -152,10 +143,7 @@ public class NavD extends AppCompatActivity
         startActivity(intent);
     }
 
-    public void clickingMedia(MenuItem item) {
-        Intent intent = new Intent(NavD.this, MediaAcitvity.class);
-        startActivity(intent);
-    }
+
 
 
     public void clickingLore(MenuItem item) {
@@ -163,13 +151,12 @@ public class NavD extends AppCompatActivity
         startActivity(intent);
     }
 
-<<<<<<< HEAD
-=======
+
     public void clickingGallery(MenuItem item) {
         Intent intent = new Intent(NavD.this, WallpaperAcitivty.class);
         startActivity(intent);
     }
->>>>>>> splash
+
 
     public void clickingMusic(MenuItem item) {
         Intent intent = new Intent(NavD.this, MusicActivity.class);
@@ -204,9 +191,6 @@ public class NavD extends AppCompatActivity
         alert12.show();
     }
 
-<<<<<<< HEAD
-
-=======
     public void checkFirstRun() {
         boolean isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean("isFirstRun", true);
         if (isFirstRun) {
@@ -225,5 +209,5 @@ public class NavD extends AppCompatActivity
     public void clickingInfo(MenuItem item) {
         WelcomeDiaglogue();
     }
->>>>>>> splash
+
 }

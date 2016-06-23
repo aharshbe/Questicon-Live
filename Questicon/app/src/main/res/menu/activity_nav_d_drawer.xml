@@ -5,19 +5,11 @@
         <item
             android:id="@+id/nav_char"
             android:onClick="clickingCharacter"
-<<<<<<< HEAD
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@mipmap/ic_viewchar"
             android:title="Your character search" />
         <item
-            android:id="@+id/nav_chooser"
-            android:icon="@drawable/ic_menu_send"
-=======
-            android:icon="@mipmap/ic_viewchar"
-            android:title="View your character" />
-        <item
-            android:id="@+id/nav_chooser"
+
             android:icon="@mipmap/ic_charactercho"
->>>>>>> splash
             android:title="Characters"
             android:onClick="clickingChooser"/>
         <item
@@ -46,12 +38,6 @@
             android:title="Lore: Nobbel87's YouTube"
             android:onClick="clickingLore"/>
         <item
-<<<<<<< HEAD
-            android:id="@+id/nav_Media"
-            android:icon="@drawable/ic_menu_send"
-            android:title="Media"
-            android:onClick="clickingMedia"/>
-=======
             android:id="@+id/nav_Gallery"
             android:icon="@mipmap/ic_gallery"
             android:title="Gallery"
@@ -61,7 +47,6 @@
             android:icon="@mipmap/ic_music"
             android:title="Music"
             android:onClick="clickingMusic"/>
->>>>>>> splash
 
 
     </group>
