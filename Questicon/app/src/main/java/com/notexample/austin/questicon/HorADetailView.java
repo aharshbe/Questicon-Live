@@ -3,6 +3,7 @@ package com.notexample.austin.questicon;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.media.MediaPlayer;
 import android.support.annotation.StringRes;
 import android.support.v7.app.AppCompatActivity;
@@ -11,15 +12,24 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 public class HorADetailView extends AppCompatActivity {
+
+    TextView horde, alliance;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hor_adetail_view);
 
+        Typeface font = Typeface.createFromAsset(getAssets(), "wowfont.ttf");
+
         checkFirstRun();
+        horde = (TextView) findViewById(R.id.thehordetextview);
+        horde.setTypeface(font);
+        alliance = (TextView) findViewById(R.id.thealliancetextview);
+        alliance.setTypeface(font);
     }
 
     @Override

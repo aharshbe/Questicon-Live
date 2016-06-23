@@ -3,6 +3,7 @@ package com.notexample.austin.questicon;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.graphics.drawable.AnimationDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,15 +22,21 @@ public class SplashScreenMain extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen_main);
 
+        Typeface font = Typeface.createFromAsset(getAssets(), "wowfont.ttf");
+
 //        background2 = (ImageView) findViewById(R.id.splash);
         icon = (ImageView) findViewById(R.id.icon);
         welcome = (TextView) findViewById(R.id.Welcome);
+        welcome.setTypeface(font);
         Animation animation3 = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
         animation3.setDuration(2600);
         welcome.setAnimation(animation3);
         to = (TextView) findViewById(R.id.to);
+        to.setTypeface(font);
         news = (TextView) findViewById(R.id.newhag);
+        news.setTypeface(font);
         urdaily = (TextView) findViewById(R.id.your);
+        urdaily.setTypeface(font);
         Animation animation6 = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_out_right);
         animation6.setDuration(2700);
         urdaily.setAnimation(animation6);
@@ -78,7 +85,7 @@ public class SplashScreenMain extends AppCompatActivity {
                 try {
                     // Thread will sleep for 5 seconds
 
-                    sleep(3 * 1000);
+                    sleep(4 * 1000);
 
 
                     // After 5 seconds redirect to another intent

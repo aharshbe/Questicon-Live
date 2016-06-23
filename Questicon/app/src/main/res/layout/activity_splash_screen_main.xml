@@ -15,61 +15,43 @@
         android:layout_centerHorizontal="true" />
 
     <ImageButton
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:id="@+id/icon"
-        android:shadowColor="#eb5c5b"
-        android:shadowDx="4"
-        android:shadowDy="4"
-        android:shadowRadius="4.5"
-        android:background="@drawable/orccharacter"
-        android:layout_above="@+id/Welcome"
+        android:background="@drawable/a1gif"
         android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome"
+        android:text="Welcome!"
         android:textColor="#bc8954"
-        android:shadowColor="#bc8954"
-        android:shadowDx="4"
-        android:shadowDy="4"
-        android:shadowRadius="4.5"
-        android:textSize="70sp"
+        android:textSize="50sp"
         android:id="@+id/Welcome"
-        android:layout_above="@+id/to"
-        android:layout_alignStart="@+id/newhag" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="To"
-        android:shadowColor="#bc8954"
-        android:shadowDx="4"
-        android:shadowDy="4"
-        android:shadowRadius="4.5"
+        android:text="To!"
         android:textColor="#bc8954"
-        android:textSize="50sp"
-        android:fontFamily="cursive"
+        android:textSize="40sp"
         android:id="@+id/to"
-        android:layout_centerVertical="true"
+        android:layout_below="@+id/Welcome"
         android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Questicon"
-        android:shadowColor="#eb5c5b"
-        android:shadowDx="4"
-        android:shadowDy="4"
-        android:shadowRadius="4.5"
-        android:textSize="70sp"
+        android:text="Questicon!"
+        android:textSize="50sp"
         android:textColor="#bc8954"
         android:id="@+id/newhag"
         android:layout_below="@+id/to"
-        android:layout_alignEnd="@+id/your" />
+        android:layout_alignEnd="@+id/Welcome" />
 
     <TextView
         android:layout_width="300dp"
@@ -79,6 +61,7 @@
         android:layout_marginRight="10dp"
         android:text="...the ultimate World of Warcraft Companion"
         android:id="@+id/your"
+        android:fontFamily="cursive"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true" />
 </RelativeLayout>
