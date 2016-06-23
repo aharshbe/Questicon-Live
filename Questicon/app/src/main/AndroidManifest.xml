@@ -30,11 +30,6 @@
             android:name=".NavD"
             android:label="Questicon"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".DungeonActivity"
@@ -87,7 +82,14 @@
         <activity android:name=".DwarfActivity" />
         <activity android:name=".GnomeActivity" />
         <activity android:name=".HumanActivity" />
-        <activity android:name=".NightElfActivity"></activity>
+        <activity android:name=".NightElfActivity" />
+        <activity android:name=".SplashScreenMain">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
