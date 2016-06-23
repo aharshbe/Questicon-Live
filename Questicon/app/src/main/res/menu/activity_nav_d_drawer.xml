@@ -5,46 +5,46 @@
         <item
             android:id="@+id/nav_char"
             android:onClick="clickingCharacter"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@mipmap/ic_viewchar"
             android:title="View your character" />
         <item
             android:id="@+id/nav_chooser"
-            android:icon="@drawable/ic_menu_send"
+            android:icon="@mipmap/ic_charactercho"
             android:title="Characters"
             android:onClick="clickingChooser"/>
         <item
             android:id="@+id/nav_bosses"
             android:onClick="clickingBosses"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@mipmap/ic_bosses"
             android:title="Bosses" />
         <item
             android:id="@+id/nav_quest"
             android:onClick="clickingDungeons"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@mipmap/ic_dungeons"
             android:title="Dungeons" />
         <item
             android:id="@+id/nav_mounts"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@mipmap/ic_mounts"
             android:title="Mounts"
             android:onClick="clickingMounts"/>
         <item
             android:id="@+id/nav_items"
-            android:icon="@drawable/ic_menu_send"
+            android:icon="@mipmap/ic_pets"
             android:title="Pets"
             android:onClick="clickingPets"/>
         <item
             android:id="@+id/nav_Lore"
-            android:icon="@drawable/ic_menu_send"
+            android:icon="@mipmap/ic_loreyoutbe"
             android:title="Lore: Nobbel87's YouTube"
             android:onClick="clickingLore"/>
         <item
             android:id="@+id/nav_Gallery"
-            android:icon="@drawable/ic_menu_send"
+            android:icon="@mipmap/ic_gallery"
             android:title="Gallery"
             android:onClick="clickingGallery"/>
         <item
             android:id="@+id/nav_Music"
-            android:icon="@drawable/ic_menu_send"
+            android:icon="@mipmap/ic_music"
             android:title="Music"
             android:onClick="clickingMusic"/>
 
@@ -55,7 +55,7 @@
         <menu>
             <item
                 android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
+                android:icon="@mipmap/ic_sharenav"
                 android:title="Questicon" />
 
         </menu>
