@@ -6,7 +6,12 @@
             android:id="@+id/nav_char"
             android:onClick="clickingCharacter"
             android:icon="@drawable/ic_menu_camera"
-            android:title="Characters" />
+            android:title="View your character" />
+        <item
+            android:id="@+id/nav_chooser"
+            android:icon="@drawable/ic_menu_send"
+            android:title="Characters"
+            android:onClick="clickingChooser"/>
         <item
             android:id="@+id/nav_bosses"
             android:onClick="clickingBosses"
@@ -33,19 +38,20 @@
             android:title="Lore: Nobbel87's YouTube"
             android:onClick="clickingLore"/>
         <item
-            android:id="@+id/nav_media"
+            android:id="@+id/nav_Gallery"
             android:icon="@drawable/ic_menu_send"
-            android:title="WoW Media"
-            android:onClick="clickingMedia"/>
+            android:title="Gallery"
+            android:onClick="clickingGallery"/>
         <item
-            android:id="@+id/nav_chooser"
+            android:id="@+id/nav_Music"
             android:icon="@drawable/ic_menu_send"
-            android:title="Character Helper"
-            android:onClick="clickingChooser"/>
+            android:title="Music"
+            android:onClick="clickingMusic"/>
+
 
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Share Questicon's Repo">
         <menu>
             <item
                 android:id="@+id/nav_share"
