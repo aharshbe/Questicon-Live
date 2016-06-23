@@ -1,21 +1,33 @@
 package com.notexample.austin.questicon;
 
 import android.app.AlertDialog;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.drawable.AnimationDrawable;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.NotificationCompat;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class NavD extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -31,6 +43,7 @@ public class NavD extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         checkFirstRun();
+        NOTIFICATIONBox();
 
 
 
@@ -206,5 +219,87 @@ public class NavD extends AppCompatActivity
     public void clickingInfo(MenuItem item) {
         WelcomeDiaglogue();
     }
+    public void NOTIFICATIONBox() {
+
+        ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+
+        //If there is internet connection then the user will be presented with a notification that displays the top story
+        if (networkInfo != null && networkInfo.isConnected()) {
+
+            NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            notificationManager.cancel(6);
+
+
+        } else {
+            NoInternetDialogue();
+
+//            Intent intent = new Intent(NavD.this, MainActivity.class);
+            Intent intent1 = new Intent(Settings.ACTION_WIFI_SETTINGS);
+
+//            PendingIntent pendingIntent = PendingIntent.getActivity(NavD.this, (int) System.currentTimeMillis(), intent, 0);
+            PendingIntent pendingIntent1 = PendingIntent.getActivity(NavD.this, (int) System.currentTimeMillis(), intent1, 0);
+
+
+            NotificationCompat.BigTextStyle bigTextStyle = new NotificationCompat.BigTextStyle();
+            NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(NavD.this);
+            mBuilder.setSmallIcon(android.R.drawable.stat_sys_warning);
+            mBuilder.setContentTitle("No internet connection!");
+            Notification notification = mBuilder.build();
+            long[] pattern = {500, 500, 500, 500, 500, 500, 500, 500, 500};
+            mBuilder.setSound(notification.sound = Uri.parse("android.resource://"
+                    + this.getPackageName() + "/" + R.raw.notif));
+            mBuilder.setVibrate(pattern);
+            mBuilder.setLights(Color.RED, 500, 500);
+            mBuilder.setStyle(new NotificationCompat.InboxStyle());
+            mBuilder.setContentText("To use the app, please enable WIFI, Thanks!");
+            mBuilder.setContentIntent(pendingIntent1);
+            mBuilder.setPriority(Notification.PRIORITY_MAX);
+            mBuilder.setStyle(bigTextStyle);
+            mBuilder.addAction(android.R.drawable.ic_menu_info_details, "Connect WIFI", pendingIntent1);
+
+            NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            notificationManager.notify(6, bigTextStyle.build());
+        }
+
+
+    }
+
+
+    public void NoInternetDialogue() {
+        AlertDialog.Builder builder7 = new AlertDialog.Builder(this);
+        builder7.setIcon(R.mipmap.ic_main_icon_questicon);
+        builder7.setMessage("No internet connection, please click below to enable connection!" + "\n" + "\n" + "-Sincerely, your developers");
+        builder7.setCancelable(true);
+
+        builder7.setPositiveButton(
+                "Go to connection settings",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                        Intent intent1 = new Intent(Settings.ACTION_WIFI_SETTINGS);
+                        startActivity(intent1);
+
+
+                        return;
+                    }
+                });
+
+        builder7.setNegativeButton(
+                "I'm alright",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Toast.makeText(NavD.this, "Totally get it, but be advised unfortunately Questicons functionality will be greatly limited!", Toast.LENGTH_LONG).show();
+                        dialog.cancel();
+                    }
+                });
+
+        AlertDialog alert11 = builder7.create();
+        alert11.show();
+
+    }
+
+
+
 
 }

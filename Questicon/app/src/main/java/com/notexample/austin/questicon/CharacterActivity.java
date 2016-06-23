@@ -1,10 +1,15 @@
 package com.notexample.austin.questicon;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -44,6 +49,8 @@ public class CharacterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_character);
 
+        checkFirstRun();
+
         listView = (ListView) findViewById(R.id.listView);
         realm = (EditText) findViewById(R.id.realm);
         charactername = (EditText) findViewById(R.id.charactername);
@@ -54,65 +61,19 @@ public class CharacterActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
 
 
-        CheckingInternetConnection();
+
 
 
     }
-
-
-    public void CheckingInternetConnection() {
-
-        ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
-        if (networkInfo != null && networkInfo.isConnected()) {
-
-
-            Intent intent1 = new Intent(this, CharacterActivity.class);
-
-            PendingIntent pendingIntent1 = PendingIntent.getActivity(this, (int) System.currentTimeMillis(), intent1, 0);
-
-
-            NotificationCompat.BigTextStyle bigPictureStyle = new NotificationCompat.BigTextStyle();
-            NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this);
-            mBuilder.setSmallIcon(android.R.drawable.star_on);
-            mBuilder.setContentTitle("Welcome to Questicon");
-            mBuilder.setContentIntent(pendingIntent1);
-            mBuilder.setPriority(Notification.PRIORITY_MAX);
-            mBuilder.setStyle(bigPictureStyle);
-
-            NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-            notificationManager.notify(1, bigPictureStyle.build());
-            notificationManager.cancel(6);
-
-
-        } else {
-            Toast.makeText(getApplicationContext(), "Connection not ready",
-                    Toast.LENGTH_SHORT).show();
-            Intent intent1 = new Intent(Settings.ACTION_WIFI_SETTINGS);
-
-
-            PendingIntent pendingIntent = PendingIntent.getActivity(this, (int) System.currentTimeMillis(), intent1, 0);
-
-
-            NotificationCompat.BigTextStyle bigTextStyle = new NotificationCompat.BigTextStyle();
-            bigTextStyle.setSummaryText("To use the app, please enable WIFI, Thanks!");
-
-            NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this);
-            mBuilder.setSmallIcon(android.R.drawable.star_on);
-            mBuilder.setContentTitle("Questicon Needs Attention");
-            mBuilder.setContentText("To use the Question, you'll need to enable WIFI.");
-            mBuilder.setContentIntent(pendingIntent);
-            mBuilder.setPriority(Notification.PRIORITY_MAX);
-            mBuilder.setStyle(bigTextStyle);
-            mBuilder.addAction(R.drawable.wifi, "To open WIFI settings", pendingIntent);
-
-            NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-            notificationManager.notify(6, bigTextStyle.build());
-            notificationManager.cancel(1);
-
-
-        }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.info, menu);
+        return true;
     }
+
+
+
 
     public void APICALL() {
 
@@ -228,6 +189,59 @@ public class CharacterActivity extends AppCompatActivity {
         startActivity(myIntent);
 
 
+    }
+
+    public void clickingInfo(MenuItem item) {
+        InfoDiaglogue();
+    }
+
+    public void InfoDiaglogue() {
+        AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
+        builder2.setTitle("So you're a little confused...");
+        builder2.setIcon(R.mipmap.ic_launcher_questicon);
+        builder2.setCancelable(true);
+        builder2.setMessage("To search for your character: \n\n Just place your character's realm in the first box and their name in the second, lastly hit the search button at the bottom of the screen! \n\n **Only characters on a US realm can be searched for the moment, sorry about that!**");
+        builder2.setPositiveButton(
+                "Thanks!",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+
+                        return;
+                    }
+                });
+
+        AlertDialog alert12 = builder2.create();
+        alert12.show();
+    }
+
+    public void checkFirstRun() {
+        boolean isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean("isFirstRun3", true);
+        if (isFirstRun) {
+
+            AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
+            builder2.setTitle("Dear WoW player...");
+            builder2.setIcon(R.mipmap.ic_launcher_questicon);
+            builder2.setCancelable(true);
+            builder2.setMessage("To search for your character: \n\n Just place your character's realm in the first box and their name in the second, lastly hit the search button at the bottom of the screen! \n\n **Only characters on a US realm can be searched for the moment, sorry about that!**");
+            builder2.setPositiveButton(
+                    "Thanks!",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+
+                            return;
+                        }
+                    });
+
+            AlertDialog alert12 = builder2.create();
+            alert12.show();
+
+            getSharedPreferences("PREFERENCE", MODE_PRIVATE)
+                    .edit()
+                    .putBoolean("isFirstRun3", false)
+                    .apply();
+        }
     }
 }
 

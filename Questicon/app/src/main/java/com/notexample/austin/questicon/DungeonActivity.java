@@ -261,6 +261,8 @@ public class DungeonActivity extends AppCompatActivity {
     public void clickingInfo(MenuItem item) {
         InfoDiaglogue();
     }
+
+
     public void InfoDiaglogue() {
         AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
         builder2.setTitle("So you're a little confused...");
