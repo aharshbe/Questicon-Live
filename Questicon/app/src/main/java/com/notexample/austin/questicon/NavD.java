@@ -31,7 +31,7 @@ public class NavD extends AppCompatActivity
         WelcomeDiaglogue();
 
         gyro = (ImageView) findViewById(R.id.gyro);
-        gyro.setBackgroundResource(R.drawable.character_animation);
+        gyro.setBackgroundResource(R.drawable.loading_tenticles_annimation);
         AnimationDrawable gyroAnimation = (AnimationDrawable) gyro.getBackground();
         gyroAnimation.start();
 
@@ -119,7 +119,7 @@ public class NavD extends AppCompatActivity
     }
 
     public void clickingDungeons(MenuItem item) {
-        Intent intent = new Intent(NavD.this, DungeonActivity.class);
+        Intent intent = new Intent(NavD.this, SplashScreenDungeons.class);
         startActivity(intent);
     }
 

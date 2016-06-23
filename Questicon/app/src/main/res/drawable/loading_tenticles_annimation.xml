@@ -1,0 +1,44 @@
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false" >
+
+    <item
+        android:drawable="@drawable/tenticlesloadinggif1"
+        android:duration="100"/>
+    <item
+        android:drawable="@drawable/tenticlesloadinggif2"
+        android:duration="100"/>
+    <item
+        android:drawable="@drawable/tenticlesloadinggif3"
+        android:duration="100"/>
+    <item
+        android:drawable="@drawable/tenticlesloadinggif4"
+        android:duration="100"/>
+    <item
+        android:drawable="@drawable/tenticlesloadinggif5"
+        android:duration="100"/>
+    <item
+        android:drawable="@drawable/tenticlesloadinggif6"
+        android:duration="100"/>
+    <item
+        android:drawable="@drawable/tenticlesloadinggif7"
+        android:duration="100"/>
+    <item
+        android:drawable="@drawable/tenticlesloadinggif8"
+        android:duration="100"/>
+    <item
+        android:drawable="@drawable/tenticlesloadinggif9"
+        android:duration="100"/>
+    <item
+        android:drawable="@drawable/tenticlesloadinggif10"
+        android:duration="100"/>
+    <item
+        android:drawable="@drawable/tenticlesloadinggif11"
+        android:duration="100"/>
+    <item
+        android:drawable="@drawable/tenticlesloadinggif12"
+        android:duration="100"/>
+    <item
+        android:drawable="@drawable/tenticlesloadinggif13"
+        android:duration="100"/>
+
+</animation-list>
