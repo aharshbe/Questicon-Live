@@ -12,6 +12,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -19,7 +20,8 @@ import android.widget.ImageView;
 public class NavD extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    ImageView gyro;
+//    ImageView gyro;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,12 +30,23 @@ public class NavD extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        WelcomeDiaglogue();
+        checkFirstRun();
 
+
+<<<<<<< HEAD
+=======
+
+>>>>>>> splash
 //        gyro = (ImageView) findViewById(R.id.gyro);
 //        gyro.setBackgroundResource(R.drawable.loading_tenticles_annimation);
 //        AnimationDrawable gyroAnimation = (AnimationDrawable) gyro.getBackground();
 //        gyroAnimation.start();
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> splash
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -44,6 +57,7 @@ public class NavD extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setItemIconTintList(null);
     }
 
     @Override
@@ -60,6 +74,8 @@ public class NavD extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.nav_d, menu);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.info, menu);
         return true;
     }
 
@@ -96,7 +112,13 @@ public class NavD extends AppCompatActivity
 
         } else if (id == R.id.nav_Lore) {
 
+<<<<<<< HEAD
         } else if (id == R.id.nav_Media) {
+=======
+        } else if (id == R.id.nav_Music) {
+
+        } else if (id == R.id.nav_Gallery) {
+>>>>>>> splash
 
         }
 
@@ -141,6 +163,20 @@ public class NavD extends AppCompatActivity
         startActivity(intent);
     }
 
+<<<<<<< HEAD
+=======
+    public void clickingGallery(MenuItem item) {
+        Intent intent = new Intent(NavD.this, WallpaperAcitivty.class);
+        startActivity(intent);
+    }
+>>>>>>> splash
+
+    public void clickingMusic(MenuItem item) {
+        Intent intent = new Intent(NavD.this, MusicActivity.class);
+        startActivity(intent);
+    }
+
+
 
     public void clickingChooser(MenuItem item) {
         Intent intent = new Intent(NavD.this, SplashScreenLoadingCharacters.class);
@@ -168,5 +204,26 @@ public class NavD extends AppCompatActivity
         alert12.show();
     }
 
+<<<<<<< HEAD
 
+=======
+    public void checkFirstRun() {
+        boolean isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean("isFirstRun", true);
+        if (isFirstRun) {
+
+            WelcomeDiaglogue();
+
+
+            getSharedPreferences("PREFERENCE", MODE_PRIVATE)
+                    .edit()
+                    .putBoolean("isFirstRun", false)
+                    .apply();
+        }
+    }
+
+
+    public void clickingInfo(MenuItem item) {
+        WelcomeDiaglogue();
+    }
+>>>>>>> splash
 }

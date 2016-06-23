@@ -270,6 +270,7 @@
         android:layout_height="40dp"
         android:background="@android:drawable/ic_menu_save"
         android:id="@+id/buttonSavewallaper"
+        android:onClick="clickingSave"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true" />
 </RelativeLayout>

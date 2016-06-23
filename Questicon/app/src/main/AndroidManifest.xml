@@ -7,7 +7,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_pandaren"
+        android:hardwareAccelerated="true"
+        android:largeHeap="true"
+        android:icon="@mipmap/ic_main_icon_questicon"
         android:label="Questicon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -62,9 +64,6 @@
         <activity
             android:name=".MusicActivity"
             android:label="Music" />
-        <activity
-            android:name=".HordeorAllianceActivity"
-            android:label="Character Chooser" />
         <activity android:name=".HorADetailView" />
         <activity android:name=".AllianceSelectActivity" />
         <activity android:name=".HordeSelectActivity" />
