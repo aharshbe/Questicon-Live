@@ -141,7 +141,7 @@ public class HorADetailView extends AppCompatActivity {
     }
 
     public void checkFirstRun() {
-        boolean isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean("isFirstRun3", true);
+        boolean isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean("isFirstRun4", true);
         if (isFirstRun) {
 
             AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
@@ -164,7 +164,7 @@ public class HorADetailView extends AppCompatActivity {
 
             getSharedPreferences("PREFERENCE", MODE_PRIVATE)
                     .edit()
-                    .putBoolean("isFirstRun3", false)
+                    .putBoolean("isFirstRun4", false)
                     .apply();
         }
     }
