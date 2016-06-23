@@ -1,5 +1,7 @@
 package com.notexample.austin.questicon;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.speech.tts.TextToSpeech;
@@ -9,6 +11,7 @@ import android.os.Bundle;
 import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
@@ -184,6 +187,7 @@ public class DungeonActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dungeon);
 
+        checkFirstRun();
         dungeon();
     }
 
@@ -252,6 +256,58 @@ public class DungeonActivity extends AppCompatActivity {
         client.get("https://us.api.battle.net/wow/zone/?locale=en_US&apikey=wheces9zargz65mhza5jfv9nentuy2gg", jsonHttpResponseHandler);
 
 
+    }
+
+    public void clickingInfo(MenuItem item) {
+        InfoDiaglogue();
+    }
+    public void InfoDiaglogue() {
+        AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
+        builder2.setTitle("So you're a little confused...");
+        builder2.setIcon(R.mipmap.ic_launcher_questicon);
+        builder2.setCancelable(true);
+        builder2.setMessage("A single press on a dungeon:\n\n Will start the text to speech engine and read that dungeons lore. \n\n A long press on a dunegon: \n\n Will open that dungeons detailed informtaion like loot gained from killing the boss or where the dungeon is located.");
+        builder2.setPositiveButton(
+                "Thanks!",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+
+                        return;
+                    }
+                });
+
+        AlertDialog alert12 = builder2.create();
+        alert12.show();
+    }
+
+    public void checkFirstRun() {
+        boolean isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean("isFirstRun1", true);
+        if (isFirstRun) {
+
+            AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
+            builder2.setTitle("Dear WoW player...");
+            builder2.setIcon(R.mipmap.ic_launcher_questicon);
+            builder2.setCancelable(true);
+            builder2.setMessage("A single press on a dungeon:\n\n Will start the text to speech engine and read that dungeons lore. \n\n A long press on a dunegon: \n\n Will open that dungeons detailed informtaion like loot gained from killing the boss or where the dungeon is located.");
+            builder2.setPositiveButton(
+                    "Thanks!",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+
+                            return;
+                        }
+                    });
+
+            AlertDialog alert12 = builder2.create();
+            alert12.show();
+
+            getSharedPreferences("PREFERENCE", MODE_PRIVATE)
+                    .edit()
+                    .putBoolean("isFirstRun1", false)
+                    .apply();
+        }
     }
 
 

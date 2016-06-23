@@ -1,6 +1,8 @@
 package com.notexample.austin.questicon;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.support.v7.app.AppCompatActivity;
@@ -21,6 +23,7 @@ public class DunegonDetailView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dunegon_detail_view);
+
 
 
         bossesName = (WebView) findViewById(R.id.webViewDungeonDetail);

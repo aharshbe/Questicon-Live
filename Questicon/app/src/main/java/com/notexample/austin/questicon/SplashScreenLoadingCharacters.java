@@ -32,10 +32,10 @@ public class SplashScreenLoadingCharacters extends AppCompatActivity {
 
                 try {
                     // Thread will sleep for 5 seconds
-                    sleep(3 * 1000);
+                    sleep(2 * 1000);
 
                     // After 5 seconds redirect to another intent
-                    Intent i = new Intent(getBaseContext(), HordeorAllianceActivity.class);
+                    Intent i = new Intent(getBaseContext(), HorADetailView.class);
                     startActivity(i);
 
                     //Remove activity

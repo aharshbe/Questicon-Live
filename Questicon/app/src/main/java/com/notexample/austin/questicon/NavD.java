@@ -12,6 +12,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -21,6 +22,7 @@ public class NavD extends AppCompatActivity
 
 //    ImageView gyro;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +30,9 @@ public class NavD extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        WelcomeDiaglogue();
+        checkFirstRun();
+
+
 
 //        gyro = (ImageView) findViewById(R.id.gyro);
 //        gyro.setBackgroundResource(R.drawable.loading_tenticles_annimation);
@@ -63,6 +67,8 @@ public class NavD extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.nav_d, menu);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.info, menu);
         return true;
     }
 
@@ -178,5 +184,22 @@ public class NavD extends AppCompatActivity
         alert12.show();
     }
 
+    public void checkFirstRun() {
+        boolean isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean("isFirstRun", true);
+        if (isFirstRun) {
 
+            WelcomeDiaglogue();
+
+
+            getSharedPreferences("PREFERENCE", MODE_PRIVATE)
+                    .edit()
+                    .putBoolean("isFirstRun", false)
+                    .apply();
+        }
+    }
+
+
+    public void clickingInfo(MenuItem item) {
+        WelcomeDiaglogue();
+    }
 }

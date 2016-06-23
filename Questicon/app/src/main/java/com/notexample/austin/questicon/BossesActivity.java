@@ -1,7 +1,9 @@
 package com.notexample.austin.questicon;
 
+import android.app.AlertDialog;
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.speech.tts.TextToSpeech;
@@ -12,6 +14,7 @@ import android.support.v7.widget.SearchView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
@@ -198,6 +201,8 @@ public class BossesActivity extends AppCompatActivity {
 
         handleIntent(getIntent());
 
+        checkFirstRun();
+
 
     }
 
@@ -285,6 +290,58 @@ public class BossesActivity extends AppCompatActivity {
     }
 
 
+    public void clickingInfo(MenuItem item) {
+        InfoDiaglogue();
+
+    }
+    public void InfoDiaglogue() {
+        AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
+        builder2.setTitle("So you're a little confused...");
+        builder2.setIcon(R.mipmap.ic_launcher_questicon);
+        builder2.setCancelable(true);
+        builder2.setMessage("A single press on a boss:\n\n Will start the text to speech engine and read that bosses lore. \n\n A long press on a boss: \n\n Will open that bosses detailed informtaion like loot gained from killing the boss or which dungeon you can find him/her/it in.");
+        builder2.setPositiveButton(
+                "Thanks!",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+
+                        return;
+                    }
+                });
+
+        AlertDialog alert12 = builder2.create();
+        alert12.show();
+    }
+
+    public void checkFirstRun() {
+        boolean isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean("isFirstRun2", true);
+        if (isFirstRun) {
+
+            AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
+            builder2.setTitle("Dear WoW player...");
+            builder2.setIcon(R.mipmap.ic_launcher_questicon);
+            builder2.setCancelable(true);
+            builder2.setMessage("A single press on a boss:\n\n Will start the text to speech engine and read that bosses lore. \n\n A long press on a boss: \n\n Will open that bosses detailed informtaion like loot gained from killing the boss or which dungeon you can find him/her/it in.");
+            builder2.setPositiveButton(
+                    "Thanks!",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+
+                            return;
+                        }
+                    });
+
+            AlertDialog alert12 = builder2.create();
+            alert12.show();
+
+            getSharedPreferences("PREFERENCE", MODE_PRIVATE)
+                    .edit()
+                    .putBoolean("isFirstRun2", false)
+                    .apply();
+        }
+    }
 }
 
 

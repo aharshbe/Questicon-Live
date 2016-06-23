@@ -4,6 +4,7 @@
     <item
         android:title="infoIconMenu"
         android:icon="@drawable/info1"
+        android:onClick="clickingInfo"
         app:showAsAction="ifRoom"
         />
 
