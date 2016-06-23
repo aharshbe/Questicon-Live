@@ -3,60 +3,105 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    tools:context="com.notexample.austin.questicon.HorADetailView"
-    android:background="#000">
-
-    <TextView
-        android:id="@+id/chooserTVDetail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:background="#70F0FFFF"
-        android:text="Choose between Horde or Alliance"
-        android:textColor="#000"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+    tools:context="com.notexample.austin.questicon.HorADetailView">
 
     <ImageView
-        android:id="@+id/horderImage"
-        android:layout_width="150dp"
-        android:layout_height="230dp"
-        android:onClick="clickingHordeSelect"
-        android:background="@drawable/hordecresticon"
-        android:layout_centerVertical="true"
-        android:layout_alignParentStart="true" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/hordeoralliance"
+        android:alpha=".3"/>
 
-    <ImageView
-        android:id="@+id/allianceImage"
-        android:layout_width="150dp"
-        android:layout_height="220dp"
-        android:onClick="clickingAllianceSelect"
-        android:background="@drawable/alliancecresticon"
-        android:layout_above="@+id/buttonInfoAlliance"
-        android:layout_alignParentEnd="true" />
+   <FrameLayout
+       android:layout_width="match_parent"
+       android:layout_height="250dp"
+       android:paddingTop="10dp"
+       android:paddingRight="10dp"
+       android:paddingBottom="10dp"
+       android:paddingLeft="10dp"
+       android:id="@+id/allianceFrame">
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:background="#4700008B">
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/info1"
-        android:id="@+id/buttonInfoHorde"
-        android:onClick="clickingInfoHorde"
-        android:layout_below="@+id/horderImage"
-        android:layout_alignEnd="@+id/horderImage"
-        android:layout_marginEnd="44dp" />
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="The Alliance"
+               android:textSize="30sp"
+               android:textColor="#000"
+               android:id="@+id/textView3"
+               android:layout_alignParentTop="true"
+               android:layout_toStartOf="@+id/allianceImage" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/buttonInfoAlliance"
-        android:onClick="clickingInfoAlliance"
-        android:background="@drawable/info1"
-        android:layout_alignTop="@+id/buttonInfoHorde"
-        android:layout_alignStart="@+id/allianceImage"
-        android:layout_marginStart="42dp" />
+           <ImageView
+               android:id="@+id/allianceImage"
+               android:layout_width="150dp"
+               android:layout_height="220dp"
+               android:onClick="clickingAllianceSelect"
+               android:background="@drawable/alliancecresticon"
+               android:layout_alignParentEnd="true" />\
+
+           <ImageView
+               android:layout_width="170dp"
+               android:layout_height="130dp"
+               android:layout_marginLeft="10dp"
+               android:background="@drawable/alliancecharacters"
+               android:id="@+id/imageView3"
+               android:layout_centerVertical="true"
+               android:layout_alignParentStart="true" />
+
+       </RelativeLayout>
+   </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:id="@+id/allianceHorde"
+        android:layout_below="@id/allianceFrame">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#47B22222">
+
+
+            <ImageView
+                android:id="@+id/horderImage"
+                android:layout_width="150dp"
+                android:layout_height="230dp"
+                android:onClick="clickingHordeSelect"
+                android:background="@drawable/hordecresticon"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="The Horde"
+                android:textSize="30sp"
+                android:textColor="#000"
+                android:id="@+id/textView4"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/horderImage" />
+
+            <ImageView
+                android:layout_width="170dp"
+                android:layout_height="130dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/horde2"
+                android:id="@+id/imageView4"
+                android:layout_marginRight="10dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true" />
+
+        </RelativeLayout>
+    </FrameLayout>
+
+
+
+
+
 </RelativeLayout>

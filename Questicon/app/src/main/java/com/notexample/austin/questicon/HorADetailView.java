@@ -7,6 +7,9 @@ import android.media.MediaPlayer;
 import android.support.annotation.StringRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 
 public class HorADetailView extends AppCompatActivity {
@@ -15,24 +18,25 @@ public class HorADetailView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hor_adetail_view);
+
+        checkFirstRun();
     }
 
-    public void clickingInfoAlliance(View view) {
-        AllianceInfoDialogue();
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.info, menu);
+        return true;
     }
 
-    public void clickingInfoHorde(View view) {
+
+
+    public void clickingHordeSelect(View view) {
         HordeInfoDialogue();
     }
 
-    public void clickingHordeSelect(View view) {
-        Intent intent = new Intent(HorADetailView.this, HordeSelectActivity.class);
-        startActivity(intent);
-    }
-
     public void clickingAllianceSelect(View view) {
-        Intent intent = new Intent(HorADetailView.this, AllianceSelectActivity.class);
-        startActivity(intent);
+        AllianceInfoDialogue();
     }
 
     public void AllianceInfoDialogue() {
@@ -105,5 +109,57 @@ public class HorADetailView extends AppCompatActivity {
 
         AlertDialog alert11 = builder1.create();
         alert11.show();
+    }
+    public void InfoDiaglogue() {
+        AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
+        builder2.setTitle("So you're a little confused...");
+        builder2.setIcon(R.mipmap.ic_launcher_questicon);
+        builder2.setCancelable(true);
+        builder2.setMessage("Select a faction: \n\n There are two factions: The Horde and The Alliance. \n\n To view information about each simply click on it's sigil!");
+        builder2.setPositiveButton(
+                "Thanks!",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+
+                        return;
+                    }
+                });
+
+        AlertDialog alert12 = builder2.create();
+        alert12.show();
+    }
+
+    public void checkFirstRun() {
+        boolean isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean("isFirstRun3", true);
+        if (isFirstRun) {
+
+            AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
+            builder2.setTitle("Dear WoW player...");
+            builder2.setIcon(R.mipmap.ic_launcher_questicon);
+            builder2.setCancelable(true);
+            builder2.setMessage("Select a faction: \n\n There are two factions: The Horde and The Alliance. \n\n To view information about each simply click on it's sigil!");
+            builder2.setPositiveButton(
+                    "Thanks!",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+
+                            return;
+                        }
+                    });
+
+            AlertDialog alert12 = builder2.create();
+            alert12.show();
+
+            getSharedPreferences("PREFERENCE", MODE_PRIVATE)
+                    .edit()
+                    .putBoolean("isFirstRun3", false)
+                    .apply();
+        }
+    }
+
+    public void clickingInfo(MenuItem item) {
+        InfoDiaglogue();
     }
 }
