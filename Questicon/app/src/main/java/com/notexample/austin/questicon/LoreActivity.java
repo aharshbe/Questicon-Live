@@ -1,5 +1,6 @@
 package com.notexample.austin.questicon;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.speech.tts.TextToSpeech;
@@ -24,6 +25,8 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Locale;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import cz.msebera.android.httpclient.Header;
 
@@ -98,8 +101,6 @@ public class LoreActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-            Toast.makeText(LoreActivity.this, "There are " + loreModelArrayList.size() + " videos to search through.", Toast.LENGTH_SHORT).show();
-
 
         }
 
@@ -119,6 +120,24 @@ public class LoreActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lore_stuff);
 
         lore();
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Hey there!");
+        builder.setIcon(R.drawable.gyro_animation);
+        builder.setMessage("Loading lore videos, just two seconds...");
+        builder.setCancelable(false);
+
+        final AlertDialog closedialog= builder.create();
+
+        closedialog.show();
+
+        final Timer timer2 = new Timer();
+        timer2.schedule(new TimerTask() {
+            public void run() {
+                closedialog.dismiss();
+                timer2.cancel(); //this will cancel the timer of the system
+            }
+        }, 2000);
     }
 
     public void lore() {

@@ -1,5 +1,6 @@
 package com.notexample.austin.questicon;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,6 +20,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import cz.msebera.android.httpclient.Header;
 
@@ -80,7 +83,6 @@ public class MountsActivity extends AppCompatActivity {
                         }
                     });
                 }
-                Toast.makeText(MountsActivity.this, "There are "+jsonArray.length()+ " mounts to search through.", Toast.LENGTH_SHORT).show();
 
 
             } catch (JSONException e) {
@@ -106,6 +108,23 @@ public class MountsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_mounts);
 
         mount();
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("HI!");
+        builder.setIcon(R.drawable.gyro_animation);
+        builder.setMessage("Loading Mounts, just two seconds...");
+        builder.setCancelable(false);
+
+        final AlertDialog closedialog= builder.create();
+
+        closedialog.show();
+
+        final Timer timer2 = new Timer();
+        timer2.schedule(new TimerTask() {
+            public void run() {
+                closedialog.dismiss();
+                timer2.cancel(); //this will cancel the timer of the system
+            }
+        }, 2000);
     }
 
     public void mount() {

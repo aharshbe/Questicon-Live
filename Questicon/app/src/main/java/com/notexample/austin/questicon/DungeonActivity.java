@@ -27,6 +27,8 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Locale;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import cz.msebera.android.httpclient.Header;
 
@@ -162,7 +164,6 @@ public class DungeonActivity extends AppCompatActivity {
                         }
                     });
                 }
-                Toast.makeText(DungeonActivity.this, "There are "+jsonArray.length()+ " dungeons to search through.", Toast.LENGTH_SHORT).show();
 
 
             } catch (JSONException e) {
@@ -189,6 +190,24 @@ public class DungeonActivity extends AppCompatActivity {
 
         checkFirstRun();
         dungeon();
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Hello there!");
+        builder.setIcon(R.drawable.gyro_animation);
+        builder.setMessage("Loading Dunegeons, just two seconds...");
+        builder.setCancelable(false);
+
+        final AlertDialog closedialog= builder.create();
+
+        closedialog.show();
+
+        final Timer timer2 = new Timer();
+        timer2.schedule(new TimerTask() {
+            public void run() {
+                closedialog.dismiss();
+                timer2.cancel(); //this will cancel the timer of the system
+            }
+        }, 2000);
     }
 
     @Override

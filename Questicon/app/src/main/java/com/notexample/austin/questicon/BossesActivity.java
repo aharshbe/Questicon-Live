@@ -171,7 +171,6 @@ public class BossesActivity extends AppCompatActivity {
                         }
                     });
                 }
-                Toast.makeText(BossesActivity.this, "There are "+jsonArray.length()+ " bosses to search through.", Toast.LENGTH_SHORT).show();
 
 
             } catch (JSONException e) {
@@ -208,7 +207,7 @@ public class BossesActivity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Hello!");
         builder.setIcon(R.drawable.gyro_animation);
-        builder.setMessage("Loading Bosses, just one second");
+        builder.setMessage("Loading Bosses, just two seconds...");
         builder.setCancelable(false);
 
         final AlertDialog closedialog= builder.create();
