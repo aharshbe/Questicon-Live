@@ -50,15 +50,15 @@
 * **Verify it's out with Blizzard to submit app the Play Store**
 * **Submit to Google Play store**
 
-
-##User Story:
-###> ...To be added
-##User Flow Diagram:
-###> ...To be added
 ##Paper Prototype:
 ###> ...To be added
 ##Paper Prototype v2:
-###>...To be added
+![](readmedata/images.png)
+![](readmedata/images1.png)
+![](readmedata/images2.png)
+![](readmedata/images3.png)
+
+
 
 
 
