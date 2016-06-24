@@ -2,6 +2,10 @@
 #Questicon: Your World of Warcraft companion
 ##>Project 4, a World of Warcraft App
 ####Your source for World of Warcraft bosses, pets and more...
+![](readmedata/o3.gif)
+![](readmedata/o1.gif)
+![](readmedata/o2.gif)
+![](readmedata/o4.gif)
 ##The purpose of this app:
 ####To provide the viewer with WoW data in the form of an API call via Blizzard's servers that website can be found here: [Blizzard API link](https://dev.battle.net/io-docs)
 ##Requierments for Project 4:
