@@ -712,7 +712,7 @@ public class MusicActivity extends ActionBarActivity {
     }
 
     public void checkFirstRun() {
-        boolean isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean("isFirstRun7", true);
+        boolean isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean("isFirstRun20", true);
         if (isFirstRun) {
 
             AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
@@ -735,7 +735,7 @@ public class MusicActivity extends ActionBarActivity {
 
             getSharedPreferences("PREFERENCE", MODE_PRIVATE)
                     .edit()
-                    .putBoolean("isFirstRun7", false)
+                    .putBoolean("isFirstRun20", false)
                     .apply();
         }
     }

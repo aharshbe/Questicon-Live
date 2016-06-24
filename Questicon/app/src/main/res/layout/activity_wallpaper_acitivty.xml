@@ -267,10 +267,12 @@
 
     <Button
         android:layout_width="40dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
         android:layout_height="40dp"
-        android:background="@android:drawable/ic_menu_save"
+        android:background="@mipmap/ic_savesong"
         android:id="@+id/buttonSavewallaper"
         android:onClick="clickingSave"
-        android:layout_alignParentTop="true"
+        android:layout_alignBottom="@+id/selected"
         android:layout_alignParentEnd="true" />
 </RelativeLayout>

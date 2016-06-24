@@ -182,7 +182,7 @@ public class WallpaperAcitivty extends AppCompatActivity  {
         builder2.setTitle("So you're a little confused...");
         builder2.setIcon(R.mipmap.ic_launcher_questicon);
         builder2.setCancelable(true);
-        builder2.setMessage("To flip through images: \n\n just swipe from right to left on the images at the bottom to the streen \n\n To view image: \n\n Just select the image you'd like by clicking it! \n\n To save images:\n\n Just hit the save icon in the upper right hand corner of the screen.");
+        builder2.setMessage("To flip through images: \n\n just swipe from right to left on the images at the bottom to the streen \n\n To view image: \n\n Just select the image you'd like by clicking it! \n\n To save images:\n\n Just hit the save icon in the bottom right hand corner of the screen.");
         builder2.setPositiveButton(
                 "Thanks!",
                 new DialogInterface.OnClickListener() {
@@ -205,7 +205,7 @@ public class WallpaperAcitivty extends AppCompatActivity  {
             builder2.setTitle("Dear WoW player...");
             builder2.setIcon(R.mipmap.ic_launcher_questicon);
             builder2.setCancelable(true);
-            builder2.setMessage("To flip through images: \n\n just swipe from right to left on the images at the bottom to the streen \n\n To view image: \n\n Just select the image you'd like by clicking it! \n\n To save images:\n\n Just hit the save icon in the upper right hand corner of the screen.");
+            builder2.setMessage("To flip through images: \n\n just swipe from right to left on the images at the bottom to the streen \n\n To view image: \n\n Just select the image you'd like by clicking it! \n\n To save images:\n\n Just hit the save icon in the bottom right hand corner of the screen.");
             builder2.setPositiveButton(
                     "Thanks!",
                     new DialogInterface.OnClickListener() {
