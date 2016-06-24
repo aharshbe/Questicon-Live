@@ -359,7 +359,7 @@ public class NavD extends AppCompatActivity
     }
 
     public void clickingPetsAc(View view) {
-        Intent intent = new Intent(NavD.this, MountsActivity.class);
+        Intent intent = new Intent(NavD.this, PetsActivity.class);
         startActivity(intent);
     }
 

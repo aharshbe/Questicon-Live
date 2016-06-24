@@ -23,7 +23,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#47000000">
+                android:background="#67B8860B">
 
                 <TextView
                     android:id="@+id/LevelBoss"
@@ -70,6 +70,13 @@
                     android:background="#000"
                     android:layout_alignBottom="@+id/nameBosses"
                     android:layout_alignParentEnd="true" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:background="@drawable/flmaes100"
+                    android:id="@+id/imagegrass"
+                    android:layout_below="@id/descriptionBosses" />
+
 
 
 
