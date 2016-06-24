@@ -27,6 +27,9 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,8 +37,10 @@ import android.widget.Toast;
 public class NavD extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     TextView charsearch, chars, bosses, dungeons, mounts, pets, lore, gallery, music, share;
+    FrameLayout charsearchframe;
 
 //    ImageView gyro;
+
 
 
     @Override
@@ -49,6 +54,7 @@ public class NavD extends AppCompatActivity
         NOTIFICATIONBox();
 
         Typeface font = Typeface.createFromAsset(getAssets(), "wowfont.ttf");
+
 
         charsearch = (TextView) findViewById(R.id.charactersearch);
         charsearch.setTypeface(font);
