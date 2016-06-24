@@ -68,6 +68,23 @@
 ##See YouTube Video of Questicon here:
 [Questicon Android Application YouTube(Link)](##Download Questicon here:
 [Questicon Android Application (Link)](https://www.youtube.com/watch?v=bWKAx6R1HLE&feature=youtu.be)
+##Presentation Slides:
+![](readmedata/QusticonPresentationImages.001.jpeg)
+![](readmedata/QusticonPresentationImages.002.jpeg)
+![](readmedata/QusticonPresentationImages.003.jpeg)
+![](readmedata/QusticonPresentationImages.004.jpeg)
+![](readmedata/QusticonPresentationImages.005.jpeg)
+![](readmedata/QusticonPresentationImages.006.jpeg)
+![](readmedata/QusticonPresentationImages.007.jpeg)
+![](readmedata/QusticonPresentationImages.008.jpeg)
+![](readmedata/QusticonPresentationImages.009.jpeg)
+![](readmedata/QusticonPresentationImages.010.jpeg)
+![](readmedata/QusticonPresentationImages.011.jpeg)
+![](readmedata/QusticonPresentationImages.012.jpeg)
+![](readmedata/QusticonPresentationImages.013.jpeg)
+![](readmedata/QusticonPresentationImages.014.jpeg)
+
+
 
 
 
