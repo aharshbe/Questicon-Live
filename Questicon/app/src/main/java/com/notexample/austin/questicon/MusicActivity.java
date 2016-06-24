@@ -258,6 +258,8 @@ public class MusicActivity extends ActionBarActivity {
         durationHandler.removeCallbacks(updateSeekBarTime);
         mediaPlayer.stop();
         gyroAnimation.stop();
+        mp3Icon = (ImageView) findViewById(R.id.mp3Icon);
+        mp3Icon.setBackgroundResource(R.drawable.soundtrack);
     }
 
     public class CustomOnItemSelectedListener implements AdapterView.OnItemSelectedListener {
