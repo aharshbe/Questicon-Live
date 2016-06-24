@@ -9,6 +9,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.AnimationDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -27,10 +28,12 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class NavD extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    TextView charsearch, chars, bosses, dungeons, mounts, pets, lore, gallery, music, share;
 
 //    ImageView gyro;
 
@@ -44,6 +47,31 @@ public class NavD extends AppCompatActivity
 
         checkFirstRun();
         NOTIFICATIONBox();
+
+        Typeface font = Typeface.createFromAsset(getAssets(), "wowfont.ttf");
+
+        charsearch = (TextView) findViewById(R.id.charactersearch);
+        charsearch.setTypeface(font);
+        chars = (TextView) findViewById(R.id.characterinfo);
+        chars.setTypeface(font);
+        bosses = (TextView) findViewById(R.id.bossestextview);
+        bosses.setTypeface(font);
+        dungeons = (TextView) findViewById(R.id.dungeonstextview);
+        dungeons.setTypeface(font);
+        mounts = (TextView) findViewById(R.id.mountstextview);
+        mounts.setTypeface(font);
+        pets = (TextView) findViewById(R.id.petstextview);
+        pets.setTypeface(font);
+        lore = (TextView) findViewById(R.id.loretextview);
+        lore.setTypeface(font);
+        gallery = (TextView) findViewById(R.id.gallerytextview);
+        gallery.setTypeface(font);
+        music= (TextView) findViewById(R.id.musictextview);
+        music.setTypeface(font);
+        share = (TextView) findViewById(R.id.sharetextview);
+        share.setTypeface(font);
+
+
 
 
 
@@ -300,6 +328,61 @@ public class NavD extends AppCompatActivity
     }
 
 
+    public void clickingCharSearch(View view) {
+        Intent intent = new Intent(NavD.this, CharacterActivity.class);
+        startActivity(intent);
+    }
 
+    public void clickingCharInfo(View view) {
+        Intent intent = new Intent(NavD.this, SplashScreenLoadingCharacters.class);
+        startActivity(intent);
+    }
 
+    public void clickingBossesAc(View view) {
+        Intent intent = new Intent(NavD.this, BossesActivity.class);
+        startActivity(intent);
+    }
+
+    public void clickingDungeonsAc(View view) {
+        Intent intent = new Intent(NavD.this, DungeonActivity.class);
+        startActivity(intent);
+    }
+    public void clickingMountsAc(View view) {
+        Intent intent = new Intent(NavD.this, MountsActivity.class);
+        startActivity(intent);
+    }
+
+    public void clickingPetsAc(View view) {
+        Intent intent = new Intent(NavD.this, MountsActivity.class);
+        startActivity(intent);
+    }
+
+    public void clickingLoreAc(View view) {
+        Intent intent = new Intent(NavD.this, LoreActivity.class);
+        startActivity(intent);
+    }
+
+    public void clickingGalleryAc(View view) {
+        Intent intent = new Intent(NavD.this, WallpaperAcitivty.class);
+        startActivity(intent);
+    }
+
+    public void clickingMusicAc(View view) {
+        Intent intent = new Intent(NavD.this, MusicActivity.class);
+        startActivity(intent);
+    }
+
+    public void clickingShare(View view) {
+        Intent sharingIntent = new Intent(Intent.ACTION_SEND);
+        sharingIntent.setType("text/plain");
+        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, "https://github.com/aharshbe/Questicon");
+        startActivity(Intent.createChooser(sharingIntent, getString(R.string.send_intent_title)));
+    }
+
+    public void clickingShareNav(MenuItem item) {
+        Intent sharingIntent = new Intent(Intent.ACTION_SEND);
+        sharingIntent.setType("text/plain");
+        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, "https://github.com/aharshbe/Questicon");
+        startActivity(Intent.createChooser(sharingIntent, getString(R.string.send_intent_title)));
+    }
 }

@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView01"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#000"
+    android:layout_marginTop="55dp">
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,19 +15,373 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.notexample.austin.questicon.NavD"
-    tools:showIn="@layout/app_bar_nav_d"
-    >
+    tools:showIn="@layout/app_bar_nav_d">
 
-    <ImageView
-        android:id="@+id/gyro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:contentDescription="test"
-        />
 
+    <FrameLayout
+        android:id="@+id/framecharsearch"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#57F0F8FF">
+
+            <ImageView
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@mipmap/ic_viewchar"
+                android:id="@+id/imageView5" />
+
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:textColor="#F0F8FF"
+                android:onClick="clickingCharSearch"
+                android:id="@+id/charactersearch"
+                android:layout_width="260dp"
+                android:layout_height="50dp"
+                android:textSize="18sp"
+                android:text="Your character search"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true" />
+
+
+        </RelativeLayout>
+    </FrameLayout>
+    <FrameLayout
+        android:id="@+id/framecharacters"
+        android:layout_below="@id/framecharsearch"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#57F0F8FF">
+
+            <ImageView
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@mipmap/ic_charactercho"
+                android:id="@+id/imageView6" />
+
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:textColor="#F0F8FF"
+                android:onClick="clickingCharInfo"
+                android:id="@+id/characterinfo"
+                android:layout_width="260dp"
+                android:layout_height="50dp"
+                android:textSize="18sp"
+                android:text="Characters"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true" />
+
+
+        </RelativeLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/framebosses"
+        android:layout_below="@id/framecharacters"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#57F0F8FF">
+
+            <ImageView
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@mipmap/ic_bosses"
+                android:id="@+id/imageView9" />
+
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:textColor="#F0F8FF"
+                android:onClick="clickingBossesAc"
+                android:id="@+id/bossestextview"
+                android:layout_width="260dp"
+                android:layout_height="50dp"
+                android:textSize="18sp"
+                android:text="Bosses"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true" />
+
+
+        </RelativeLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/framedungeons"
+        android:layout_below="@id/framebosses"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#57F0F8FF">
+
+            <ImageView
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@mipmap/ic_dungeons"
+                android:id="@+id/imageView10" />
+
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:textColor="#F0F8FF"
+                android:onClick="clickingDungeonsAc"
+                android:id="@+id/dungeonstextview"
+                android:layout_width="260dp"
+                android:layout_height="50dp"
+                android:textSize="18sp"
+                android:text="Dungeons"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true" />
+
+
+        </RelativeLayout>
+    </FrameLayout>
+    <FrameLayout
+        android:id="@+id/framemounts"
+        android:layout_below="@id/framedungeons"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#57F0F8FF">
+
+            <ImageView
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@mipmap/ic_mounts"
+                android:id="@+id/imageView11" />
+
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:textColor="#F0F8FF"
+                android:onClick="clickingMountsAc"
+                android:id="@+id/mountstextview"
+                android:layout_width="260dp"
+                android:layout_height="50dp"
+                android:textSize="18sp"
+                android:text="Mounts"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true" />
+
+
+        </RelativeLayout>
+    </FrameLayout>
+    <FrameLayout
+        android:id="@+id/framepets"
+        android:layout_below="@id/framemounts"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#57F0F8FF">
+
+            <ImageView
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@mipmap/ic_pets"
+                android:id="@+id/imageView12" />
+
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:textColor="#F0F8FF"
+                android:onClick="clickingPetsAc"
+                android:id="@+id/petstextview"
+                android:layout_width="260dp"
+                android:layout_height="50dp"
+                android:textSize="18sp"
+                android:text="Pets"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true" />
+
+
+        </RelativeLayout>
+    </FrameLayout>
+    <FrameLayout
+        android:id="@+id/framelore"
+        android:layout_below="@id/framepets"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#57F0F8FF">
+
+            <ImageView
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@mipmap/ic_loreyoutbe"
+                android:id="@+id/imageView13" />
+
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:textColor="#F0F8FF"
+                android:onClick="clickingLoreAc"
+                android:id="@+id/loretextview"
+                android:layout_width="260dp"
+                android:layout_height="50dp"
+                android:textSize="18sp"
+                android:text="Lore: Nobbel87's YouTube"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true" />
+
+
+        </RelativeLayout>
+    </FrameLayout>
+    <FrameLayout
+        android:id="@+id/framegallery"
+        android:layout_below="@id/framelore"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#57F0F8FF">
+
+            <ImageView
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@mipmap/ic_gallery"
+                android:id="@+id/imageView14" />
+
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:textColor="#F0F8FF"
+                android:onClick="clickingGalleryAc"
+                android:id="@+id/gallerytextview"
+                android:layout_width="260dp"
+                android:layout_height="50dp"
+                android:textSize="18sp"
+                android:text="Gallery"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true" />
+
+
+        </RelativeLayout>
+    </FrameLayout>
+    <FrameLayout
+        android:id="@+id/framemusic"
+        android:layout_below="@id/framegallery"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#57F0F8FF">
+
+            <ImageView
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@mipmap/ic_music"
+                android:id="@+id/imageView15" />
+
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:textColor="#F0F8FF"
+                android:onClick="clickingMusicAc"
+                android:id="@+id/musictextview"
+                android:layout_width="260dp"
+                android:layout_height="50dp"
+                android:textSize="18sp"
+                android:text="Music"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true" />
+
+
+        </RelativeLayout>
+    </FrameLayout>
+    <FrameLayout
+        android:id="@+id/frameshare"
+        android:layout_below="@id/framemusic"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#57F0F8FF">
+
+            <ImageView
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@mipmap/ic_sharenav"
+                android:id="@+id/imageView16" />
+
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:textColor="#F0F8FF"
+                android:onClick="clickingShare"
+                android:id="@+id/sharetextview"
+                android:layout_width="260dp"
+                android:layout_height="50dp"
+                android:textSize="18sp"
+                android:text="Share Questicon's Repo"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true" />
+
+
+        </RelativeLayout>
+    </FrameLayout>
 
 
 
 
 </RelativeLayout>
+    </ScrollView>

@@ -55,6 +55,7 @@
         <menu>
             <item
                 android:id="@+id/nav_share"
+                android:onClick="clickingShareNav"
                 android:icon="@mipmap/ic_sharenav"
                 android:title="Questicon" />
 
