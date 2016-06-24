@@ -17,7 +17,7 @@ public class SplashScreenDungeons extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen_dungeons);
 
         icon = (ImageView) findViewById(R.id.splashCharacters);
-        icon.setBackgroundResource(R.drawable.loading_tenticles_annimation);
+        icon.setBackgroundResource(R.drawable.darkportal_animation);
         AnimationDrawable gyroAnimation = (AnimationDrawable) icon.getBackground();
         gyroAnimation.start();
 

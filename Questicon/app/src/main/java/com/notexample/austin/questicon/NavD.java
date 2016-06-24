@@ -176,7 +176,7 @@ public class NavD extends AppCompatActivity
     }
 
     public void clickingDungeons(MenuItem item) {
-        Intent intent = new Intent(NavD.this, DungeonActivity.class);
+        Intent intent = new Intent(NavD.this, SplashScreenDungeons.class);
         startActivity(intent);
     }
 
@@ -350,7 +350,7 @@ public class NavD extends AppCompatActivity
     }
 
     public void clickingDungeonsAc(View view) {
-        Intent intent = new Intent(NavD.this, DungeonActivity.class);
+        Intent intent = new Intent(NavD.this, SplashScreenDungeons.class);
         startActivity(intent);
     }
     public void clickingMountsAc(View view) {
