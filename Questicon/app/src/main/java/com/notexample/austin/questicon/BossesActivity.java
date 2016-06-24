@@ -30,6 +30,8 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Locale;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import cz.msebera.android.httpclient.Header;
 
@@ -202,6 +204,24 @@ public class BossesActivity extends AppCompatActivity {
         handleIntent(getIntent());
 
         checkFirstRun();
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Hello!");
+        builder.setIcon(R.drawable.gyro_animation);
+        builder.setMessage("Loading Bosses, just one second");
+        builder.setCancelable(false);
+
+        final AlertDialog closedialog= builder.create();
+
+        closedialog.show();
+
+        final Timer timer2 = new Timer();
+        timer2.schedule(new TimerTask() {
+            public void run() {
+                closedialog.dismiss();
+                timer2.cancel(); //this will cancel the timer of the system
+            }
+        }, 2000);
 
 
     }
