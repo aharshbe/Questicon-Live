@@ -1,7 +1,10 @@
 package com.notexample.austin.questicon;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
+import android.graphics.drawable.AnimationDrawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Handler;
@@ -9,6 +12,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -29,6 +33,7 @@ import java.util.concurrent.TimeUnit;
 
 public class MusicActivity extends ActionBarActivity {
     private MediaPlayer mediaPlayer, mediaPlayer2;
+    AnimationDrawable gyroAnimation;
     private ImageView mp3Icon;
     private TextView songDuration;
     private TextView songName;
@@ -54,6 +59,12 @@ public class MusicActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music);
+
+        checkFirstRun();
+
+
+
+
 
 
 //        songName = (TextView) findViewById(R.id.songName);
@@ -103,6 +114,26 @@ public class MusicActivity extends ActionBarActivity {
 
 
     }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        try {
+
+            if (mediaPlayer.isPlaying() == true) {
+
+                durationHandler.removeCallbacks(updateSeekBarTime);
+                mediaPlayer.stop();
+                mediaPlayer.reset();
+                mediaPlayer.release();
+
+            }
+
+        } catch (IllegalStateException i) {
+            i.printStackTrace();
+        }
+
+    }
 
     private Runnable updateSeekBarTime = new Runnable() {
         public void run() {
@@ -118,12 +149,17 @@ public class MusicActivity extends ActionBarActivity {
 
 
         mediaPlayer.start();
+        mp3Icon = (ImageView) findViewById(R.id.mp3Icon);
+        mp3Icon.setBackgroundResource(R.drawable.music_animation);
+        gyroAnimation = (AnimationDrawable) mp3Icon.getBackground();
+        gyroAnimation.start();
         timeStart = mediaPlayer.getCurrentPosition();
         seekBar.setProgress((int) timeStart);
         durationHandler.postDelayed(updateSeekBarTime, 100);
     }
 
     public void pause(View view) {
+        gyroAnimation.stop();
         mediaPlayer.pause();
     }
 
@@ -147,8 +183,8 @@ public class MusicActivity extends ActionBarActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.menu_main, menu);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.info, menu);
         return true;
     }
 
@@ -216,6 +252,12 @@ public class MusicActivity extends ActionBarActivity {
     public void addListenerOnSpinnerItemSelection() {
         spinner = (Spinner) findViewById(R.id.spinner);
         spinner.setOnItemSelectedListener(new CustomOnItemSelectedListener());
+    }
+
+    public void stop(View view) {
+        durationHandler.removeCallbacks(updateSeekBarTime);
+        mediaPlayer.stop();
+        gyroAnimation.stop();
     }
 
     public class CustomOnItemSelectedListener implements AdapterView.OnItemSelectedListener {
@@ -639,9 +681,65 @@ public class MusicActivity extends ActionBarActivity {
         }
 
 
+
         @Override
         public void onNothingSelected(AdapterView<?> adapterView) {
 
         }
+
+
+    }
+    public void InfoDiaglogue() {
+        AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
+        builder2.setTitle("So you're a little confused...");
+        builder2.setIcon(R.mipmap.ic_launcher_questicon);
+        builder2.setCancelable(true);
+        builder2.setMessage("Glossay of buttons:\n\n Ear: Play a song \n\n Back arrow: Go back a few seconds \n\n Stop hand: Stop the song \n\n Folder: Save song \n\n To play a song: \n\n Click on the menu selector: Where it says: 'Please choose a song to play' \n\n Then hit the play button at the bottom of the screen! \n\n To save a song: \n\n Just hit the save button on-top of the music controls" );
+        builder2.setPositiveButton(
+                "Thanks!",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+
+                        return;
+                    }
+                });
+
+        AlertDialog alert12 = builder2.create();
+        alert12.show();
+    }
+
+    public void checkFirstRun() {
+        boolean isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean("isFirstRun7", true);
+        if (isFirstRun) {
+
+            AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
+            builder2.setTitle("Dear WoW player...");
+            builder2.setIcon(R.mipmap.ic_launcher_questicon);
+            builder2.setCancelable(true);
+            builder2.setMessage("Glossay of buttons:\n\n Ear: Play a song \n\n Back arrow: Go back a few seconds \n\n Stop hand: Stop the song \n\n Folder: Save song \n\n To play a song: \n\n Click on the menu selector: Where it says: 'Please choose a song to play' \n\n Then hit the play button at the bottom of the screen! \n\n To save a song: \n\n Just hit the save button on-top of the music controls" );
+            builder2.setPositiveButton(
+                    "Thanks!",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+
+                            return;
+                        }
+                    });
+
+            AlertDialog alert12 = builder2.create();
+            alert12.show();
+
+            getSharedPreferences("PREFERENCE", MODE_PRIVATE)
+                    .edit()
+                    .putBoolean("isFirstRun7", false)
+                    .apply();
+        }
+    }
+
+
+    public void clickingInfo(MenuItem item) {
+        InfoDiaglogue();
     }
 }

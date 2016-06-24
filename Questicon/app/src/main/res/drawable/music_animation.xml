@@ -1,0 +1,28 @@
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false" >
+
+    <item
+        android:drawable="@drawable/musicplaying1"
+        android:duration="100"/>
+    <item
+        android:drawable="@drawable/musicplaying2"
+        android:duration="100"/>
+    <item
+        android:drawable="@drawable/musicplaying3"
+        android:duration="100"/>
+    <item
+        android:drawable="@drawable/musicplaying4"
+        android:duration="100"/>
+    <item
+        android:drawable="@drawable/musicplaying5"
+        android:duration="100"/>
+    <item
+        android:drawable="@drawable/musicplaying6"
+        android:duration="100"/>
+    <item
+        android:drawable="@drawable/musicplaying7"
+        android:duration="100"/>
+    <item
+        android:drawable="@drawable/musicplaying8"
+        android:duration="100"/>
+</animation-list>
