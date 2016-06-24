@@ -8,9 +8,9 @@
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="true"
-        android:largeHeap="true"
         android:icon="@mipmap/ic_main_icon_questicon"
         android:label="Questicon"
+        android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
@@ -89,7 +89,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".SplashScreenLoadingCharacters" />
-        <activity android:name=".SplashScreenDungeons"></activity>
+        <activity android:name=".SplashScreenDungeons" />
+        <activity android:name=".SplashScreenElune"></activity>
     </application>
 
 </manifest>

@@ -166,7 +166,7 @@ public class NavD extends AppCompatActivity
     }
 
     public void clickingCharacter(MenuItem item) {
-        Intent intent = new Intent(NavD.this, CharacterActivity.class);
+        Intent intent = new Intent(NavD.this, SplashScreenElune.class);
         startActivity(intent);
     }
 
@@ -218,7 +218,7 @@ public class NavD extends AppCompatActivity
         AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
         builder2.setTitle("Dear WoW player...");
         builder2.setIcon(R.mipmap.ic_launcher_questicon);
-        builder2.setMessage("Welcome to Questicon: Your World of Warcraft Companion \n\n To get started, swipe from the left, there you'll have access to all the bosses, characters and dungeons WoW has to offer. \n\nFeel free to checkout media for some fun stuff too!");
+        builder2.setMessage("Welcome to Questicon: Your World of Warcraft Companion \n\n To get started, swipe from the left, there you'll have access to all the bosses, characters and dungeons WoW has to offer or click on a category on this screen. \n\nFeel free to checkout music or the gallery for some fun stuff too!");
         builder2.setCancelable(true);
 
         builder2.setPositiveButton(
@@ -335,7 +335,7 @@ public class NavD extends AppCompatActivity
 
 
     public void clickingCharSearch(View view) {
-        Intent intent = new Intent(NavD.this, CharacterActivity.class);
+        Intent intent = new Intent(NavD.this, SplashScreenElune.class);
         startActivity(intent);
     }
 
