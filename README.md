@@ -1,7 +1,7 @@
 # <<<<<<<<<<<<<<<![](readmedata/questicon.png)>>>>>>>>>>>>>
 # Questicon: Your World of Warcraft companion
 ## >Project 4, a World of Warcraft App
-#### our source for World of Warcraft bosses, pets and more...
+#### Your source for World of Warcraft bosses, pets and more...
 ![](readmedata/o3.gif)
 ![](readmedata/o1.gif)
 ![](readmedata/o2.gif)
