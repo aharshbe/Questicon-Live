@@ -21,7 +21,7 @@
 
 ## ![](https://us.battle.net/mashery-assets/static/images//home-jumbo-no-inset.jpg)
 ## Meet Hamlick, Questicon's user personal:
-<<<<<<<<<<<<<![](readmedata/gamerpersona.jpg)>>>>>>>>>>>>
+<<<<<<<<<<<<< ![](readmedata/gamerpersona.jpg) >>>>>>>>>>>>
 ## >About Hamlick
 
 * **Hamlick is a 16 year old gamer who enjoys playing Wolrd of Warcraft (WoW), especially on the weekends.**
