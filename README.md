@@ -1,6 +1,6 @@
 # <<<<<<<<<<<<<<<![](readmedata/questicon.png)>>>>>>>>>>>>>
 # Questicon: Your World of Warcraft companion
-## >Project 4, a World of Warcraft App
+## >View Questicon on Google Play [here](https://play.google.com/store/apps/details?id=com.notexample.austin.questicon)
 #### Your source for World of Warcraft bosses, pets and more...
 ![](readmedata/o3.gif)
 ![](readmedata/o1.gif)

@@ -18,16 +18,4 @@
         android:id="@+id/tvWallpapers"
         android:background="@drawable/wallpaperhd" />
 
-    <TextView
-        android:layout_marginTop="2dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Music"
-        android:onClick="clickingMusic"
-        android:fontFamily="cursive"
-        android:id="@+id/tvMusic"
-        android:background="@drawable/soundtrack"
-        android:textColor="#70eebe00"
-        android:textSize="50sp"
-        android:layout_below="@+id/tvWallpapers" />
 </RelativeLayout>

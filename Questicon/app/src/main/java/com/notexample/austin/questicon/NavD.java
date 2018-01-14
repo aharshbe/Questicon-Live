@@ -36,7 +36,7 @@ import android.widget.Toast;
 
 public class NavD extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    TextView charsearch, chars, bosses, dungeons, mounts, pets, lore, gallery, music, share;
+    TextView charsearch, chars, bosses, dungeons, mounts, pets, lore, gallery, share;
     FrameLayout charsearchframe;
 
 //    ImageView gyro;
@@ -64,31 +64,16 @@ public class NavD extends AppCompatActivity
         bosses.setTypeface(font);
         dungeons = (TextView) findViewById(R.id.dungeonstextview);
         dungeons.setTypeface(font);
-        mounts = (TextView) findViewById(R.id.mountstextview);
-        mounts.setTypeface(font);
+//        mounts = (TextView) findViewById(R.id.mountstextview);
+//        mounts.setTypeface(font);
         pets = (TextView) findViewById(R.id.petstextview);
         pets.setTypeface(font);
         lore = (TextView) findViewById(R.id.loretextview);
         lore.setTypeface(font);
         gallery = (TextView) findViewById(R.id.gallerytextview);
         gallery.setTypeface(font);
-        music= (TextView) findViewById(R.id.musictextview);
-        music.setTypeface(font);
         share = (TextView) findViewById(R.id.sharetextview);
         share.setTypeface(font);
-
-
-
-
-
-//        gyro = (ImageView) findViewById(R.id.gyro);
-//        gyro.setBackgroundResource(R.drawable.loading_tenticles_annimation);
-//        AnimationDrawable gyroAnimation = (AnimationDrawable) gyro.getBackground();
-//        gyroAnimation.start();
-
-
-
-
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -147,15 +132,13 @@ public class NavD extends AppCompatActivity
 
         } else if (id == R.id.nav_quest) {
 
-        } else if (id == R.id.nav_mounts) {
+        //} else if (id == R.id.nav_mounts) {
 
         } else if (id == R.id.nav_items) {
 
         } else if (id == R.id.nav_Lore) {
 
-        } else if (id == R.id.nav_Music) {
-
-        } else if (id == R.id.nav_Gallery) {
+        }  else if (id == R.id.nav_Gallery) {
 
 
         }
@@ -180,10 +163,10 @@ public class NavD extends AppCompatActivity
         startActivity(intent);
     }
 
-    public void clickingMounts(MenuItem item) {
-        Intent intent = new Intent(NavD.this, MountsActivity.class);
-        startActivity(intent);
-    }
+//    public void clickingMounts(MenuItem item) {
+//        Intent intent = new Intent(NavD.this, MountsActivity.class);
+//        startActivity(intent);
+//    }
 
     public void clickingPets(MenuItem item) {
         Intent intent = new Intent(NavD.this, PetsActivity.class);
@@ -199,12 +182,6 @@ public class NavD extends AppCompatActivity
 
     public void clickingGallery(MenuItem item) {
         Intent intent = new Intent(NavD.this, WallpaperAcitivty.class);
-        startActivity(intent);
-    }
-
-
-    public void clickingMusic(MenuItem item) {
-        Intent intent = new Intent(NavD.this, MusicActivity.class);
         startActivity(intent);
     }
 
@@ -370,11 +347,6 @@ public class NavD extends AppCompatActivity
 
     public void clickingGalleryAc(View view) {
         Intent intent = new Intent(NavD.this, WallpaperAcitivty.class);
-        startActivity(intent);
-    }
-
-    public void clickingMusicAc(View view) {
-        Intent intent = new Intent(NavD.this, MusicActivity.class);
         startActivity(intent);
     }
 

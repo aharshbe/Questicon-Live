@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.SearchView;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
@@ -50,10 +51,7 @@ public class MountsActivity extends AppCompatActivity {
                     mountModels.add(mountModel);
                     adapterMount.notifyDataSetChanged();
 
-
-
                     ListView listViewMount = (ListView) findViewById(R.id.listViewMounts);
-
 
                     assert listViewMount != null;
                     listViewMount.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -87,10 +85,10 @@ public class MountsActivity extends AppCompatActivity {
 
             } catch (JSONException e) {
                 e.printStackTrace();
+
             }
-
-
         }
+
 
 
         @Override
@@ -158,7 +156,6 @@ public class MountsActivity extends AppCompatActivity {
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-
 
                 return false;
             }

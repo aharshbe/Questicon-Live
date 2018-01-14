@@ -22,11 +22,11 @@
             android:onClick="clickingDungeons"
             android:icon="@mipmap/ic_dungeons"
             android:title="Dungeons" />
-        <item
-            android:id="@+id/nav_mounts"
-            android:icon="@mipmap/ic_mounts"
-            android:title="Mounts"
-            android:onClick="clickingMounts"/>
+        <!--<item-->
+            <!--android:id="@+id/nav_mounts"-->
+            <!--android:icon="@mipmap/ic_mounts"-->
+            <!--android:title="Mounts"-->
+            <!--android:onClick="clickingMounts"/>-->
         <item
             android:id="@+id/nav_items"
             android:icon="@mipmap/ic_pets"
@@ -42,12 +42,6 @@
             android:icon="@mipmap/ic_gallery"
             android:title="Gallery"
             android:onClick="clickingGallery"/>
-        <item
-            android:id="@+id/nav_Music"
-            android:icon="@mipmap/ic_music"
-            android:title="Music"
-            android:onClick="clickingMusic"/>
-
 
     </group>
 

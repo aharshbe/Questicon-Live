@@ -17,10 +17,4 @@ public class MediaAcitvity extends AppCompatActivity {
         Intent intent = new Intent(MediaAcitvity.this, WallpaperAcitivty.class);
         startActivity(intent);
     }
-
-    public void clickingMusic(View view) {
-        Intent intent = new Intent(MediaAcitvity.this, MusicActivity.class);
-        startActivity(intent);
-
-    }
 }

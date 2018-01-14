@@ -163,45 +163,45 @@
 
         </RelativeLayout>
     </FrameLayout>
-    <FrameLayout
-        android:id="@+id/framemounts"
-        android:layout_below="@id/framedungeons"
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <!--<FrameLayout-->
+        <!--android:id="@+id/framemounts"-->
+        <!--android:layout_below="@id/framedungeons"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#57F0F8FF">
+        <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="#57F0F8FF">-->
 
-            <ImageView
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@mipmap/ic_mounts"
-                android:id="@+id/imageView11" />
-
-
-            <TextView
-                android:layout_marginTop="10dp"
-                android:textColor="#F0F8FF"
-                android:onClick="clickingMountsAc"
-                android:id="@+id/mountstextview"
-                android:layout_width="260dp"
-                android:layout_height="50dp"
-                android:textSize="18sp"
-                android:text="Mounts"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true" />
+            <!--<ImageView-->
+                <!--android:layout_marginLeft="5dp"-->
+                <!--android:layout_marginTop="5dp"-->
+                <!--android:layout_width="40dp"-->
+                <!--android:layout_height="40dp"-->
+                <!--android:background="@mipmap/ic_mounts"-->
+                <!--android:id="@+id/imageView11" />-->
 
 
-        </RelativeLayout>
-    </FrameLayout>
+            <!--<TextView-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:textColor="#F0F8FF"-->
+                <!--android:onClick="clickingMountsAc"-->
+                <!--android:id="@+id/mountstextview"-->
+                <!--android:layout_width="260dp"-->
+                <!--android:layout_height="50dp"-->
+                <!--android:textSize="18sp"-->
+                <!--android:text="Mounts"-->
+                <!--android:layout_alignParentTop="true"-->
+                <!--android:layout_alignParentEnd="true" />-->
+
+
+        <!--</RelativeLayout>-->
+    <!--</FrameLayout>-->
     <FrameLayout
         android:id="@+id/framepets"
-        android:layout_below="@id/framemounts"
+        android:layout_below="@id/framedungeons"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -307,45 +307,10 @@
 
         </RelativeLayout>
     </FrameLayout>
-    <FrameLayout
-        android:id="@+id/framemusic"
-        android:layout_below="@id/framegallery"
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#57F0F8FF">
-
-            <ImageView
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@mipmap/ic_music"
-                android:id="@+id/imageView15" />
-
-
-            <TextView
-                android:layout_marginTop="10dp"
-                android:textColor="#F0F8FF"
-                android:onClick="clickingMusicAc"
-                android:id="@+id/musictextview"
-                android:layout_width="260dp"
-                android:layout_height="50dp"
-                android:textSize="18sp"
-                android:text="Music"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true" />
-
-
-        </RelativeLayout>
-    </FrameLayout>
     <FrameLayout
         android:id="@+id/frameshare"
-        android:layout_below="@id/framemusic"
+        android:layout_below="@id/framegallery"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -379,9 +344,6 @@
 
         </RelativeLayout>
     </FrameLayout>
-
-
-
 
 </RelativeLayout>
     </ScrollView>

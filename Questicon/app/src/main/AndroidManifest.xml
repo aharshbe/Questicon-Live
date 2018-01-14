@@ -61,9 +61,6 @@
         <activity
             android:name=".WallpaperAcitivty"
             android:label="Wallpapers" />
-        <activity
-            android:name=".MusicActivity"
-            android:label="Music" />
         <activity android:name=".HorADetailView" />
         <activity android:name=".AllianceSelectActivity" />
         <activity android:name=".HordeSelectActivity" />
